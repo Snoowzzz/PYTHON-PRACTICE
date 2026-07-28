@@ -142,14 +142,46 @@
 # print(f"The factorial of {number} is {count}")
 
 
-def factorial(num):
-  count = 1
-  if num == 1 or num == 0:
-     return 1
+# def factorial(num):
+#   count = 1
+#   if num == 1 or num == 0:
+#      return 1
+#   else:
+#    while num >=2:
+#      count =count* num*(num-1)
+#      num= num -2
+#    return count
+# number = int(input("Enter your number: "))
+# print(f"The factorial of the {number} is {factorial(number)}")
+
+
+# IP ADDRESS VERIFIER
+IP = input("Enter your Ip address: ")
+k = IP.split('.')
+def IP_valid():
+  if Type == 1:
+      if int(k[0]) < 128:
+        print(f"The class of IP {IP} is A ")
+      elif int(k[0]) < 192:
+        print(f"The class of IP {IP} is B ")
+      elif int(k[0]) < 224:
+        print(f"The class of IP {IP} is C ")
+      else:
+        print(f"The class of IP {IP} is D ")
   else:
-   while num >=2:
-     count =count* num*(num-1)
-     num= num -2
-   return count
-number = int(input("Enter your number: "))
-print(f"The factorial of the {number} is {factorial(number)}")
+      print("Thankyou for visiting")
+count = 0
+while count!= 4:
+  for i in range(0,4): 
+   if int(k[i]) in range(1,256):
+    count+=1
+  if count == 4:
+    break
+  if count!= 4:
+   print("Please enter a Valid IP address")
+
+print("Valid Ip address ")
+Type = int(input("Would like to know the Type of IP: Press '1' for Yes and '0' for NO "))
+IP_valid()
+   
+  
