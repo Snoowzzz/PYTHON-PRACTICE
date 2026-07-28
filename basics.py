@@ -144,7 +144,7 @@
 
 def factorial(num):
   count = 1
-  if num == 1 or 0:
+  if num == 1 or num == 0:
      return 1
   else:
    while num >=2:
