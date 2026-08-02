@@ -31,9 +31,12 @@
 # collection_1 = {4,5,7,8,9}
 # set = collection.intersection(collection_1)
 # print(set)
-student_info = {}
-for i in range(2):
-    name = input("Enter the name of the subject: ")
-    marks = int(input("Enter the marks you scored in that subject: "))
-    student_info[name] = marks
-print(student_info)
+# student_info = {}
+# for i in range(2):
+#     name = input("Enter the name of the subject: ")
+#     marks = int(input("Enter the marks you scored in that subject: "))
+#     student_info[name] = marks
+# print(student_info)
+# print(bool(0))
+# p,q,r = 0,2,3
+# print(p,q,r)
