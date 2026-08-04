@@ -190,3 +190,9 @@
 # print(f"Normal Run: {typing_scores}")
 # typing_elite= [wpm for wpm in typing_scores if wpm > 90]
 # print(f"Elite Run: {typing_elite}")
+# def stutter(word):
+#   s = word[0:2]
+#   k = s + "... "
+#   return f"{k}{k}{word}"
+# word = input("plz enter a word: ")
+# print(stutter(word))

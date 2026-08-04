@@ -39,4 +39,15 @@
 # print(student_info)
 # print(bool(0))
 # p,q,r = 0,2,3
-# print(p,q,r)
+# # print(p,q,r)
+# my_dict = {
+#     "name" :"Soham",
+#      "age" : 17,
+#      "hobbies" : ["Swimming","Dancing","Gaming"],
+#      "personal_info" :{
+#          "single": True,
+#          "crush": "Many",
+#          "gay": "No"
+#      }
+# }
+# print(my_dict["personal_info"].keys())
