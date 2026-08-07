@@ -1,2 +1,1 @@
-this is just a demo file nothing more trying to use this file 
-to understand the read and write functions in python.
+bakchodi on top bolte
