@@ -6,3 +6,41 @@ Character     Meaning
 'b'           binary mode
 't'           text mode (default)
 '+'           open a disk file for updating (reading and writing)
+
+## OOPS
+Methods
+Methods are functions that belong to objects.
+
+#creating class                          #creating object
+class Student:                           s1 = Student("karan")
+    def __init__(self, fullname):       s1.hello()
+        self.name = fullname
+
+
+def hello(self):
+    print("hello", self.name)
+What is self?
+        self represents the instance (object) itself
+        It's a reference to the specific object calling the method
+        Always the first parameter in any method
+        Allows methods to access and modify object properties
+__init__ Special Method:
+        Called constructor or initializer
+        Automatically runs when you create an object: s1 = Student("karan")
+        Used to initialize object attributes (data)
+        The __init__ method sets up the initial state
+How Method Calling Works:
+    s1.hello()  →  hello(s1)  
+    When you call s1.hello(), Python automatically passes s1 as self
+    The method uses self.name to access that specific object's data
+Why Methods Matter:
+    Encapsulation: Data (attributes) and functions (methods) stay together
+    Reusability: Define once, use for many objects
+    Organization: Related operations grouped in one class
+    Access to object state: Methods can read/modify attributes via self
+Example with multiple objects
+    s1 = Student("Karan")
+    s2 = Student("Priya")
+
+    s1.hello()  # prints: hello Karan
+    s2.hello()  # prints: hello Priya
