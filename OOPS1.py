@@ -36,14 +36,43 @@
 # print(s2.name,s2.marks,Student.college_name)
 
 # how to define a new function and then call it using self 
-class Student:
-    def __init__(self,name,marks):
-        self.name = name
-        self.marks = marks
-    def welcome(self):
-        print("Welcome Student",self.name)
-    def get_marks(self):
-        return self.marks
-s1 = Student("Karan",97)
-s1.welcome()
-print(f"You scored {s1.get_marks()} in the last exam..")
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name = name
+#         self.marks = marks
+#     def welcome(self):
+#         print("Welcome Student",self.name)
+#     def get_marks(self):
+#         return self.marks
+# s1 = Student("Karan",97)
+# s1.welcome()
+# print(f"You scored {s1.get_marks()} in the last exam..")
+
+
+
+# practice from the apni kaksha lecture
+# class Student(): 
+    
+#     def __init__(self,name,marks):
+#         self.name = name
+#         self.marks = marks 
+#     def average(self,marks):
+#         total = sum(marks)
+#         average1 = total/len(marks)
+#         return average1
+# s1 = Student("Soham",[97,96,94])
+# k =round(s1.average([97,96,94]),2)
+# print(s1.name,s1.marks,k)
+
+# better version of the upper
+# class Student(): 
+    
+#     def __init__(self,name,marks):
+#         self.name = name
+#         self.marks = marks 
+#     def average(self):
+#         total = sum(self.marks)
+#         average1 = total/len(self.marks)
+#         print(f"Hi {self.name} your average is {round(average1,2)}")
+# s1 = Student("Soham",[97,96,94])
+# s1.average()
