@@ -73,3 +73,8 @@
 # import os
 # os.remove("Samplefile.txt")
 # os.remove("Input\demo.txt")
+
+f = open("Demo.txt","+r")
+data = f.readline()
+new_data = data.split(",")
+print(new_data[1])
