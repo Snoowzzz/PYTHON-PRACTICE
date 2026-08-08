@@ -70,4 +70,6 @@
 # with open("Samplefile.txt","w") as f:
 #     f.write(new_data)
 #     print(new_data)
-    
+# import os
+# os.remove("Samplefile.txt")
+# os.remove("Input\demo.txt")
