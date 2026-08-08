@@ -44,3 +44,10 @@ Example with multiple objects
 
     s1.hello()  # prints: hello Karan
     s2.hello()  # prints: hello Priya
+KEY CONCEPTS:
+ABSTRACTION
+Hiding the implementation details of a class
+and only showing the essential features to the user.
+ENCAPSULATION
+Wrapping data and functions into a single unit (object). 
+Combining data and methods together within a class.
