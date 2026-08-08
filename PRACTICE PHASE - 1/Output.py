@@ -73,8 +73,28 @@
 # import os
 # os.remove("Samplefile.txt")
 # os.remove("Input\demo.txt")
+# practice python - 1
+# with open("Demo.txt", "r") as f:
+#     lines = f.read().splitlines() 
 
-f = open("Demo.txt","+r")
-data = f.readline()
-new_data = data.split(",")
-print(new_data[1])
+# parsed_records = []
+
+# for line in lines:
+#     if "ERROR" in line:
+#         continue  
+        
+#     tokens = line.split(",")
+#     row_dict = {
+#         "date": tokens[0].strip(),
+#         "temp": float(tokens[1].strip()),
+#         "status": tokens[2].strip()
+#     }
+#     parsed_records.append(row_dict)
+
+# # --- NEW MULTI-LINE WRITE ARCHITECTURE ---
+# with open("Output.txt", "w") as f_out:
+#     for record in parsed_records:
+#         # Convert each dictionary to a string and attach a newline mechanical break
+#         f_out.write(str(record) + "\n")
+
+# print("Successfully written to Output.txt across multiple lines!")
