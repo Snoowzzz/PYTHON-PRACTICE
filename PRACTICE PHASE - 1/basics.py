@@ -196,3 +196,24 @@
 #   return f"{k}{k}{word}"
 # word = input("plz enter a word: ")
 # print(stutter(word))
+
+## LEETCODE problem
+def is_a_palindrome(x):
+    if x > 0:
+        s = str(x)
+        k = int(s[::-1])
+        print(k)
+        if x == k:
+            return True 
+        else:
+            return False
+    elif x == 0:
+        return True
+    else:
+        return False
+
+num = int(input("enter a number: "))
+if is_a_palindrome(num) == True:
+    print("the number is a palindrone")
+else:
+    print("Not a palindrone")
