@@ -198,22 +198,56 @@
 # print(stutter(word))
 
 ## LEETCODE problem
-def is_a_palindrome(x):
-    if x > 0:
-        s = str(x)
-        k = int(s[::-1])
-        print(k)
-        if x == k:
-            return True 
-        else:
-            return False
-    elif x == 0:
-        return True
-    else:
-        return False
+# def is_a_palindrome(x):
+#     if x > 0:
+#         s = str(x)
+#         k = int(s[::-1])
+#         print(k)
+#         if x == k:
+#             return True 
+#         else:
+#             return False
+#     elif x == 0:
+#         return True
+#     else:
+#         return False
 
-num = int(input("enter a number: "))
-if is_a_palindrome(num) == True:
-    print("the number is a palindrone")
-else:
-    print("Not a palindrone")
+# num = int(input("enter a number: "))
+# if is_a_palindrome(num) == True:
+#     print("the number is a palindrone")
+# else:
+#     print("Not a palindrone")
+    
+    
+# # problem 2
+# # class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         k = []
+#         count = 0
+#         for i in range(len(nums)):
+#             if int == nums[i] + nums[i+1]:
+#                 k.append(i)
+#                 k.append(i+1)
+#                 count+=1    
+#             if count == 1:
+#                 return k
+#             else:
+#                 return False
+            
+            
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         k = []
+#         count = 0
+#         for i in range(len(nums)):
+#             for j in range(i+1,len(nums)):
+#                 if i != j:
+#                     if target == nums[i] + nums[j]:
+#                         k.append(i)
+#                         k.append(j)
+#                         count+=1
+#                         break
+#             if count > 0:
+#                 return k
+        
+#         return False
