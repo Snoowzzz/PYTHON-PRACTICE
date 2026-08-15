@@ -51,3 +51,5 @@ and only showing the essential features to the user.
 ENCAPSULATION
 Wrapping data and functions into a single unit (object). 
 Combining data and methods together within a class.
+#POLYMORPHISM when the same operator is allowed to have different meanings 
+according to the context

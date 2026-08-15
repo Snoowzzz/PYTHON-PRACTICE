@@ -97,3 +97,6 @@
 # print(s1.percentage)
 # s1.math = 80
 # print(s1.percentage)
+
+
+#Polymorphism
