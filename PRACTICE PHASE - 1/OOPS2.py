@@ -123,3 +123,18 @@
 # s3.ShowNum()
 # s4 = s3-s2
 # s4.ShowNum()
+
+# Circle Def practice question 1
+# import math
+# class Circle:
+#     def __init__(self,radius):
+#         self.radius = radius
+#     def area(self):
+#         area = round(math.pi*(self.radius**2),2)
+#         print(area)
+#     def perimeter(self):
+#         peri = round(math.pi*(self.radius),2)
+#         print(peri)
+# s1= Circle(8)
+# s1.area()
+# s1.perimeter()
