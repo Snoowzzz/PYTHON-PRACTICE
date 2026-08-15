@@ -141,25 +141,39 @@
 
 
 # question 2
-class Employee:
-    def __init__(self,role,department,salary):
-        self.role = role
-        self.department = department
-        self.salary = salary
-    def Showdetails(self):
-        print(f"Employee role: '{self.role}'\nDepartment: '{self.department}'\nSalary: '{self.salary}$'")
-class Engineer(Employee):
-    Employee.role ="Engineer"
-    def __init__(self,name,age,workingExp):
-        self.name = name
-        self.age = age
-        self.workingExp = workingExp
-        super().__init__("Engineer","IT","75000")
-    def PersonalInfo(self):
-        print("PERSONAL INFO  \nName: ",self.name)
-        print("Age: ",self.age)
-        print("Experience: ",self.workingExp)
+# class Employee:
+#     def __init__(self,role,department,salary):
+#         self.role = role
+#         self.department = department
+#         self.salary = salary
+#     def Showdetails(self):
+#         print(f"Employee role: '{self.role}'\nDepartment: '{self.department}'\nSalary: '{self.salary}$'")
+# class Engineer(Employee):
+#     Employee.role ="Engineer"
+#     def __init__(self,name,age,workingExp):
+#         self.name = name
+#         self.age = age
+#         self.workingExp = workingExp
+#         super().__init__("Engineer","IT","75000")
+#     def PersonalInfo(self):
+#         print("PERSONAL INFO  \nName: ",self.name)
+#         print("Age: ",self.age)
+#         print("Experience: ",self.workingExp)
                 
-engineer_personal = Engineer("Vikrant",27,4) 
-engineer_personal.Showdetails()
-engineer_personal.PersonalInfo()
+# eng1 = Engineer("Vikrant",27,4) 
+# eng1.Showdetails()
+# eng1.PersonalInfo()
+
+
+#Practice 3(Use dunder fuction to compare)
+# class Order:
+#     def __init__(self,item,price):
+#         self.item = item
+#         self.price = price
+#     def __gt__(self,order2): # dunder function of compare(>)
+#         if self.price>order2.price:
+#             return "order1>order2"
+#         return "order2>order1"
+# order1 = Order("Pizza",17)
+# order2 = Order("Burger&Fries",16)
+# print(order1.__gt__(order2)) 
