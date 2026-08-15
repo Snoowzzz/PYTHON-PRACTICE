@@ -138,3 +138,28 @@
 # s1= Circle(8)
 # s1.area()
 # s1.perimeter()
+
+
+# question 2
+class Employee:
+    def __init__(self,role,department,salary):
+        self.role = role
+        self.department = department
+        self.salary = salary
+    def Showdetails(self):
+        print(f"Employee role: '{self.role}'\nDepartment: '{self.department}'\nSalary: '{self.salary}$'")
+class Engineer(Employee):
+    Employee.role ="Engineer"
+    def __init__(self,name,age,workingExp):
+        self.name = name
+        self.age = age
+        self.workingExp = workingExp
+        super().__init__("Engineer","IT","75000")
+    def PersonalInfo(self):
+        print("PERSONAL INFO  \nName: ",self.name)
+        print("Age: ",self.age)
+        print("Experience: ",self.workingExp)
+                
+engineer_personal = Engineer("Vikrant",27,4) 
+engineer_personal.Showdetails()
+engineer_personal.PersonalInfo()
