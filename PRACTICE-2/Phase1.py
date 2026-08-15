@@ -40,10 +40,10 @@
 # print(f"After swap: a = {a},b = {b}")
 
 #Simpler and much better version
-a = int(input("Enter a number: "))
-b = int(input("Enter a number: "))
-print(f"Before swap: a = {a}, b = {b}")
-a = a + b
-b = a - b
-a = a - b
-print(f"After swap: a = {a}, b = {b}")
+# a = int(input("Enter a number: "))
+# b = int(input("Enter a number: "))
+# print(f"Before swap: a = {a}, b = {b}")
+# a = a + b
+# b = a - b
+# a = a - b
+# print(f"After swap: a = {a}, b = {b}")
