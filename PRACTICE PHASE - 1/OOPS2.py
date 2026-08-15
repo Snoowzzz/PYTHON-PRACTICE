@@ -66,3 +66,17 @@
 
 # car1 = ToyotaCar("prius", "electric",2017)
 # print(car1.name,car1.type,car1.year) # always have to use all the statements individually to call
+
+#class method (changing the value of a class attribute)
+class Person:
+    # def changename(self,name):
+        # Person.name = name #method 1(to change name in the entire class)
+        # self.__class__.name = "Rahul" #method 2 (to change name in the entire class only this name is there)
+    @classmethod # the clean way to change name in the entire class
+    def changename(cls,name):
+        cls.name = name
+       
+p1 = Person()
+p1.changename("Rahul Kumar")
+print(p1.name)
+print(Person.name)
