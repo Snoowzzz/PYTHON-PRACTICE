@@ -52,8 +52,8 @@
 
 #question 8 (GOOD Question)
 # h = input("Enter anything: ")
-# if "." in h:
-#     k = h.replace(".","",1)
+# if "." in h:   #remember this
+#     k = h.replace(".","",1)  #remember this
 #     if len(k) == 0 or k =="-":
 #         print("string") 
 #     elif k[0] != "-":
@@ -78,3 +78,14 @@
 #         else:
 #             print("string")
           
+# question 9
+# name = input("Enter you full name: ")
+# h = name.split(" ")
+# print(f"{h[1]}, {h[0]}")
+# k = h[0]
+# t = h[1]
+# print(f"{k[0].upper()}.{t[0].upper()}.")
+# name_new = name.replace(" ","")
+# print(len(name_new))
+
+#question 
