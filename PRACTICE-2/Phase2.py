@@ -89,9 +89,12 @@
 # print(len(name_new))
 
 #question 11 (Pretty good)
-word = input("Enter any word: ")
-vowels = ["a","e","i","o","u"]
-word1 = word.lower()
-for i in range(5):
-    if vowels[i] in word1:
-        print(f"{vowels[i]}: {word1.count(vowels[i])}") # super important
+# word = input("Enter any word: ")
+# vowels = ["a","e","i","o","u"]
+# word1 = word.lower()
+# for i in range(5):
+#     if vowels[i] in word1:
+#         print(f"{vowels[i]}: {word1.count(vowels[i])}") # super important
+
+
+
