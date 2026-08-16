@@ -32,12 +32,21 @@
 # print(f"{sentence.upper()}\n{len(sentence)}\n{sentence[::-1]}")
 
 #question 6
-a = 6
-b = 9.9
-c = "cat"
-d = True
-e = [1,2,3]
-f = [a,b,c,d,e]
-i = 0
-for i in f:
-    print(i,type(i))
+# a = 6
+# b = 9.9
+# c = "cat"
+# d = True
+# e = [1,2,3]
+# f = [a,b,c,d,e]
+# i = 0
+# for i in f:
+#   print(i,type(i))
+
+#question 7
+word = input("Enter a word: ")
+if len(word) <= 5:
+    print("Too short to split")
+else:
+    k = len(word)//2
+    print(f"{word[:k]}\n{word[k:]}")
+    
