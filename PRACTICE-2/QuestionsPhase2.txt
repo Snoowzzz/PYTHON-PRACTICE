@@ -1,0 +1,50 @@
+📋 Full Question Set — Session 2
+🟢 EASY
+
+Q1 — Variables & Print
+Take a person's name, city, and age as three separate variables and print:
+My name is Soham, I live in Pune and I am 20 years old.
+Use only one print() statement.
+
+Q2 — Type Casting
+User enters a number. Cast to int, float, bool and print all three with labels on separate lines.
+
+Q3 — String Indexing
+Given "programming", print first, last, and middle character using indexing only.
+
+Q4 — If-Else Basics
+Take a number, print "Positive", "Negative", or "Zero".
+
+Q5 — String Methods
+Take a sentence, print it in ALL CAPS, total character count, and reversed — on separate lines.
+
+Q6 — Type Check
+Create one variable each of int, float, str, bool, list. Print each value and type using a loop.
+
+🟡 MEDIUM
+
+Q7 — String Slicing + Conditionals
+Take a word. If more than 5 characters, print first and second half on separate lines. If 5 or fewer, print "Too short to split".
+
+Q8 — Type Casting Edge Case
+Take string input. Without try/except, determine if it's int, float, or string using only string methods. Handle negatives and decimals.
+
+Q9 — String Manipulation
+Take full name (First Last). Print "Last, First", initials as "F.L.", and total letters excluding spaces.
+
+Q10 — Nested If-Else
+Take marks 0–100. Print grade (O/A/B/C/D/F), Pass/Fail, and "Invalid marks" if out of range.
+
+Q11 — String Frequency
+Take a sentence. Print each vowel and its count — only if count > 0. Case insensitive.
+
+🔴 HARD
+
+Q12 — Caesar Cipher
+Take a string and shift number. Shift every alphabet character forward by shift positions with wrap. Preserve case. Non-alphabets unchanged.
+
+Q13 — Expression Evaluator
+Take "number operator number" as string. Parse manually, compute, handle division by zero. Smart int/float casting on result.
+
+Q14 — Hollow Diamond
+Take n, print hollow diamond of width 2n-1. Build each row as string first, then print.
