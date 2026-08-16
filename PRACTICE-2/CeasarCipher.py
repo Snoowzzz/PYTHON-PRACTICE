@@ -20,7 +20,7 @@ for i in range(L):
         if sentence[i].isupper():
             k = uppercase.find(sentence[i]) #returns the index of the position
             t = k+3
-            t = (k+shift)%26
+            t = (k+shift)%26 #Important simplifies everything
             newsentence += uppercase[t]
         else: 
             k = lowercase.find(sentence[i]) #returns the index of the position

@@ -152,5 +152,36 @@
 #         print(result)
 
 
+# Q14 — Pattern Logic + String Building
+# Take an integer n as input. Print a hollow diamond of * with width 2n-1.
+# For n = 4:
 
+#    *
+#   * *
+#  *   *
+# *     *
+#  *   *
+#   * *
+#    *
+# N*2 - 1 (TOTAL LINES)
+n = int(input("Enter n: "))
 
+# upper half
+for i in range(n):
+    spaces = " " * (n - 1 - i)
+    if i == 0:
+        row = spaces + "*"
+    else:
+        inner = " " * (2 * i - 1)
+        row = spaces + "*" + inner + "*"
+    print(row)
+
+# lower half
+for i in range(n - 2, -1, -1):
+    spaces = " " * (n - 1 - i)
+    if i == 0:
+        row = spaces + "*"
+    else:
+        inner = " " * (2 * i - 1)
+        row = spaces + "*" + inner + "*"
+    print(row)
