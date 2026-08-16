@@ -43,10 +43,38 @@
 #   print(i,type(i))
 
 #question 7
-word = input("Enter a word: ")
-if len(word) <= 5:
-    print("Too short to split")
-else:
-    k = len(word)//2
-    print(f"{word[:k]}\n{word[k:]}")
-    
+# word = input("Enter a word: ")
+# if len(word) <= 5:
+#     print("Too short to split")
+# else:
+#     k = len(word)//2
+#     print(f"{word[:k]}\n{word[k:]}")
+
+#question 8 (GOOD Question)
+# h = input("Enter anything: ")
+# if "." in h:
+#     k = h.replace(".","",1)
+#     if len(k) == 0 or k =="-":
+#         print("string") 
+#     elif k[0] != "-":
+#         if k.isdigit():
+#             print("float")
+#         else:
+#             print("string")
+#     else:
+#         if k[1:].isdigit():
+#             print("float")
+#         else:
+#             print("string")
+# else:
+#     if h[0] != "-":
+#         if h.isdigit():
+#             print("int")
+#         else:
+#             print("string")
+#     else:
+#         if h[1:].isdigit():
+#             print("int")
+#         else:
+#             print("string")
+          
