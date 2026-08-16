@@ -96,5 +96,92 @@
 #     if vowels[i] in word1:
 #         print(f"{vowels[i]}: {word1.count(vowels[i])}") # super important
 
+# HARD QUESTIONS:( mine was wrong still working on it)
+# strnumber = input("Enter two number you want to perform operation on in the form 'a +-/* b: ")
+# operator = ["+","-","/","*"]
+# for i in range(4):
+#     strnum = strnumber.replace(" ","")
+#     if operator[i] in strnum[1:]:
+#         strnew = strnum.split(operator[i],1)
+#         if i == 0:
+#             result = int(strnew[0]) + int(strnew[1])
+#         elif i == 1:
+#             result = int(strnew[0]) - int(strnew[1])
+#         elif i == 2:
+#             result = float(int(strnew[0]) / int(strnew[1]))
+#         elif i == 3:
+#             result = int(strnew[0]) * int(strnew[1])
+# print(result)
 
+# BETTER SOLUTION
+# strnumber = input("Enter expression (e.g. '12 + 5'): ")
+# parts = strnumber.split(" ")   # split on spaces → ["12", "+", "5"]
+# a = parts[0]
+# op = parts[1]
+# b = parts[2]
+
+# # smart casting
+# def cast(x):
+#     if "." in x:
+#         return float(x)
+#     return int(x)
+
+# num1 = cast(a)
+# num2 = cast(b)
+
+# if op == "+":
+#     result = num1 + num2
+# elif op == "-":
+#     result = num1 - num2
+# elif op == "*":
+#     result = num1 * num2
+# elif op == "/":
+#     if num2 == 0:
+#         print("Division by zero")
+#         result = None
+#     else:
+#         result = num1 / num2
+# else:
+#     print("Invalid operator")
+#     result = None
+
+# if result is not None:
+#     if isinstance(result, float) and result == int(result) and op != "/":
+#         print(int(result))
+#     else:
+#         print(result)
+
+
+# HARD PROBLEM 2 (Super Important)
+# Q12 — Caesar Cipher
+# Take a string and a shift number as input. Shift every alphabet character forward by shift positions (wrap around after z). Non-alphabet characters stay unchanged. Case must be preserved.
+
+# Example: "Hello, World!" with shift 3 → "Khoor, Zruog!"
+import string
+letters = str(string.ascii_letters)
+lowercase = str(string.ascii_lowercase)
+uppercase = str(string.ascii_uppercase)
+sentence = input("Enter anything: ")
+L = len(sentence)
+shift = int(input("How many words you want to shift: "))
+newsentence = ""
+# newsentence += "abc"
+# print(newsentence)
+for i in range(L):
+    if sentence[i] in letters:
+        if sentence[i].isupper():
+            k = uppercase.find(sentence[i]) #returns the index of the position
+            t = k+3
+            t = (k+shift)%26
+            newsentence += uppercase[t]
+        else: 
+            k = lowercase.find(sentence[i]) #returns the index of the position
+            t = k+3
+            if t > 25:
+                t -= 26
+            newsentence += lowercase[t]
+    else:
+        newsentence += sentence[i]
+
+print(newsentence)
 
