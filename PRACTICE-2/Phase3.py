@@ -142,41 +142,72 @@
 # Hard ones
 # Hard (4) 
 # # Input: "aaabbbcca" → Output: "a3b3c2a1"
-string1 = "aaabbbbb"
-k = len(string1)
-t =1
-b = 1
-newstr = ""
-i = 0
-print(string1)
-count = 0
-for p in range(k):
-    if string1[i] == string1[i+1]:
-        i = i+1  
-        t+=1
-        count+=1
-        continue
-    if count > 0:
-        newstr += string1[i-count]  #aaabbbbc
-        newstr += str(t)
-    else:
-        newstr += string1[i]
-        newstr += str(b)
-    t = 1
-    count = 0
+# string1 = "aaabbbbb"
+# k = len(string1)
+# t =1
+# b = 1
+# newstr = ""
+# i = 0
+# print(string1)
+# count = 0
+# for p in range(k):
+#     if string1[i] == string1[i+1]:
+#         i = i+1  
+#         t+=1
+#         count+=1
+#         continue
+#     if count > 0:
+#         newstr += string1[i-count]  #aaabbbbc
+#         newstr += str(t)
+#     else:
+#         newstr += string1[i]
+#         newstr += str(b)
+#     t = 1
+#     count = 0
 # print(newstr)
 
 # Q2 — Nested Loops + Operators (accumulator)
 # Print a triangle of running sums (triangular numbers), n rows.
 # Input: "4" → Output: "1\n1 3\n1 3 6\n1 3 6 10"
-n =int(input("Enter a number: "))
-k = 0
-p  = 0
-for i in range(0,n):
-    for j in range(0,i+1):
-        p+=1
-        print(k+p,end=" ")
-        k = k+p
-    k = 0
-    p = 0
-    print()
+# n =int(input("Enter a number: "))
+# k = 0
+# p  = 0
+# for i in range(0,n):
+#     for j in range(0,i+1):
+#         p+=1
+#         print(k+p,end=" ")
+#         k = k+p
+#     k = 0
+#     p = 0
+#     print()
+
+
+# Hard question 4
+# Given "rows,cols", print a mini multiplication table, space-separated.
+# Input: "3,3" → Output: "1 2 3\n2 4 6\n3 6 9"
+# k = 1
+# i = int(input("Enter the now of rows: "))
+# j = int(input("Enter the no of coloumns: "))
+# for rows in range(i):
+#     for cols in range(j):  #this line decides number of times you want to print
+#         print((rows+1)*k,end=" ") # something in line....
+#         k+=1
+#     k = 1
+#     print()
+
+# Hard question 3
+# H3 — Loops + Strings + If-Else
+# Balanced-parentheses check with a running counter (single bracket type, no imports).
+# Input: "(a+(b*c)-d)" → Output: "Balanced"
+# Input: "(a+b))" → Output: "Not Balanced"
+# equation = "(a+(b-c()))"
+# k = len(equation)
+# count = 0
+# for value in equation:
+#     if value == "(":
+#         count += 1
+#     elif value == ")":
+#         count -= 1
+#     if count < 0:
+#         break
+# print("Balanced" if count == 0 else "Not Balanced")
