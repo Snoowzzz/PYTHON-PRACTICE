@@ -46,41 +46,41 @@
 # print("Liftoff!")
 
 # MEDIUM ONES
-# Question 1(Reversing a string)
+# Question 1 (Reversing a string)
 # word = input("Enter any word: ")
 # k = len(word)
 # rev_word = ""
 # for i in range(k-1,-1,-1):
 #     rev_word+=word[i]
 # print(rev_word)
+
 # #another way of doing it
 # # for i in range(0,k):
 # #     rev_word+=word[k-i-1]
 # print(rev_word)
 
-# Question 2()
-# word = "3,-5,6,-7,-8"
+# Question 2 (Print the sum of positive numbers in a string: )
+# word = input("Enter any numbers separated by comma or space: ")
 # new_word = word.replace(",","").replace(" ","")
-# new_word1 = ""
 # k = len(new_word)
-# count = 0
-# for i in range(k):   
-#     if new_word[i] == "-":
-#         i = i+2   
-#     elif new_word[i] != "-":
-#         new_word1 += new_word[i]
-#     if new_word[k-2] == "-":
-#         count+=1
-# if count > 0: 
-#     print(new_word1[:k-3])
+# i = 0
+# total = 0
+# while i < k:  #Important learning whenever we have to skip something
+#     if new_word[i] == "-"   # in a loop use while not for
+#         i +=2
+#     else:
+#         total += int(new_word[i])
+#         i+=1
+# print(total)   
+    
+    
 
-
-# Question 3 (done)
+# Question 3 (print a letter n+1 number of times where n = index)
 # word = input("Enter a word: ")
 # for i in range(len(word)):
 #     print(word[i]*(i+1))
-# #another approach for this
 
+# another approach for this
 # word = input("Enter a word: ")
 # for pos, ch in enumerate(word):
 #     # pos gives the index/position of each character
@@ -119,7 +119,7 @@
 #         break
 # did not wrote the else cause u did not ask for it..
 
-#Question 7 (factorial using While)
+# Question 7 (factorial using While)
 # n = int(input("Enter a number (Positive): ")) 
 # fact = 1
 # if n == 0 or n == 1:
@@ -128,5 +128,6 @@
 #     while n>=2:
 #         fact *= n
 #         n = n-1
-# print(fact,"(Even)")    
+# print(fact,"(Even)") #any number greater than 1 has a even factorial..
+   
     
