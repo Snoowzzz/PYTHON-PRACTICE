@@ -102,6 +102,13 @@
 
 # Question 5 (Find if a certain range contains a number multiple of 15)
 # print("Enter the range in which you want to find (a,b)")
+
+# Better way of taking two inputs in one sentence
+# Type two numbers separated by a space (e.g., 10 20)
+# num1, num2 = map(int, input("Enter two numbers: ").split())
+# print("First number:", num1)
+# print("Second number:", num2)
+
 # a = int(input("Enter the first value a: "))
 # b = int(input("Enter the second value b: "))
 # for i in range(a,b+1):
@@ -131,3 +138,10 @@
 #  print(fact,"(Even)") #any number greater than 1 has a even factorial..
    
     
+    
+# Hard ones
+# Hard (4)
+
+# H1 — Loops + Strings + Casting
+# Run-length encode.
+# Input: "aaabbbcca" → Output: "a3b3c2a1"
