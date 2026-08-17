@@ -1,3 +1,15 @@
-#some important info 
-Without flush=True:  [ 0, 1, 2, 3, 4 ]  --> (Held in buffer, appears all at once at the end)
-With flush=True:     0 --> 1 --> 2 -->   --> (Pushed to the screen one by one instantly)
+import time
+for i in range(5):
+    print(i, end=" ", flush=True)
+    time.sleep(0.5)  # Simulates a delay
+
+##some important info 
+Without flush=True:  [ 0, 1, 2, 3, 4 ]  --> 
+  (Held in buffer, appears all at once at the end)
+With flush=True:     0 --> 1 --> 2 -->   -->
+  (Pushed to the screen one by one instantly)
+
+##
+numbers = [0, 1, 2, 3, 4]
+print(*numbers)
+Output: 0 1 2 3 4
