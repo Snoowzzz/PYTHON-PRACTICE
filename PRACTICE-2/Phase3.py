@@ -44,3 +44,15 @@
 #     print(n)
 #     n -= 1
 # print("Liftoff!")
+
+# MEDIUM ONES
+# Question 1(Reversing a string)
+word = input("Enter any word: ")
+k = len(word)
+rev_word = ""
+for i in range(k-1,-1,-1):
+    rev_word+=word[i]
+#another way of doing it
+# for i in range(0,k):
+#     rev_word+=word[k-i-1]
+print(rev_word)
