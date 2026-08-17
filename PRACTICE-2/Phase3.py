@@ -88,7 +88,7 @@
 #     print(ch * (pos + 1))
 
 
-#Question 4 (Print the highest number in a number)
+#Question 4 (Print the highest digit in a number)
 # number = int(input("Enter a number: "))
 # k = abs(number)
 # word = str(k)
@@ -98,6 +98,16 @@
 #         a = int(pos)
 #     else:
 #         pass
-# print(a)
+# print(f"Largest digit: {a}")
 
-# Question 5
+# Question 5 (pretty easy)
+# print("Enter the range in which you want to find (a,b)")
+# a = int(input("Enter the first value a: "))
+# b = int(input("Enter the second value b: "))
+# for i in range(a,b+1):
+#     if i%15 == 0:
+#         print(i)
+#         break
+# else:
+#     print("None found")
+    
