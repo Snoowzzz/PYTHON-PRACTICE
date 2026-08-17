@@ -76,6 +76,13 @@
 
 
 # Question 3 (done)
-word = "abc"
-for i in range(len(word)):
-    print(word[i]*(i+1))
+# word = input("Enter a word: ")
+# for i in range(len(word)):
+#     print(word[i]*(i+1))
+# #another approach for this
+
+word = input("Enter a word: ")
+for pos, ch in enumerate(word):
+    # pos gives the index/position of each character
+    # ch is the actual character at that position
+    print(ch * (pos + 1))
