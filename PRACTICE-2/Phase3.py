@@ -74,4 +74,8 @@
 # if count > 0: 
 #     print(new_word1[:k-3])
 
-        
+
+# Question 3 (done)
+word = "abc"
+for i in range(len(word)):
+    print(word[i]*(i+1))
