@@ -48,3 +48,20 @@ Take "number operator number" as string. Parse manually, compute, handle divisio
 
 Q14 — Hollow Diamond
 Take n, print hollow diamond of width 2n-1. Build each row as string first, then print.
+
+
+PHASE - 2
+Score Summary
+Phase-2	Topic	Result
+E1–E4	Easy set (sum, index+char, evens, countdown)	✅ Full — all 4
+M1	Reverse string	✅ Full
+M2	Sum of positives	✅ Full (⚠️ approach fragile on multi-digit inputs — flagged earlier)
+M3	Char repeat pattern	✅ Full
+M4	Largest digit	✅ Full
+M5	Multiple of 15 in range	✅ Full
+M6	Digit-contains check	✅ Full
+M7	Factorial (while)	✅ Full
+H1	Run-length encoding	⏳ In progress — parked, indexing bug, self-diagnosed as fixable
+H2	Nested-loop triangular sums	✅ Full — first self-built nested-loop pattern
+H3	Balanced parentheses	📅 Tomorrow
+H4	Mini multiplication table	📅 Tomorrow
