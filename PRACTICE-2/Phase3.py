@@ -66,7 +66,7 @@
 # i = 0
 # total = 0
 # while i < k:  #Important learning whenever we have to skip something
-#     if new_word[i] == "-"   # in a loop use while not for
+#     if new_word[i] == "-":  # in a loop use while not for
 #         i +=2
 #     else:
 #         total += int(new_word[i])
@@ -128,6 +128,6 @@
 #     while n>=2:
 #         fact *= n
 #         n = n-1
-# print(fact,"(Even)") #any number greater than 1 has a even factorial..
+#  print(fact,"(Even)") #any number greater than 1 has a even factorial..
    
     
