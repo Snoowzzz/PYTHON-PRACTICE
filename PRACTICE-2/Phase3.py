@@ -96,11 +96,11 @@
 # for pos in word:
 #     if int(pos) > a:
 #         a = int(pos)
-#     else:
+#     else:    # writing this cause felt good
 #         pass
 # print(f"Largest digit: {a}")
 
-# Question 5 (pretty easy)
+# Question 5 (Find if a certain range contains a number multiple of 15)
 # print("Enter the range in which you want to find (a,b)")
 # a = int(input("Enter the first value a: "))
 # b = int(input("Enter the second value b: "))
@@ -110,4 +110,23 @@
 #         break
 # else:
 #     print("None found")
+
+# Question 6 (Check if a string has numbers)
+# word = input("Enter a word: ")
+# for pos in word:
+#     if pos.isdigit():
+#         print("Contains digit")
+#         break
+# did not wrote the else cause u did not ask for it..
+
+#Question 7 (factorial using While)
+# n = int(input("Enter a number (Positive): ")) 
+# fact = 1
+# if n == 0 or n == 1:
+#    print(1,"(Odd)") 
+# else:
+#     while n>=2:
+#         fact *= n
+#         n = n-1
+# print(fact,"(Even)")    
     
