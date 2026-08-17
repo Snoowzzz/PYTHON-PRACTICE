@@ -1,0 +1,3 @@
+#some important info 
+Without flush=True:  [ 0, 1, 2, 3, 4 ]  --> (Held in buffer, appears all at once at the end)
+With flush=True:     0 --> 1 --> 2 -->   --> (Pushed to the screen one by one instantly)
