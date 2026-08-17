@@ -47,12 +47,31 @@
 
 # MEDIUM ONES
 # Question 1(Reversing a string)
-word = input("Enter any word: ")
-k = len(word)
-rev_word = ""
-for i in range(k-1,-1,-1):
-    rev_word+=word[i]
-#another way of doing it
-# for i in range(0,k):
-#     rev_word+=word[k-i-1]
-print(rev_word)
+# word = input("Enter any word: ")
+# k = len(word)
+# rev_word = ""
+# for i in range(k-1,-1,-1):
+#     rev_word+=word[i]
+# print(rev_word)
+# #another way of doing it
+# # for i in range(0,k):
+# #     rev_word+=word[k-i-1]
+# print(rev_word)
+
+# Question 2()
+# word = "3,-5,6,-7,-8"
+# new_word = word.replace(",","").replace(" ","")
+# new_word1 = ""
+# k = len(new_word)
+# count = 0
+# for i in range(k):   
+#     if new_word[i] == "-":
+#         i = i+2   
+#     elif new_word[i] != "-":
+#         new_word1 += new_word[i]
+#     if new_word[k-2] == "-":
+#         count+=1
+# if count > 0: 
+#     print(new_word1[:k-3])
+
+        
