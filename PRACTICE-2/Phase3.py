@@ -81,8 +81,23 @@
 #     print(word[i]*(i+1))
 # #another approach for this
 
-word = input("Enter a word: ")
-for pos, ch in enumerate(word):
-    # pos gives the index/position of each character
-    # ch is the actual character at that position
-    print(ch * (pos + 1))
+# word = input("Enter a word: ")
+# for pos, ch in enumerate(word):
+#     # pos gives the index/position of each character
+#     # ch is the actual character at that position
+#     print(ch * (pos + 1))
+
+
+#Question 4 (Print the highest number in a number)
+# number = int(input("Enter a number: "))
+# k = abs(number)
+# word = str(k)
+# a = 0
+# for pos in word:
+#     if int(pos) > a:
+#         a = int(pos)
+#     else:
+#         pass
+# print(a)
+
+# Question 5
