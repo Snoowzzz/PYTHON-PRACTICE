@@ -142,30 +142,24 @@
 # Hard ones
 # Hard (4) 
 # # Input: "aaabbbcca" → Output: "a3b3c2a1"
-# string1 = "aaabbbbb"
-# k = len(string1)
-# t =1
-# b = 1
-# newstr = ""
-# i = 0
-# print(string1)
-# count = 0
-# for p in range(k):
-#     if string1[i] == string1[i+1]:
-#         i = i+1  
-#         t+=1
-#         count+=1
-#         continue
-#     if count > 0:
-#         newstr += string1[i-count]  #aaabbbbc
-#         newstr += str(t)
-#     else:
-#         newstr += string1[i]
-#         newstr += str(b)
-#     t = 1
-#     count = 0
-# print(newstr)
+string1 = "aaabbbbcd"
+k = len(string1)
+t = 1
+newstr = ""
 
+for i in range(k - 1):          # stop one early, no i+1 crash
+    if string1[i] == string1[i + 1]:
+        t += 1
+    else:
+        newstr += string1[i]
+        newstr += str(t)
+        t = 1
+
+# last group always needs manual flush — this is what you were missing
+newstr += string1[-1]
+newstr += str(t)
+
+print(newstr)   # a3b4c1d1
 # Q2 — Nested Loops + Operators (accumulator)
 # Print a triangle of running sums (triangular numbers), n rows.
 # Input: "4" → Output: "1\n1 3\n1 3 6\n1 3 6 10"
