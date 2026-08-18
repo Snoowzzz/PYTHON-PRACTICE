@@ -26,3 +26,13 @@
 # *****
 #  ***
 #   *
+char = "*"
+n = 3
+
+for i in range(n):
+    for j in range(5):
+        for j in range(n-i-1,n+i-1):
+            print(char,end="")
+        else:
+            print(" ",end="")
+    print()
