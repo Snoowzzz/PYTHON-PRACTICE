@@ -44,3 +44,39 @@
 #           else:
 #               print(" ",end="")  
 #     print()
+
+
+# Q3 Pattern Problems — warm up first:
+# P1 — Staircase of functions (conceptual warmup)
+# Print this for n=5:
+# 1
+# 2 2
+# 3 3 3
+# 4 4 4 4
+# 5 5 5 5 5
+# Each row r prints the number r exactly r times. 
+# Build each row as a string, one print per row.
+
+# n = 5
+# for i in range(n):
+#     for j in range(i+1):
+#         print(i+1,end=" ")
+#     print()
+
+
+# 2 — Zigzag numbers
+# For n=4:
+# 1
+# 2 3
+# 4 5 6
+# 7 8 9 10
+# Continuous counter across rows. Row r has exactly r numbers. 
+# No hardcoding the starting number of each row — derive it.
+# n = 5
+# k = 0
+# for i in range(n):
+#     for j in range(i+1):
+#         print(k+1,end=" ")
+#         k = k+1
+#     print()
+
