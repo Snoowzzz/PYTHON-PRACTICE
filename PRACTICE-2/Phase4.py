@@ -26,15 +26,19 @@
 # *****
 #  ***
 #   *
-char = "*"
-n = 3
+char = input("Enter a single character('*','@','&','$') ")
+n = int(input("Enter any number you like: "))
 k = 2*n-1
 for i in range(k):
     for j in range(k):
        if i < n:
-        if n-i-1<= j <= n+i-1:
-            print(char,end="")
-        else:
-            print(" ",end="")
-        
+          if n-i-1<= j <= n+i-1:
+             print(char,end="")
+          else:
+             print(" ",end="")
+       else:
+          if i-n+1 <= j <=k-i+n-2: # this line took a lot of thinking 
+             print(char,end="")
+          else:
+              print(" ",end="")  
     print()
