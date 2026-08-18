@@ -28,11 +28,13 @@
 #   *
 char = "*"
 n = 3
-
-for i in range(n):
-    for j in range(5):
-        for j in range(n-i-1,n+i-1):
+k = 2*n-1
+for i in range(k):
+    for j in range(k):
+       if i < n:
+        if n-i-1<= j <= n+i-1:
             print(char,end="")
         else:
             print(" ",end="")
+        
     print()
