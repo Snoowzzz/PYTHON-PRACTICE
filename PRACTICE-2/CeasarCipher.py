@@ -1,4 +1,4 @@
-## THIS IS MY SELF BUILT ON FIRST ATTEMPT CAESAR CIPHER
+## THIS IS MY SELF BUILT FIRST ATTEMPT of CAESAR CIPHER
 # HARD PROBLEM 2 (Super Important)
 # Q12 — Caesar Cipher
 # Take a string and a shift number as input. Shift every alphabet character forward by shift positions (wrap around after z). Non-alphabet characters stay unchanged. Case must be preserved.
