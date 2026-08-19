@@ -30,4 +30,23 @@
 # It returns (minimum, maximum, average).
 
 
-## Q3
+## Q3 Function to remove a negative from a list
+def remove_negatives(nums, count=0):
+# nums is required; count starts at 0 when no second argument is supplied.
+   new_lst = []
+   for i in nums:
+       if i >= 0:
+           new_lst.append(i) 
+       else:
+           count+=1
+           pass
+   return new_lst, count 
+  
+nums = [-1,-2,-3,-5]
+# Calling without count makes count use its default value, 0.
+new_nums, count = remove_negatives(nums)
+# Unpack the returned tuple into new_nums and count.
+if count != len(nums):
+    print(new_nums, count)
+else:
+    print(f"There are no positive numbers in the list: {new_nums}")
