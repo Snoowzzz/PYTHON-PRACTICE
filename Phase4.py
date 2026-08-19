@@ -68,3 +68,15 @@
 #     print(f"Vowels in {word}: {count}")
 
 # ## Q3
+# def squares(n):
+#     new_lst = []
+#     for i in range(n):
+#         k = (i+1)**2
+#         new_lst.append(k)
+#     return new_lst
+# n = int(input("Enter the number till you want squares: "))
+# new_lst = squares(n)
+# if n>0:
+#     print(f"Here is list of number which contains squares from 1 to {n}\n{new_lst}")
+# else:
+#     print(f"Enter a valid positive number..")
