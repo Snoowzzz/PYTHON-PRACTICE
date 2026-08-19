@@ -142,7 +142,15 @@
 # print(f"Your Modified String is {newstr}.")
 
 
-
+## Question 3
+def getdict(list):
+    dict = {
+        
+    }
+    for i in list:
+        if  0<= i <=100:
+            if i >89:
+                
 
 
 

@@ -93,7 +93,8 @@ Output: "llohe"   ← k > len(s), handle it
 ---
 
 ### M3 — Function + Nested Logic
-Write a function `categorize_scores(scores)` that takes a list of integers (0–100) and returns a dictionary with counts for each grade band:
+Write a function `categorize_scores(scores)` that takes a list of integers (0–100)
+and returns a dictionary with counts for each grade band:
 - A: 90–100 · B: 75–89 · C: 50–74 · F: 0–49
 
 ```
