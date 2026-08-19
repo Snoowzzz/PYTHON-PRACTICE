@@ -91,3 +91,17 @@
 #     return -1
 # nums = [4,5,6]
 # print(even_index(nums))
+
+# ## Q1 Medium ( modify a list remove duplicates from it without changing the order):
+# def unique_ordered(nums):
+#     new_list = []
+#     for i in nums:
+#         if i not in new_list:
+#             new_list.append(i)
+#     return new_list        
+# nums = [1,2,3]
+# new_list = unique_ordered(nums)
+# print(f"Modified List (without duplicates): {new_list}")
+
+
+## Q2 Medium
