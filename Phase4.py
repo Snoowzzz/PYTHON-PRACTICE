@@ -105,3 +105,17 @@
 
 
 ## Q2 Medium
+# Input:  s = "abcdef", k = 2
+# Output: "efabcd"
+# def modify(s,t):
+#     k = len(s)
+#     char_lst = []
+#     for i in range(k):
+#         m = (i+t)%k
+#         char_lst.insert(m,s[i])
+#     final_str = "".join(char_lst)
+#     return final_str
+# s = input("Enter a string: ")
+# t = int(input("By how much you want to  shift the string in Right: "))
+# final_str = modify(s,t)
+# print(f"Modified string: {final_str}")    
