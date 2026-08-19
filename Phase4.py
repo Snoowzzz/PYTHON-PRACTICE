@@ -166,7 +166,30 @@
 # print(f"Your Modified String is {newstr}.")
 
 
+## Hard Questions:
+# Question 1
+### H1 — List Flattener (Nested Lists)
+# Input:  [1, [2, 3], 4, [5, 6, 7], 8]
+# Output: [1, 2, 3, 4, 5, 6, 7, 8]
 
+# def flattener(data):
+#     flat = [num for row in data for num in row]
+#     return flat
+# data = [1,[2,3],4, [5,6,7],8]
+# flat = flattener(data)
+# print(f"The simplified data is {data}")
+
+
+def flattener(data):
+    newdata = str(data).replace(",","").replace("[","").replace("]","").replace(" ","")
+    flat_list = []
+    for i in newdata:
+        flat_list.append(int(i))
+    return flat_list
+        
+data = [1, [2, [3, [4]]]]
+flat_list = flattener(data)
+print(f"Your Flattened List is: \n{flat_list}")
 
 
 

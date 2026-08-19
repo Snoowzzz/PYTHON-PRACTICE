@@ -121,7 +121,9 @@ Output: "cloud computing is fun"
 ---
 
 ### H1 — List Flattener (Nested Lists)
-Write a function `flatten(nested)` that takes a **list that may contain integers or other lists (one level deep only)** and returns a single flat list of all integers.
+Write a function `flatten(nested)` that takes a **list that may contain 
+integers or other lists (one level deep only)** and returns a 
+single flat list of all integers.
 
 ```
 Input:  [1, [2, 3], 4, [5, 6, 7], 8]
