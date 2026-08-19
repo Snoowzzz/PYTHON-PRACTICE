@@ -80,3 +80,18 @@
 #     print(f"Here is list of number which contains squares from 1 to {n}\n{new_lst}")
 # else:
 #     print(f"Enter a valid positive number..")
+
+
+## Q4 return the index of first even number:
+# def even_index(nums):
+#     # enumerate(nums) is used here, so ch receives the index and i receives
+#     # the corresponding value from nums.
+#     for ch,i in enumerate(nums):
+#         if i%2 == 0:
+#             k = ch
+#             break 
+#     else:
+#          return -1
+#     return k
+# nums = [4,5,6]
+# print(even_index(nums))
