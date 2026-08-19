@@ -172,26 +172,110 @@
 # Input:  [1, [2, 3], 4, [5, 6, 7], 8]
 # Output: [1, 2, 3, 4, 5, 6, 7, 8]
 
+# My Idea 1
 # def flattener(data):
-#     flat = [num for row in data for num in row]
-#     return flat
-# data = [1,[2,3],4, [5,6,7],8]
-# flat = flattener(data)
-# print(f"The simplified data is {data}")
-
-
-def flattener(data):
-    newdata = str(data).replace(",","").replace("[","").replace("]","").replace(" ","")
-    flat_list = []
-    for i in newdata:
-        flat_list.append(int(i))
-    return flat_list
+#     newdata = str(data).replace(",","").replace("[","").replace("]","").replace(" ","")
+#     flat_list = []
+#     for i in newdata:
+#         flat_list.append(int(i))
+#     return flat_list
         
-data = [1, [2, [3, [4]]]]
-flat_list = flattener(data)
-print(f"Your Flattened List is: \n{flat_list}")
+# data = [1, [2, [3, [4]]]]
+# flat_list = flattener(data)
+# print(f"Your Flattened List is: \n{flat_list}")
 
+# ## Take 2 (Completed it)
+# def flattener(data):
+#     data1 = str(data).replace(" ","")
+#     newstr = ""
+#     count = 0
+#     list1 = ["[","]"]
+#     list0 = []
+#     for i in data1:
+#         if i not in list1:
+#             if str(i).isdigit():
+#                 newstr += str(i)
+#                 count +=1
+#                 continue
+#             if count>0:
+#                 newstr+=","
+#             else:
+#                 newstr+=str(i) 
+#             count = 0 
+#     newlist = newstr.split(",")
+#     for i in newlist:
+#         if i:
+#             list0.append(int(i))
+        
+#     return list0
+         
+# data = [12, 23,34,45,[56,67]]
+# flat_list = flattener(data)
+# print(f"Your Flattened List is: \n{flat_list}")
+#---------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------
+## Claude Answer using Recursion....
+### IMP SOLVED USING RECURSION
+# def flattener(data):
+#     flat = []
+#     for item in data:
+#         if isinstance(item, list):
+#             flat += flattener(item)  # function calls itself
+#         else:
+#             flat.append(item)
+#     return flat
 
+##Call it with [1, [2, [3, [4]]]]
+
+# Call 1 — flattener([1, [2, [3, [4]]]])
+# flat = [], now loop through items:
+
+# item = 1 → not a list → flat.append(1) → flat = [1]
+# item = [2, [3, [4]]] → IS a list → call flattener([2, [3, [4]]]) and add whatever it returns to flat
+
+# So Call 1 is now waiting for Call 2 to finish.
+# Call 2 — flattener([2, [3, [4]]])
+
+# flat = [], loop:
+
+# item = 2 → not a list → flat.append(2) → flat = [2]
+# item = [3, [4]] → IS a list → call flattener([3, [4]]) and wait
+
+# Call 3 — flattener([3, [4]])
+
+# flat = [], loop:
+
+# item = 3 → not a list → flat.append(3) → flat = [3]
+# item = [4] → IS a list → call flattener([4]) and wait
+
+# Call 4 — flattener([4])
+
+# flat = [], loop:
+
+# item = 4 → not a list → flat.append(4) → flat = [4]
+# Loop ends, return [4]
+
+# Now everything unwinds backwards:
+
+# Call 3 gets [4] back → flat = [3] + [4] = [3, 4] → returns [3, 4]
+# Call 2 gets [3, 4] back → flat = [2] + [3, 4] = [2, 3, 4] → returns [2, 3, 4]
+# Call 1 gets [2, 3, 4] back → flat = [1] + [2, 3, 4] = [1, 2, 3, 4] → 
+# returns [1, 2, 3, 4]
+
+# The core idea in one line:
+
+# If the item is a list — don't touch it yet, go deeper. If it's a number — grab it.
+
+# The function keeps calling itself with smaller and smaller pieces until 
+# there are no more lists left, only numbers. Then it hands everything back 
+# up the chain.
+
+# This pattern — a function solving a smaller version of its own problem — 
+# is recursion. You'll see it again in binary search, tree traversal, merge sort. 
+# This is your first real encounter with it. Make sure you trace this on paper once 
+# yourself with a simple example like [1, [2, 3]]. That'll lock it in.
+#----------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------
 
 
 
