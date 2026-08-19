@@ -121,6 +121,30 @@
 # print(f"Modified string: {final_str}")    
 
 
+## Question 3 (Return the total grade count of the class)
+# def getdict(list1):
+#     dict1 = {
+#       "A": 0,
+#       "B": 0,
+#       "C": 0,
+#       "F": 0,  
+#     }
+#     for i in list1:
+#         if  0<= i <=100:
+#             if i >89:
+#                 dict1["A"]+=1
+#             elif 75<=i<90:
+#                 dict1["B"]+=1
+#             elif 50<= i <75:
+#                 dict1["C"]+=1
+#             else:
+#                 dict1["F"]+=1  
+#     return dict1
+# list1 = [92,45,76,55,89,100,38]
+# dict1 = getdict(list1)
+# print(f"Following are the graded scores: \n{dict1}")            
+            
+
 # ## QUESTION 4 ( STRING  RECONSTRUCTOR)
 # def consec_spaces(sentence):
 #     k = len(sentence)
@@ -141,16 +165,6 @@
 # newstr = consec_spaces(sentence)
 # print(f"Your Modified String is {newstr}.")
 
-
-## Question 3
-def getdict(list):
-    dict = {
-        
-    }
-    for i in list:
-        if  0<= i <=100:
-            if i >89:
-                
 
 
 
