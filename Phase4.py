@@ -119,3 +119,46 @@
 # t = int(input("By how much you want to  shift the string in Right: "))
 # final_str = modify(s,t)
 # print(f"Modified string: {final_str}")    
+
+
+# ## QUESTION 4 ( STRING  RECONSTRUCTOR)
+# def consec_spaces(sentence):
+#     k = len(sentence)
+#     newstr = ""
+#     count = 0
+#     for i in range(k):
+#         if sentence[i] == " ":
+#             count+=1
+#             continue
+#         if count>0:
+#             newstr+=" "
+#             newstr+=sentence[i] ## this was the thing that i was missing for a long time
+#         else:     
+#             newstr += sentence[i]
+#         count = 0
+#     return newstr
+# sentence = "CLoud    computing   is     fun   "
+# newstr = consec_spaces(sentence)
+# print(f"Your Modified String is {newstr}.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
