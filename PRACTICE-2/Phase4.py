@@ -278,13 +278,31 @@
 #----------------------------------------------------------------------------------------
 
 
-## Question 2 (Hard)
-
-
-
-
-
-
+# ## Question 2 (Hard)
+# def add_scores(Scoreboard,name,score):
+#     if name in Scoreboard:
+#         if score > Scoreboard["score"]:
+#             Scoreboard.update({"score":score})
+#     dict1 ={
+#         "Name":name,
+#         "Score":score,
+#     }
+#     Scoreboard.append(dict1)
+# def top_list(Scoreboard,n):
+#     updatedict = Scoreboard.sort()
+#     newdict = updatedict[len(Scoreboard)-n:-1]
+#     return newdict
+# def has_qualified(scoreboard,threshold):
+#     newlist = []
+#     for item in scoreboard:
+#         if item.get("score",0)>threshold:
+#             newlist.append(scoreboard["Name"]) 
+# Scoreboard = []
+# add_scores(Scoreboard, "Soham", 88)
+# add_scores(Scoreboard, "Riya", 95)
+# add_scores(Scoreboard, "Arjun", 72)
+# add_scores(Scoreboard, "Soham", 91)
+# print(top_list(Scoreboard, 2))
 
 
 
