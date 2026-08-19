@@ -30,7 +30,7 @@
 # # It returns (minimum, maximum, average).
 
 
-# ## Q3 Function to remove a negative from a list
+# ## Q1 Function to remove a negative from a list
 # def remove_negatives(nums, count=0):
 # # nums is required; count starts at 0 when no second argument is supplied.
 #    new_lst = []
@@ -70,9 +70,8 @@
 # ## Q3
 # def squares(n):
 #     new_lst = []
-#     for i in range(n):
-#         k = (i+1)**2
-#         new_lst.append(k)
+#     for i in range(1,n+1):
+#         new_lst.append(i**2)
 #     return new_lst
 # n = int(input("Enter the number till you want squares: "))
 # new_lst = squares(n)
@@ -88,10 +87,7 @@
 #     # the corresponding value from nums.
 #     for ch,i in enumerate(nums):
 #         if i%2 == 0:
-#             k = ch
-#             break 
-#     else:
-#          return -1
-#     return k
+#             return ch
+#     return -1
 # nums = [4,5,6]
 # print(even_index(nums))
