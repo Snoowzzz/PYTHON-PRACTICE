@@ -117,7 +117,7 @@
 **Day 2 Priority:**
 - [ ] Dedicated dict, set, tuple drill — not easy/medium/hard format, just concept-locking questions so syntax becomes muscle memory
 - [ ] Lambda functions — understand properly, not just copy-paste usage
-- [ ] Nested loops — strengthen, currently functional but needs more reps
+- [ ] Nested functions — how to use them , how they work
 
 **Day 3 Priority:**
 - [ ] Session 3 — 4 medium, 6 hard (boss tier, same elevated level as Session 2)
