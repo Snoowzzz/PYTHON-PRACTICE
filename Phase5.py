@@ -30,3 +30,14 @@
 # newlst = merge_lsts(a,b)
 # print(f"The Merged list is: {newlst}")
 
+
+## Cleaner version  (Use of minimum function) really smart
+def merge_lsts(a, b):
+    newlst = []
+    min_len = min(len(a), len(b))
+    for i in range(min_len):
+        newlst.append(a[i])
+        newlst.append(b[i])
+    newlst += a[min_len:]
+    newlst += b[min_len:]
+    return newlst
