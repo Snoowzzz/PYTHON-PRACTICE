@@ -65,4 +65,40 @@
 
 # word = "Cloud"
 # print(is_palindrone(word))
+
+
+### Q1 Medium (List return only max)
+# # Input:  [3, 1, 4, 1, 5, 9, 2, 6]
+# # Output: [3, 3, 4, 4, 5, 9, 9, 9] 
+# def running_max(nums):
+#     newlst = []
+#     for i in range(len(nums)):
+#         if i == 0:
+#             newlst.append(nums[i])
+#             continue
         
+#         ## First try had some serious flaw 
+#         # else:
+#         #     # if nums[i-1]>=nums[i]:
+#         #     #     newlst.append(nums[i-1])      
+#         #     # else:
+#         #     #     newlst.append(nums[i])
+         
+#         ## MY complete working version  
+#         else:
+#             k = len(newlst)
+#             if nums[i] > newlst[k-1]:
+#                 newlst.append(nums[i])
+#             else:
+#                 newlst.append(newlst[k-1])    
+
+#         ### Claude's Cleaner version (good)
+#         #else:  
+#             if nums[i] > newlst[-1]:  ## very smooth REMEMBER THIS TRICK!!! ###
+#                 newlst.append(nums[i])
+#             else:
+#                 newlst.append(newlst[-1])
+
+#     return newlst        
+# nums = [3,1,4,1,5,9,2,6] 
+# print(running_max(nums))           
