@@ -70,6 +70,7 @@
 ### Q1 Medium (List return only max)
 # # Input:  [3, 1, 4, 1, 5, 9, 2, 6]
 # # Output: [3, 3, 4, 4, 5, 9, 9, 9] 
+
 # def running_max(nums):
 #     newlst = []
 #     for i in range(len(nums)):
@@ -101,4 +102,26 @@
 
 #     return newlst        
 # nums = [3,1,4,1,5,9,2,6] 
-# print(running_max(nums))           
+# print(running_max(nums))
+
+## Q2 Medium (reversing a sentence)  
+# Input:  "Cloud Computing is fun"
+# Output: "fun is Computing Cloud"
+         
+# def reversewords(words):
+#     list1 = []
+#     for i in range(len(words)):
+#         newstr = ""
+#         if words[i] == " ":
+#             continue
+#         else:
+#             if i < len(words)-1:
+#                 while words[i+1] != " ":
+#                     newstr += words[i]
+#                 newstr += words[i]
+#                 list1.append(newstr)
+#     return list1
+# words = "Cloud Computing is fun"
+# print(reversewords(words))
+
+### Q3 Medium
