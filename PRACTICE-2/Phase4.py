@@ -105,7 +105,7 @@
 
 
 ## Q2 Medium
-# Input:  s = "abcdef", k = 2
+# Input:  s = "abcdef", t = 2
 # Output: "efabcd"
 # def modify(s,t):
 #     k = len(s)

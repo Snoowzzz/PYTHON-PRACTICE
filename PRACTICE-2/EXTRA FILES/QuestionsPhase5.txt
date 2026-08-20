@@ -18,7 +18,8 @@
 ---
 
 ### E1 — Two-List Merger
-Write a function `merge_alternating(a, b)` that merges two lists by alternating elements. If one list is longer, append the remaining elements at the end.
+Write a function `merge_alternating(a, b)` that merges two lists by alternating elements.
+If one list is longer, append the remaining elements at the end.
 
 ```
 Input:  a = [1, 2, 3], b = [10, 20]
@@ -32,7 +33,8 @@ Output: [1, 10, 20, 30]
 ---
 
 ### E2 — Palindrome Checker
-Write a function `is_palindrome(s)` that returns `True` if the string is a palindrome, ignoring spaces and case. Do **not** use slicing reversal `[::-1]` — use a loop.
+Write a function `is_palindrome(s)` that returns `True` if the string is a palindrome, 
+ignoring spaces and case. Do **not** use slicing reversal `[::-1]` — use a loop.
 
 ```
 Input:  "Race Car"    → True
@@ -49,7 +51,8 @@ Input:  "A man a plan a canal Panama"  → True
 ---
 
 ### M1 — Running Maximum
-Write a function `running_max(nums)` that returns a new list where each element is the **maximum value seen so far** from the beginning of the list up to that index.
+Write a function `running_max(nums)` that returns a new list where each element is the 
+**maximum value seen so far** from the beginning of the list up to that index.
 
 ```
 Input:  [3, 1, 4, 1, 5, 9, 2, 6]
@@ -60,7 +63,8 @@ Output: [3, 3, 4, 4, 5, 9, 9, 9]
 ---
 
 ### M2 — Word Reverser
-Write a function `reverse_words(sentence)` that reverses the **order of words** in a sentence but keeps each word's characters intact. Handle multiple spaces between words.
+Write a function `reverse_words(sentence)` that reverses the **order of words** in a 
+sentence but keeps each word's characters intact. Handle multiple spaces between words.
 
 ```
 Input:  "Cloud Computing is fun"
@@ -69,12 +73,15 @@ Output: "fun is Computing Cloud"
 Input:  "  hello   world  "
 Output: "world hello"
 ```
-> 💡 Do NOT use `split()` and `reverse()` together as a one-liner. Build the word list manually with a loop, then reconstruct. Adversarial: single word. All spaces.
+> 💡 Do NOT use `split()` and `reverse()` together as a one-liner. 
+Build the word list manually with a loop, then reconstruct. Adversarial: 
+single word. All spaces.
 
 ---
 
 ### M3 — Chunk Splitter
-Write a function `chunk_list(lst, size)` that splits a list into chunks of a given size. The last chunk may be smaller if the list doesn't divide evenly.
+Write a function `chunk_list(lst, size)` that splits a list into chunks of a given size. 
+The last chunk may be smaller if the list doesn't divide evenly.
 
 ```
 Input:  lst = [1,2,3,4,5,6,7], size = 3
@@ -88,7 +95,9 @@ Output: [[1,2], [3,4]]
 ---
 
 ### M4 — List Rotator
-Write a function `rotate_list(lst, k)` that rotates a list to the **right** by `k` positions. Do **not** use string slicing tricks — work with the list directly using a loop or index math.
+Write a function `rotate_list(lst, k)` that rotates a list to the **right** by `k`. 
+positions Do **not** use string slicing tricks — work with the list directly 
+using a loop or index math.
 
 ```
 Input:  lst = [1,2,3,4,5], k = 2
@@ -97,18 +106,22 @@ Output: [4,5,1,2,3]
 Input:  lst = [1,2,3], k = 5
 Output: [2,3,1]   ← k > len(lst), handle it
 ```
-> 💡 This is the list version of M2 from Session 1. The math insight is the same — find it.
+> 💡 This is the list version of M2 from Session 1. The math insight is the same —
+find it.
 
 ---
 
 ### M5 — Frequency Counter
-Write a function `char_frequency(s)` that returns a list of tuples `(character, count)` sorted by count **descending**, then alphabetically for ties. Ignore spaces. Do not use dicts.
+Write a function `char_frequency(s)` that returns a list of tuples `(character, count)` 
+sorted by count **descending**, then alphabetically for ties. Ignore spaces. 
+Do not use dicts.
 
 ```
 Input:  "hello world"
 Output: [('l', 3), ('o', 2), ('d', 1), ('e', 1), ('h', 1), ('r', 1), ('w', 1)]
 ```
-> 💡 This is a genuine challenge without dicts. Think about what structures you DO have. Adversarial: single character repeated. All unique characters.
+> 💡 This is a genuine challenge without dicts. Think about what structures you DO have.
+ Adversarial: single character repeated. All unique characters.
 
 ---
 
@@ -118,7 +131,9 @@ Output: [('l', 3), ('o', 2), ('d', 1), ('e', 1), ('h', 1), ('r', 1), ('w', 1)]
 ---
 
 ### H1 — String Compression (RLE Upgraded)
-Write a function `compress(s)` that performs Run-Length Encoding but with a twist — if a character appears only once, do **not** write the count. Only write the count when it's greater than 1.
+Write a function `compress(s)` that performs Run-Length Encoding but with a twist — if a 
+character appears only once, do **not** write the count. Only write the count when it's 
+greater than 1.
 
 ```
 Input:  "aaabbccddddef"
@@ -128,7 +143,8 @@ Input:  "abcd"
 Output: "abcd"   ← no counts since all are 1
 ```
 
-**Extension:** Write `decompress(s)` that reverses this — takes `"3a2b2c4def"` and returns `"aaabbccdddddef"`. Both functions must work together as a pair.
+**Extension:** Write `decompress(s)` that reverses this — takes `"3a2b2c4def"` and 
+returns `"aaabbccdddddef"`. Both functions must work together as a pair.
 
 > 💡 Adversarial: single character `"a"` → `"a"`. Empty string. `"aaaaaa"` → `"6a"`.
 
@@ -161,7 +177,9 @@ print(col_max(m, 2))    # → 9
 print(transpose(m))     # → [[1,4,7],[2,5,8],[3,6,9]]
 ```
 
-> 💡 Transpose is the real challenge here. Think about what `matrix[row][col]` becoming `matrix[col][row]` means structurally. Adversarial: 1x1 matrix. Non-square matrix (2 rows, 3 cols).
+> 💡 Transpose is the real challenge here. Think about what `matrix[row][col]` becoming 
+`matrix[col][row]` means structurally. Adversarial: 1x1 matrix. 
+Non-square matrix (2 rows, 3 cols).
 
 ---
 
@@ -180,7 +198,9 @@ Input:  caesar_cipher("Khoor, Zruog!", 3, "decode")
 Output: "Hello, World!"
 ```
 
-> 💡 The alphabet wraps — `Z` shifted by 1 becomes `A`. Think modulo. `ord()` and `chr()` are allowed — they convert characters to ASCII numbers and back. That's all you need.
+> 💡 The alphabet wraps — `Z` shifted by 1 becomes `A`. Think modulo. `ord()` and 
+`chr()` are allowed — they convert characters to ASCII numbers and back. 
+That's all you need.
 
 ---
 
@@ -201,4 +221,5 @@ Output: "Hello, World!"
 
 ---
 
-*Session 3 is the final boss — 4 medium 6 hard, same elevated level. Lock Session 2 in first.*
+*Session 3 is the final boss — 4 medium 6 hard, same elevated level. 
+Lock Session 2 in first.*

@@ -148,3 +148,7 @@
 # size = 2
 # list2 = chunksplit(lst,size)
 # print(f"The Chunked list is: {list2}")
+
+## Q4 MEDIUM (list rotator)
+# Input:  lst = [1,2,3,4,5], k = 2
+# Output: [4,5,1,2,3]
