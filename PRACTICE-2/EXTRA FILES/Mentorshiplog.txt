@@ -1,0 +1,170 @@
+# Python Mentorship — Master Execution Log
+**Last Updated:** 20-08-2026
+**Mentor:** Claude | **Student:** Soham, BTech CSE Sem 5, MIT WPU
+
+---
+
+## OVERALL PROGRESS SNAPSHOT
+
+| Session | Topic | Score | Status |
+|---------|-------|-------|--------|
+| Days 1-2 (17-18 Aug) | Loops + Strings | 14/15 + 2 bonus | ✅ Complete |
+| Session 1 (19 Aug) | Functions + Lists intro | 9/10 | ✅ Complete |
+| Session 2 (20 Aug) | Functions + Lists elevated | 5/10 done | 🔄 In Progress |
+| Session 3 | Functions + Lists boss tier | 0/10 | ⏳ Pending |
+
+---
+
+## DETAILED QUESTION LOG
+
+### Days 1–2 — Loops + Strings (17-18 Aug)
+
+| Q | Problem | Status | Notes |
+|---|---------|--------|-------|
+| 1 | Sum of N | ✅ | First try |
+| 2 | Index + char print | ✅ | First try |
+| 3 | Print evens | ✅ | First try |
+| 4 | Countdown | ✅ | First try |
+| 5 | Reverse string | ✅ | First try |
+| 6 | Sum of positives | ✅ | Flagged: fragile on multi-digit input |
+| 7 | Char-repeat pattern | ✅ | First try |
+| 8 | Largest digit | ✅ | First try |
+| 9 | First multiple of 15 | ✅ | First try |
+| 10 | Contains-digit check | ✅ | First try |
+| 11 | Factorial + parity | ✅ | First try |
+| 12 | Nested triangular sums | ✅ | First self-built nested loop |
+| 13 | RLE | ⚠️ | Had correct solution, overthought it, abandoned. Revisited in Session 2 H1 |
+| 14 | Mini multiplication table | ✅ | Nested loops |
+| 15 | Balanced parentheses | ✅ | Missed negative-dip edge case, corrected after counterexample |
+| B1 | Decreasing triangle | ✅ | Bonus — solved |
+| B2 | Diamond pattern | ✅ | Bonus — correctly generalized spacing formula |
+
+**Score: 14/15 + 2 bonus**
+
+---
+
+### Session 1 — Functions + Lists Intro (19 Aug)
+
+| Q | Problem | Status | Notes |
+|---|---------|--------|-------|
+| E1 | Remove Negatives | ✅ | Added count extension, minor: unnecessary `pass`, count via math cleaner |
+| E2 | Count Vowels | ✅ | Clean, minor: return only `count` not `new_word` |
+| E3 | Squares List | ✅ | Works, cleaner with `range(1, n+1)` |
+| E4 | First Even Index | ✅ | Used `enumerate` + `for-else` — strongest easy of session |
+| M1 | Unique Ordered | ✅ | 2-3 mins, arrived at seen-tracker naturally without hints |
+| M2 | Rotate String | ✅ | Creative `insert` approach, self-caught the hardcoded `6` bug |
+| M3 | Categorize Scores | ✅ | Clean boundary logic, caught mentor's question error |
+| M4 | Compress Spaces | ✅ | Solved on pen and paper in college, self-debugged 15 min character-skip bug |
+| H1 | List Flattener | ✅ | Version 1 broke on multi-digit. Built version 2 (tokenizer) independently. Recursion solution shown and understood |
+| H2 | Scoreboard | ❌ | Dict syntax gap mid-problem. Logic direction was correct. Pending redo |
+
+**Score: 9/10**
+
+---
+
+### Session 2 — Functions + Lists Elevated (20 Aug)
+
+| Q | Problem | Status | Notes |
+|---|---------|--------|-------|
+| E1 | Merge Alternating | ✅ | All edge cases correct. Learned `min()` collapse after |
+| E2 | Palindrome (no slicing) | ✅ | All 6 adversarial cases correct |
+| M1 | Running Maximum | ✅ | Caught the descending trap. Key insight: compare against `newlst[-1]` |
+| M2 | Word Reverser | 🔄 | In progress — tricky, partially figured in college |
+| M3 | Chunk Splitter | ✅ | All edge cases correct. Built manual version, then saw slicing shortcut |
+| M4 | List Rotator | ✅ | Transferred insert logic from Session 1. Then derived slicing version independently |
+| M5 | Frequency Counter | ✅ | Used `set()` to deduplicate tuples, `sorted()` with lambda — clean pipeline |
+| H1 | RLE Upgraded + decompress | ⏳ | Pending |
+| H2 | Matrix Row Operations | ⏳ | Pending |
+| H3 | Caesar Cipher | ⏳ | Pending |
+
+**Score: 5/7 done (3 hard pending, M2 in progress)**
+
+---
+
+## KEY BREAKTHROUGHS LOG
+
+| Date | Breakthrough |
+|------|-------------|
+| 17 Aug | First self-built nested loop pattern |
+| 18 Aug | Balanced parentheses negative-dip edge case logic |
+| 19 Aug | Arrived at seen-tracker pattern for deduplication without hints |
+| 19 Aug | Derived `(i+t)%k` rotation formula independently |
+| 19 Aug | Self-debugged M4 space-compression character-skip bug on paper, no IDE |
+| 19 Aug | Built string tokenizer from scratch for multi-digit flattener — two versions |
+| 19 Aug | Understood recursion on first encounter without being formally taught it |
+| 20 Aug | Derived list slicing rotation `lst[k-p:] + lst[0:k-p]` independently |
+| 20 Aug | Used `set()` on tuple list for deduplication — smart lateral thinking |
+
+---
+
+## RECURRING GAPS TO WATCH
+
+1. **Edge case discipline** — both Day 1-2 misses passed sample input but failed unstated edge cases. Improving but needs to be habitual
+2. **Return scope** — functions returning more than their name promises (E2 returning `new_word`)
+3. **Unnecessary variables** — `k`, `pass`, intermediate stores that math or direct returns can eliminate
+4. **Dict syntax** — not locked in yet, caused H2 Session 1 to stall
+
+---
+
+## WHAT'S NEXT — PRIORITY ORDER
+
+### Immediate (Next 3 Days — Mass Bunk Window)
+
+**Day 1 Priority:**
+- [ ] Finish Session 2 — M2 (Word Reverser) + H1, H2, H3
+- [ ] Redo Session 1 H2 (Scoreboard) — now that dict syntax is clearer
+
+**Day 2 Priority:**
+- [ ] Dedicated dict, set, tuple drill — not easy/medium/hard format, just concept-locking questions so syntax becomes muscle memory
+- [ ] Lambda functions — understand properly, not just copy-paste usage
+- [ ] Nested loops — strengthen, currently functional but needs more reps
+
+**Day 3 Priority:**
+- [ ] Session 3 — 4 medium, 6 hard (boss tier, same elevated level as Session 2)
+- [ ] Begin OOP concepts — classes, objects, methods, `__init__`
+- [ ] File handling intro — read, write, append
+
+### After Sessions Complete:
+- [ ] OOP deep dive — inheritance, encapsulation, polymorphism
+- [ ] File handling — CSV, JSON handling with Python
+- [ ] Connect Python to AWS work — scripting for cloud automation
+
+---
+
+## SYNTAX REFERENCE (Quick Lookup)
+
+### Dict
+```python
+d = {"name": "Soham", "score": 91}
+d["name"]           # access
+d["score"] = 95     # update
+"name" in d         # check key exists
+d.get("score", 0)   # access with fallback
+```
+
+### Tuple
+```python
+t = ("a", 3)
+t[0]        # → "a"
+t[1]        # → 3
+char, count = t  # unpack
+```
+
+### Sorted with Lambda
+```python
+sorted(lst, key=lambda x: (-x[1], x[0]))
+# Sort by second element descending, first element ascending for ties
+```
+
+### Useful Built-ins Unlocked So Far
+```python
+enumerate(lst)      # index + value in loop
+range(a, b, step)   # custom range
+min() / max()       # avoid manual if/else
+isinstance(x, list) # type checking for recursion
+ord() / chr()       # char ↔ ASCII (needed for Caesar cipher)
+```
+
+---
+
+*Log maintained by Claude. Update after each session.*

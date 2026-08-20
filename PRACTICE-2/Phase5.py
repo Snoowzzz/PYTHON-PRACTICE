@@ -152,20 +152,63 @@
 ## Q4 MEDIUM (list rotator)
 # Input:  lst = [1,2,3,4,5], t = 2
 # Output: [4,5,1,2,3]
-def rotator(lst,t):
-    newlst = []
-    k = len(lst)
-#     for i in range(k):
-#         m = (i+t)%k
-#         newlst.insert(m,lst[i])
+# def rotator(lst,t):
+#     newlst = []
+#     k = len(lst)
+# #     for i in range(k):
+# #         m = (i+t)%k
+# #         newlst.insert(m,lst[i])
 
-#   slicing version (very short and precise)
-#   Derived on my own
-    p = t%k
-    newlst += lst[k-p:]
-    newlst += lst[0:k-p]
-    return newlst
-lst = [1,2,3,4,5] 
-t = 2
-newlst = rotator(lst,t)
-print(f"The Rotated list is: {newlst}")
+# #   slicing version (very short and precise)
+# #   Derived on my own
+#     p = t%k
+#     newlst += lst[k-p:]
+#     newlst += lst[0:k-p]
+#     return newlst
+# lst = [1,2,3,4,5] 
+# t = 2
+# newlst = rotator(lst,t)
+# print(f"The Rotated list is: {newlst}")
+
+
+## Q5 Medium (Tuples) ## Do not use dict
+# Input:  "hello world"
+# Output: [('l', 3), ('o', 2), ('d', 1), ('e', 1), ('h', 1), ('r', 1), ('w', 1)]
+
+# def char_frequency(word):
+#     list1 = []
+#     word1 = word.replace(" ","")
+#     for i in word1 :
+#         ls = word1.count(i)
+#         c = (i,ls)
+#         list1.append(c)
+#         c = ()
+#     newlst = set(list1) 
+#     newlst1 = sorted(newlst,key=lambda x: (-x[1], x[0]))
+#     return newlst1    
+
+# word = "hello world"
+# newlst = char_frequency(word)
+# print(f"Character count of the word: {newlst}")
+# # Accessing a tuple through a list uses two indexes:
+# list1[0]    -> ('l', 3), the first tuple in the list
+# list1[0][0] -> 'l',    the string at index 0 of that tuple
+# list1[0][1] -> 3,      the integer at index 1 of that tuple
+# Indexing starts at 0: the first index selects the tuple, and the second
+# index selects a value inside that tuple.
+# print(list1[0][0])  # l
+# print(list1[0][1])  # 3
+
+# # Or unpack each tuple while looping through the list:
+# for character, count in list1:
+# 	print(character, count)
+# sorted with key example
+# pairs = [('b', 2), ('a', 3), ('c', 1)]
+# # print(sorted(pairs,key=lambda x: (-x[1], x[0]))) 
+# for i in pairs :
+#   print(i[0],end=" ")
+# # → [('c', 1), ('b', 2), ('a', 3)]  ascending
+
+# # reverse it
+# sorted(pairs, key=lambda x: x[1], reverse=True)
+# # → [('a', 3), ('b', 2), ('c', 1)]  descending
