@@ -32,12 +32,37 @@
 
 
 ## Cleaner version  (Use of minimum function) really smart
-def merge_lsts(a, b):
-    newlst = []
-    min_len = min(len(a), len(b))
-    for i in range(min_len):
-        newlst.append(a[i])
-        newlst.append(b[i])
-    newlst += a[min_len:]
-    newlst += b[min_len:]
-    return newlst
+# def merge_lsts(a, b):
+#     newlst = []
+#     min_len = min(len(a), len(b))
+#     for i in range(min_len):
+#         newlst.append(a[i])
+#         newlst.append(b[i])
+#     newlst += a[min_len:]
+#     newlst += b[min_len:]
+#     return newlst
+
+## Q2 (Palindrone checker)
+# Input:  "Race Car"    → True
+# Input:  "Cloud"       → False
+# Input:  "A man a plan a canal Panama"  → True
+
+# def is_palindrone(word):
+#     word1 = word.replace(" ","")
+#     word2 = word1.lower()
+#     newstr = ""
+#     for i in range(len(word2)-1,-1,-1): ## dont forget the -1(IMP for the code to work)
+#         newstr+=word2[i]  
+        
+#     # my idea
+#     # if newstr == word2:
+#     #     return True
+#     # else:
+#     #     return False
+    
+#     ## cleaner version to return
+#     return newstr == word2
+
+# word = "Cloud"
+# print(is_palindrone(word))
+        
