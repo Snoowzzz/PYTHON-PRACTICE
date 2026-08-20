@@ -150,5 +150,22 @@
 # print(f"The Chunked list is: {list2}")
 
 ## Q4 MEDIUM (list rotator)
-# Input:  lst = [1,2,3,4,5], k = 2
+# Input:  lst = [1,2,3,4,5], t = 2
 # Output: [4,5,1,2,3]
+def rotator(lst,t):
+    newlst = []
+    k = len(lst)
+#     for i in range(k):
+#         m = (i+t)%k
+#         newlst.insert(m,lst[i])
+
+#   slicing version (very short and precise)
+#   Derived on my own
+    p = t%k
+    newlst += lst[k-p:]
+    newlst += lst[0:k-p]
+    return newlst
+lst = [1,2,3,4,5] 
+t = 2
+newlst = rotator(lst,t)
+print(f"The Rotated list is: {newlst}")
