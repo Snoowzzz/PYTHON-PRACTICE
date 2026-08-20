@@ -104,24 +104,47 @@
 # nums = [3,1,4,1,5,9,2,6] 
 # print(running_max(nums))
 
-## Q2 Medium (reversing a sentence)  
+# # Q2 Medium (reversing a sentence)  
 # Input:  "Cloud Computing is fun"
 # Output: "fun is Computing Cloud"
          
 # def reversewords(words):
 #     list1 = []
+#     newstr = ""
 #     for i in range(len(words)):
-#         newstr = ""
 #         if words[i] == " ":
 #             continue
 #         else:
 #             if i < len(words)-1:
 #                 while words[i+1] != " ":
 #                     newstr += words[i]
+#                     i+=1
 #                 newstr += words[i]
 #                 list1.append(newstr)
+#         newstr = ""
 #     return list1
 # words = "Cloud Computing is fun"
 # print(reversewords(words))
 
-### Q3 Medium
+# ## Q3 Medium (With this logic At par at LEETCODE MEDIUM)
+# # Input:  lst = [1,2,3,4,5,6,7], size = 3
+# # Output: [[1,2,3], [4,5,6], [7]]
+
+# def chunksplit(lst,k):
+#     s = len(lst)
+#     list2 = []
+#     for i in range(0,s,k):
+#         list1 = []
+#         if k+i < s:
+#             for t in range(i,k+i):
+#                 list1.append(lst[t]) 
+#             list2.append(list1)          
+#         else:
+#             for t in range(i,s):
+#                 list1.append(lst[t])
+#             list2.append(list1)
+#     return list2
+# lst = [1,2,3,4]
+# size = 2
+# list2 = chunksplit(lst,size)
+# print(f"The Chunked list is: {list2}")
