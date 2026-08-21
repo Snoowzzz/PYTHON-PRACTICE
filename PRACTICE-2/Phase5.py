@@ -248,27 +248,62 @@
 
 # Input:  "abcd"
 # Output: "abcd"   ← no counts since all are 1
-def stringcount(word):
-    i = 0
-    k = 0
-    count = 1
-    newstr = ""
-    for  i in range(len(word)-1):
-        k = i
-        if word[i] == word[i+1]:
-            count+=1
-            continue
-        if count>1:
-            newstr+= str(count)
-            newstr+= word[k]
-        else: 
-            newstr += word[k]
-        count = 1
-        k = 0
-   # Replace your second for loop with this:
-    if count > 1:
-        newstr += str(count)
-    newstr += word[-1]
-    return newstr
-word = "abcdddd"
-print(stringcount(word))
+# def stringcount(word):
+#     i = 0
+#     k = 0
+#     count = 1
+#     newstr = ""
+#     for  i in range(len(word)-1):
+#         k = i
+#         if word[i] == word[i+1]:
+#             count+=1
+#             continue
+#         if count>1:
+#             newstr+= str(count)
+#             newstr+= word[k]
+#         else: 
+#             newstr += word[k]
+#         count = 1
+#         k = 0
+#    # Replace your second for loop with this:
+#     if count > 1:
+#         newstr += str(count)
+#     newstr += word[-1]
+#     return newstr
+# word = "abcdddd"
+# print(stringcount(word))
+
+## Question 2 (Hard)
+
+# print(row_sum(m, 1))    # → 15
+# print(col_max(m, 2))    # → 9
+# print(transpose(m))     # → [[1,4,7],[2,5,8],[3,6,9]]
+
+def row_sum(m,k):
+    sum = type(int)
+    for i in range(len(m)):
+        sum += m[i][k]
+    return sum
+def col_max(m,t):
+    max = m[t][0]
+    for i in range(len(m[t])):
+        if m[t][i] >= max:
+            max = m[t][i]
+    return max
+def transpose(m):
+    list2 = []
+    for i in range(len(m[0])):
+        list1 =[]
+        for j in range(len(m)):
+            list1.append(m[j][i])
+        list2.append(list1)
+    return list2
+            
+m = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(row_sum(m, 0))
+print(col_max(m, 1))
+print(transpose(m))
