@@ -203,23 +203,19 @@ Output: "Hello, World!"
 That's all you need.
 
 ---
+Q	Status	First Try?	Edge Case Tested	Notes
+E1	✅ Solved	✅ Yes	✅ Both empty, one empty	Learned min() collapse after
+E2	✅ Solved	✅ Yes	✅ Single char, empty, all spaces	Clean, no slicing used
+M1	✅ Solved	✅ Yes	✅ Descending, all same, single element	Key insight: compare against newlst[-1]
+M2	✅ Solved	❌ No	✅ Multiple spaces, single word	for loop bug caught, rebuilt with while
+M3	✅ Solved	✅ Yes	✅ size > len, size=1, empty	Manual version first, then saw slicing shortcut
+M4	✅ Solved	✅ Yes	✅ k > len, k=0, k=len	Transferred Session 1 insert logic, then derived slicing independently
+M5	✅ Solved	✅ Yes	✅ All same, all unique	Smart use of set() on tuple list for dedup
+H1	✅ Solved	❌ No	✅ Single char, all same, all unique	V1 had missing last group + replace hack, fixed both cleanly
+H2	✅ Solved	✅ Yes	✅ Non-square matrix, negative numbers	Transpose nested loop logic was clean first try
+H3	✅ Solved	✅ Yes	✅ Wrap (XYZ→ABC), k>26	Handled ASCII boundaries + case preservation independently
 
-## Session 2 Log (fill after solving)
-
-| Q | Status | First Try? | Edge Case Tested | Notes |
-|---|--------|------------|------------------|-------|
-| E1 | | | | |
-| E2 | | | | |
-| M1 | | | | |
-| M2 | | | | |
-| M3 | | | | |
-| M4 | | | | |
-| M5 | | | | |
-| H1 | | | | |
-| H2 | | | | |
-| H3 | | | | |
-
----
+10/10 — Clean sweep. Session 2 done. 🫡
 
 *Session 3 is the final boss — 4 medium 6 hard, same elevated level. 
 Lock Session 2 in first.*

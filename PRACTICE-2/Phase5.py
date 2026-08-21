@@ -323,50 +323,54 @@
 
 # # Alphabet position trick
 # ord('C') - ord('A')  # → 2  (C is 2nd from A)
-def caesar_cipher(word,k,mode):
-     newstr = ""
-     if mode == "encode":
-        for i in word:
-            if i.isupper():
-              if ord(i)+k%26 > 90:
-                t = ord(i)+(k%26) - 26 # 
-                newstr+=chr(t)
-              else:
-                t = ord(i)+(k%26)
-                newstr+=chr(t)
-            elif i.islower():
-              if ord(i)+k%26 > 122:
-                t = ord(i)+(k%26) - 26 # 
-                newstr+=chr(t)
-              else:
-                t = ord(i)+(k%26)
-                newstr+=chr(t) 
-            else:
-                newstr+=i      
-     elif mode == "decode":
-        for i in word:
-            if i.isupper():
-              if ord(i)-k%26 < 65:
-                t = ord(i)-(k%26) + 26 # 
-                newstr+=chr(t)
-              else:
-                t = ord(i)-(k%26)
-                newstr+=chr(t)
-            elif i.islower():
-              if ord(i)-k%26 < 97:
-                t = ord(i)-(k%26) + 26 # 
-                newstr+=chr(t)
-              else:
-                t = ord(i)-(k%26)
-                newstr+=chr(t) 
-            else:
-                newstr+=i  
-     else:
-        print("Enter a Valid Mode: ")
-     return newstr
-word = caesar_cipher("Hello, World!", 5, "encode") 
-print(word) 
-word1 =caesar_cipher("Khoor, Zruog!", 5, "decode")
-print(word1)
+## SELF MADE SOLUTION FOR CAESER CIPHER WHICH WORKS FOR ALL EDGE CASES
+## SOMETHING TO BE PROUD OF
+
+# def caesar_cipher(word,k,mode):
+#      newstr = ""
+#      if mode == "encode":
+#         for i in word:
+#             if i.isupper():
+#               if ord(i)+k%26 > 90:
+#                 t = ord(i)+(k%26) - 26 # 
+#                 newstr+=chr(t)
+#               else:
+#                 t = ord(i)+(k%26)
+#                 newstr+=chr(t)
+#             elif i.islower():
+#               if ord(i)+k%26 > 122:
+#                 t = ord(i)+(k%26) - 26 # 
+#                 newstr+=chr(t)
+#               else:
+#                 t = ord(i)+(k%26)
+#                 newstr+=chr(t) 
+#             else:
+#                 newstr+=i      
+#      elif mode == "decode":
+#         for i in word:
+#             if i.isupper():
+#               if ord(i)-k%26 < 65:
+#                 t = ord(i)-(k%26) + 26 # 
+#                 newstr+=chr(t)
+#               else:
+#                 t = ord(i)-(k%26)
+#                 newstr+=chr(t)
+#             elif i.islower():
+#               if ord(i)-k%26 < 97:
+#                 t = ord(i)-(k%26) + 26 # 
+#                 newstr+=chr(t)
+#               else:
+#                 t = ord(i)-(k%26)
+#                 newstr+=chr(t) 
+#             else:
+#                 newstr+=i  
+#      else:
+#         print("Enter a Valid Mode: ")
+#      return newstr
+     
+# word = caesar_cipher("Hello, World!", 5, "encode") 
+# print(word) 
+# word1 =caesar_cipher("Khoor, Zruog!", 5, "decode")
+# print(word1)
         
                             
