@@ -240,3 +240,35 @@
 # # reverse it
 # sorted(pairs, key=lambda x: x[1], reverse=True)
 # # → [('a', 3), ('b', 2), ('c', 1)]  descending
+
+### Q1 Hard string count (UPGRADED RLE) 
+
+# Input:  "aaabbccddddef"
+# Output: "3a2b2c4def"
+
+# Input:  "abcd"
+# Output: "abcd"   ← no counts since all are 1
+def stringcount(word):
+    i = 0
+    k = 0
+    count = 1
+    newstr = ""
+    for  i in range(len(word)-1):
+        k = i
+        if word[i] == word[i+1]:
+            count+=1
+            continue
+        if count>1:
+            newstr+= str(count)
+            newstr+= word[k]
+        else: 
+            newstr += word[k]
+        count = 1
+        k = 0
+   # Replace your second for loop with this:
+    if count > 1:
+        newstr += str(count)
+    newstr += word[-1]
+    return newstr
+word = "abcdddd"
+print(stringcount(word))
