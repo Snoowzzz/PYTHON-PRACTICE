@@ -22,7 +22,9 @@ Output: {"name": "Soham", "age": 20, "city": "Pune"}
 ---
 
 ### Q2 — Dict Updater
-Write a function `update_score(d, name, score)` that takes a dict of `{name: score}` pairs. If the name exists, update only if new score is higher. If name doesn't exist, add it.
+Write a function `update_score(d, name, score)` that takes a dict of `{name: score}` 
+pairs. 
+If the name exists, update only if new score is higher. If name doesn't exist, add it.
 
 ```
 d = {"Soham": 88, "Riya": 95}
