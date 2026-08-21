@@ -126,6 +126,34 @@
 # words = "Cloud Computing is fun"
 # print(reversewords(words))
 
+#### COULD NOT SOLVE IT THIS IS CLAUDES CORRECTED VERSION(logic was correct tho!!)
+# def reversewords(words):
+#     list1 = []
+#     newstr = ""
+#     i = 0
+#     while i < len(words):
+#         if words[i] == " ":
+#             if newstr != "":        # only append if we built something
+#                 list1.append(newstr)
+#                 newstr = ""
+#             i += 1
+#         else:
+#             newstr += words[i]      # build the word character by character
+#             i += 1
+#     if newstr != "":                # catch the last word
+#         list1.append(newstr)
+    
+#     # now reverse the list
+#     final = []
+#     for i in range(len(list1)-1, -1, -1):
+#         final.append(list1[i])
+    
+#     return " ".join(final)
+
+# print(reversewords("Cloud Computing is fun"))   # fun is Computing Cloud
+# print(reversewords("  hello   world  "))        # world hello
+# print(reversewords("hello"))                    # hello
+
 # ## Q3 Medium (With this logic At par at LEETCODE MEDIUM)
 # # Input:  lst = [1,2,3,4,5,6,7], size = 3
 # # Output: [[1,2,3], [4,5,6], [7]]
