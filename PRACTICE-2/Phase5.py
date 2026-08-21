@@ -275,35 +275,98 @@
 
 ## Question 2 (Hard)
 
-# print(row_sum(m, 1))    # → 15
-# print(col_max(m, 2))    # → 9
-# print(transpose(m))     # → [[1,4,7],[2,5,8],[3,6,9]]
+# # print(row_sum(m, 1))    # → 15
+# # print(col_max(m, 2))    # → 9
+# # print(transpose(m))     # → [[1,4,7],[2,5,8],[3,6,9]]
 
-def row_sum(m,k):
-    sum = type(int)
-    for i in range(len(m)):
-        sum += m[i][k]
-    return sum
-def col_max(m,t):
-    max = m[t][0]
-    for i in range(len(m[t])):
-        if m[t][i] >= max:
-            max = m[t][i]
-    return max
-def transpose(m):
-    list2 = []
-    for i in range(len(m[0])):
-        list1 =[]
-        for j in range(len(m)):
-            list1.append(m[j][i])
-        list2.append(list1)
-    return list2
+# def row_sum(m,k):
+#     sum = type(int)
+#     for i in range(len(m)):
+#         sum += m[i][k]
+#     return sum
+# def col_max(m,t):
+#     max = m[t][0]
+#     for i in range(len(m[t])):
+#         if m[t][i] >= max:
+#             max = m[t][i]
+#     return max
+# def transpose(m):
+#     list2 = []
+#     for i in range(len(m[0])):
+#         list1 =[]
+#         for j in range(len(m)):
+#             list1.append(m[j][i])
+#         list2.append(list1)
+#     return list2
             
-m = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-print(row_sum(m, 0))
-print(col_max(m, 1))
-print(transpose(m))
+# m = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ]
+# print(row_sum(m, 0))
+# print(col_max(m, 1))
+# print(transpose(m))
+
+
+## QUESTION 3 (HARD)
+
+# Input:  caesar_cipher("Hello, World!", 3, "encode")
+# Output: "Khoor, Zruog!"
+
+# Input:  caesar_cipher("Khoor, Zruog!", 3, "decode")
+# Output: "Hello, World!"
+
+# ord('A')   # → 65  (char to ASCII number)
+# ord('a')   # → 97
+# chr(65)    # → 'A' (ASCII number to char)
+
+# # Alphabet position trick
+# ord('C') - ord('A')  # → 2  (C is 2nd from A)
+def caesar_cipher(word,k,mode):
+     newstr = ""
+     if mode == "encode":
+        for i in word:
+            if i.isupper():
+              if ord(i)+k%26 > 90:
+                t = ord(i)+(k%26) - 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)+(k%26)
+                newstr+=chr(t)
+            elif i.islower():
+              if ord(i)+k%26 > 122:
+                t = ord(i)+(k%26) - 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)+(k%26)
+                newstr+=chr(t) 
+            else:
+                newstr+=i      
+     elif mode == "decode":
+        for i in word:
+            if i.isupper():
+              if ord(i)-k%26 < 65:
+                t = ord(i)-(k%26) + 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)-(k%26)
+                newstr+=chr(t)
+            elif i.islower():
+              if ord(i)-k%26 < 97:
+                t = ord(i)-(k%26) + 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)-(k%26)
+                newstr+=chr(t) 
+            else:
+                newstr+=i  
+     else:
+        print("Enter a Valid Mode: ")
+     return newstr
+word = caesar_cipher("Hello, World!", 5, "encode") 
+print(word) 
+word1 =caesar_cipher("Khoor, Zruog!", 5, "decode")
+print(word1)
+        
+                            
