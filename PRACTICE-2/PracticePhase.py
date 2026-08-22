@@ -213,31 +213,49 @@
 # d2 = {"b": 12, "c": 3, "d": 7}
 # Output: {"a": 10, "b": 12, "c": 8, "d": 7}
 
-def merge_dicts(d1,d2):
-    newdict = {}
-    for i,v in d1.items():
-        for j,t in d2.items():
-            if i == j:
-                if v>=t:
-                    newdict[i] = v
-                else:
-                    newdict[j] = t
-            else:
-                newdict[i] = v
-                newdict[j] = t
-    return newdict
-d1 = {"a": 10, "b": 5, "c": 8}
-d2 = {"b": 12, "c": 3, "d": 7}
-print(merge_dicts(d1,d2))
+# def merge_dicts(d1,d2):
+#     newdict = {}
+#     for i,v in d1.items():
+#         for j,t in d2.items():
+#             if i == j:
+#                 if v>=t:
+#                     newdict[i] = v
+#                 else:
+#                     newdict[j] = t
+#             else:
+#                 newdict[i] = v
+#                 newdict[j] = t
+#     return newdict
+# d1 = {"a": 10, "b": 5, "c": 8}
+# d2 = {"b": 12, "c": 3, "d": 7}
+# print(merge_dicts(d1,d2))
             
-def merge_dicts(d1, d2):
-    newdict = {}
-    for k, v in d1.items():
-        newdict[k] = v          # add everything from d1 first
-    for k, v in d2.items():
-        if k in newdict:
-            if v > newdict[k]:  # only update if d2 value is higher
-                newdict[k] = v
-        else:
-            newdict[k] = v      # key only in d2, just add it
-    return newdict
+# def merge_dicts(d1, d2):
+#     newdict = {}
+#     for k, v in d1.items():
+#         newdict[k] = v          # add everything from d1 first
+#     for k, v in d2.items():
+#         if k in newdict:
+#             if v > newdict[k]:  # only update if d2 value is higher
+#                 newdict[k] = v
+#         else:
+#             newdict[k] = v      # key only in d2, just add it
+#     return newdict
+
+## Question 5
+# Input:  "hello world"
+# Output: {"l": 3, "o": 2}   ← only chars with count > 1
+def char_freq_count(word):
+    seen = ""
+    d = {}
+    for i in word:
+        if i.islower() or i.isupper():
+            if i not in seen:
+                p = word.count(i)
+                seen+=i
+                if p > 1:
+                    d[i] = p
+    return d
+word = "hello world"
+freq_count = char_freq_count(word)
+print(freq_count)
