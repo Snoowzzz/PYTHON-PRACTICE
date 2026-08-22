@@ -45,3 +45,10 @@
 # fruits = ["banana", "apple", "cherry", "date"]
 # fruistnew = sorted(fruits, key=lambda x:x[-1])
 # print(fruistnew)
+
+# practice 5
+# Input:  ["Soham", "Riya", "Arjun"]
+# Output: [("Soham", 5), ("Riya", 4), ("Arjun", 5)]
+name =["Soham", "Riya", "Arjun"]
+newlist = list(map(lambda x: (x,len(x)),name))
+print(newlist)
