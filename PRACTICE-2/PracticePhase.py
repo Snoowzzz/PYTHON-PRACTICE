@@ -135,25 +135,76 @@
 
 
 ### Question 10
-def analyse(data):
-    set1 = set()
-    sum = 0
-    high_score = data[0][1]
-    for i,v in data:
-        set1.add(v)
-        sum+=v
-        if v>= high_score:
-            high_score = v
-    for i,v in data:
-        if v==high_score:
-            high_name = i  
-    avg = round(sum/len(data),2)  
-    dict1 ={
-      "highest": high_name,
-      "unique_scores": set1,
-      "average": avg,
-    }    
-    return dict1
-data = [("Soham", 91), ("Riya", 95), ("Arjun", 102), ("Soham", 91)]
-dict1 = analyse(data)
-print(dict1)
+# def analyse(data):
+#     set1 = set()
+#     sum = 0
+#     high_score = data[0][1]
+#     for i,v in data:
+#         set1.add(v)
+#         sum+=v
+#         if v>= high_score:
+#             high_score = v
+#     for i,v in data:
+#         if v==high_score:
+#             high_name = i  
+#     avg = round(sum/len(data),2)  
+#     dict1 ={
+#       "highest": high_name,
+#       "unique_scores": set1,
+#       "average": avg,
+#     }    
+#     return dict1
+# data = [("Soham", 91), ("Riya", 95), ("Arjun", 102), ("Soham", 91)]
+# dict1 = analyse(data)
+# print(dict1)
+
+### Question 1
+# Input:  {"Soham": 91, "Riya": 45, "Arjun": 72, "Meera": 38}
+# Output: {"Soham": 91, "Arjun": 72}
+# def filter_passing(grades):
+#     newdict = {}
+#     for i,v in grades.items():
+#         if v > 50:
+#            newdict[i] = v
+#     return newdict
+# grades =  {"Soham": 91, "Riya": 45, "Arjun": 72, "Meera": 38}
+# newgrades = filter_passing(grades)
+# print(newgrades)
+
+## Question 2
+# batch1 = {"Soham", "Riya", "Arjun", "Meera"}
+# batch2 = {"Soham", "Riya", "Karan"}
+# Output: {"Arjun", "Meera"}
+# def who_left(batch1,batch2):
+#     batch3 = batch1 - batch2
+#     return batch3
+# batch1 = {"Soham", "Riya", "Arjun", "Meera"}
+# batch2 = {"Soham", "Riya", "Karan"}
+# wholeft = who_left(batch1,batch2)
+# print(wholeft)
+
+## Question 3  ( indepently figured out selection sort but there it was incomplete)
+list1 = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
+# for i in range(len(list1)):
+#   if "Soham" in list1[i]:
+#     print(True)
+# # Output: [("Riya", 95), ("Soham", 91), ("Arjun", 72)]
+def sort_by_score(data):
+    list1 = []
+    used_names = []
+    for i in range(len(data)):
+        max = 0
+        for j in range(len(data)):
+            if data[j][0] not in used_names:
+                if data[j][1] >= max:
+                    max = data[j][1]
+        for i,v in data:
+            if v == max:
+              tupp = (i,v)
+              break
+        list1.append(tupp)
+        used_names.append(tupp[0])
+        
+    return list1
+data = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
+print(sort_by_score(data))

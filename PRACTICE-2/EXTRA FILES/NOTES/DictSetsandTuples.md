@@ -251,8 +251,8 @@ p.x, p.y          # 3, 4  — instead of p[0], p[1]
 
 **A tuple is only immutable at the top level.** If it holds a mutable object, that inner object can still change:
 ```python
-t = ([1, 2], 3)
-t[0].append(99)   # legal — the tuple's slot still points to the same list, the list itself changed
+
+ # legal — the tuple's slot still points to the same list, the list itself changed
 ```
 
 **"Returning multiple values" is really returning one tuple** that gets unpacked at the call site — that's why `return a, b` works at all.
