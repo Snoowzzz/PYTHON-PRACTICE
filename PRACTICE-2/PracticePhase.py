@@ -105,4 +105,18 @@
 # nums =  [3, 1, 4, 1, 5, 9, 2, 6]
 # min,max = minimax(nums)
 # s= (min,max)
-# print(s)      
+# print(s)   
+   
+
+# ## Question 8
+# def swap_pairs(lst):
+#     lst1 = []
+#     for i,v in lst:
+#         tupp = v,i
+#         lst1.append(tupp)
+#     return lst1
+# lst = [(1,2), (3,4), (5,6)]
+# swaplst = swap_pairs(lst)
+# print(f"Swapped list: {swaplst}")
+
+### Question 9
