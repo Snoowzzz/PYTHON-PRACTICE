@@ -81,7 +81,28 @@
 # s1,s2,s3 = set_elems(a,b)
 # print(f"Both: {s1}\nOnly in a: {s2}\nAll: {s3}")
 
-### Tuples
-t = (1, 2, 2, 3)
-t.count(2)     # 2
-t.index(3)  
+# ### Tuples
+# t = (1, 2, 2, 3)
+# print(t.count(2))     # 2
+# print(t.index(3))
+# t1 = ([1, 2], 3)
+# t1[0].append(99) 
+# print(t1)  
+
+## Question 7
+# Input:  [3, 1, 4, 1, 5, 9, 2, 6]
+# Output: (1, 9)
+# def minimax(nums):
+#     min = nums[0]
+#     max = nums[0]
+#     for i in nums:
+#         if i >= max:
+#             max = i
+#         if i <= min:
+#             min = i
+#     return min,max
+
+# nums =  [3, 1, 4, 1, 5, 9, 2, 6]
+# min,max = minimax(nums)
+# s= (min,max)
+# print(s)      

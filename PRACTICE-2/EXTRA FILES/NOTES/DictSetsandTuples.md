@@ -229,7 +229,7 @@ first, *rest = (1, 2, 3, 4)   # first=1, rest=[2, 3, 4]  (rest becomes a list)
 ```python
 t = (1, 2, 2, 3)
 t.count(2)     # 2
-t.index(3)     # 2
+t.index(3)     # 3
 ```
 
 ### 5.6 Niche Things Most People Don't Know
