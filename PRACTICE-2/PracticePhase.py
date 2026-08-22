@@ -230,3 +230,14 @@ d1 = {"a": 10, "b": 5, "c": 8}
 d2 = {"b": 12, "c": 3, "d": 7}
 print(merge_dicts(d1,d2))
             
+def merge_dicts(d1, d2):
+    newdict = {}
+    for k, v in d1.items():
+        newdict[k] = v          # add everything from d1 first
+    for k, v in d2.items():
+        if k in newdict:
+            if v > newdict[k]:  # only update if d2 value is higher
+                newdict[k] = v
+        else:
+            newdict[k] = v      # key only in d2, just add it
+    return newdict
