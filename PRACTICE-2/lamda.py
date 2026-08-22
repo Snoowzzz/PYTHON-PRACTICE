@@ -49,6 +49,13 @@
 # practice 5
 # Input:  ["Soham", "Riya", "Arjun"]
 # Output: [("Soham", 5), ("Riya", 4), ("Arjun", 5)]
-name =["Soham", "Riya", "Arjun"]
-newlist = list(map(lambda x: (x,len(x)),name))
-print(newlist)
+# name =["Soham", "Riya", "Arjun"]
+# newlist = list(map(lambda x: (x,len(x)),name))
+# print(newlist)
+
+# practice 6
+# # Input:  [1, 2, 3, 4, 5, 6]
+# # Output: [4, 16, 36]
+# nums =[1, 2, 3, 4, 5, 6]
+# newlst = list(map(lambda x: x**2, filter(lambda x: x % 2 == 0, nums)))
+# print(newlst)
