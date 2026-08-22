@@ -122,12 +122,38 @@
 ### Question 9
 # list1 =  ["cat", "dog", "elephant", "ant", "ox", "bee"]
 # print(len(list1[0]))
-# Output: {3: ["cat", "dog", "ant", "bee"], 8: ["elephant"], 2: ["ox"]}
-def groupby_length(words):
-    d = {}
-    for word in words:
-        k = len(word)
-        if k not in d:
-            d[k] = []        # first time seeing this length, create empty list
-        d[k].append(word)    # add word to that length's list
-    return d
+# # Output: {3: ["cat", "dog", "ant", "bee"], 8: ["elephant"], 2: ["ox"]}
+
+# def groupby_length(words):
+#     d = {}
+#     for word in words:
+#         k = len(word)
+#         if k not in d:
+#             d[k] = []        # first time seeing this length, create empty list
+#         d[k].append(word)    # add word to that length's list
+#     return d
+
+
+### Question 10
+def analyse(data):
+    set1 = set()
+    sum = 0
+    high_score = data[0][1]
+    for i,v in data:
+        set1.add(v)
+        sum+=v
+        if v>= high_score:
+            high_score = v
+    for i,v in data:
+        if v==high_score:
+            high_name = i  
+    avg = round(sum/len(data),2)  
+    dict1 ={
+      "highest": high_name,
+      "unique_scores": set1,
+      "average": avg,
+    }    
+    return dict1
+data = [("Soham", 91), ("Riya", 95), ("Arjun", 102), ("Soham", 91)]
+dict1 = analyse(data)
+print(dict1)
