@@ -120,3 +120,14 @@
 # print(f"Swapped list: {swaplst}")
 
 ### Question 9
+# list1 =  ["cat", "dog", "elephant", "ant", "ox", "bee"]
+# print(len(list1[0]))
+# Output: {3: ["cat", "dog", "ant", "bee"], 8: ["elephant"], 2: ["ox"]}
+def groupby_length(words):
+    d = {}
+    for word in words:
+        k = len(word)
+        if k not in d:
+            d[k] = []        # first time seeing this length, create empty list
+        d[k].append(word)    # add word to that length's list
+    return d
