@@ -245,17 +245,32 @@
 ## Question 5
 # Input:  "hello world"
 # Output: {"l": 3, "o": 2}   ← only chars with count > 1
-def char_freq_count(word):
-    seen = ""
-    d = {}
-    for i in word:
-        if i.islower() or i.isupper():
-            if i not in seen:
-                p = word.count(i)
-                seen+=i
-                if p > 1:
-                    d[i] = p
-    return d
-word = "hello world"
-freq_count = char_freq_count(word)
-print(freq_count)
+# def char_freq_count(word):
+#     seen = ""
+#     d = {}
+#     for i in word:
+#         if i.islower() or i.isupper():
+#             if i not in seen:
+#                 p = word.count(i)
+#                 seen+=i
+#                 if p > 1:
+#                     d[i] = p
+#     return d
+# word = "hello world"
+# freq_count = char_freq_count(word)
+# print(freq_count)
+
+## Question 6 (threshold)
+# Input:  {"Soham": 91, "Riya": 95, "Arjun": 72}, threshold=90
+# Output: {"Soham", "Riya"}
+def top_students(grade_dict,threshold):
+    top_dict ={}
+    for i,v in grade_dict.items():
+        if v> threshold:
+            top_dict[i] = v
+    return set(top_dict.keys())
+    
+students = {"Soham": 91, "Riya": 95, "Arjun": 72}
+threshold = 90
+print(top_students(students,threshold))
+            
