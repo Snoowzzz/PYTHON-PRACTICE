@@ -184,27 +184,49 @@
 # print(wholeft)
 
 ## Question 3  ( indepently figured out selection sort but there it was incomplete)
-list1 = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
+# list1 = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
 # for i in range(len(list1)):
 #   if "Soham" in list1[i]:
 #     print(True)
 # # Output: [("Riya", 95), ("Soham", 91), ("Arjun", 72)]
-def sort_by_score(data):
-    list1 = []
-    used_names = []
-    for i in range(len(data)):
-        max = 0
-        for j in range(len(data)):
-            if data[j][0] not in used_names:
-                if data[j][1] >= max:
-                    max = data[j][1]
-        for i,v in data:
-            if v == max:
-              tupp = (i,v)
-              break
-        list1.append(tupp)
-        used_names.append(tupp[0])
-        
-    return list1
-data = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
-print(sort_by_score(data))
+# def sort_by_score(data):
+#     list1 = []
+#     used_names = []
+#     for i in range(len(data)):
+#         max = 0
+#         for j in range(len(data)):
+#             if data[j][0] not in used_names:
+#                 if data[j][1] >= max:
+#                     max = data[j][1]
+#         for i,v in data:
+#             if v == max:
+#               tupp = (i,v)
+#               break
+#         list1.append(tupp)
+#         used_names.append(tupp[0])        
+#     return list1
+# data = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
+# print(sort_by_score(data))
+
+## Question 4(dict merger)
+# d1 = {"a": 10, "b": 5, "c": 8}
+# d2 = {"b": 12, "c": 3, "d": 7}
+# Output: {"a": 10, "b": 12, "c": 8, "d": 7}
+
+def merge_dicts(d1,d2):
+    newdict = {}
+    for i,v in d1.items():
+        for j,t in d2.items():
+            if i == j:
+                if v>=t:
+                    newdict[i] = v
+                else:
+                    newdict[j] = t
+            else:
+                newdict[i] = v
+                newdict[j] = t
+    return newdict
+d1 = {"a": 10, "b": 5, "c": 8}
+d2 = {"b": 12, "c": 3, "d": 7}
+print(merge_dicts(d1,d2))
+            
