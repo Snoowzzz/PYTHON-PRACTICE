@@ -77,24 +77,39 @@
 #     "absent":     {"Meera"},
 #     "gate_crash": {"Karan"}
 # }
-def audit(registered,attended):
-    present = set()
-    absent = set()
-    gatecrash = set()
-    for i in registered:
-        if i in attended:
-            present.add(i)
-        else:
-            absent.add(i)
-    for j in attended:
-        if j not in registered:
-            gatecrash.add(j)
-    dictaudit = {
-        "present": present,
-        "absent": absent,
-        "gate_crash": gatecrash,
-    }
-    return dictaudit
-registered = ["Soham", "Riya", "Arjun", "Meera"]
-attended   = ["Soham", "Arjun", "Karan", "Riya"]
-print(audit(registered,attended))
+# def audit(registered,attended):
+#     present = set()
+#     absent = set()
+#     gatecrash = set()
+#     for i in registered:
+#         if i in attended:
+#             present.add(i)
+#         else:
+#             absent.add(i)
+#     for j in attended:
+#         if j not in registered:
+#             gatecrash.add(j)
+#     dictaudit = {
+#         "present": present,
+#         "absent": absent,
+#         "gate_crash": gatecrash,
+#     }
+#     return dictaudit
+# registered = ["Soham", "Riya", "Arjun", "Meera"]
+# attended   = ["Soham", "Arjun", "Karan", "Riya"]
+# print(audit(registered,attended))
+
+## Question 5 Lambda Pipeline
+
+# lists= [
+#     {"name": "Soham", "score": 91},
+#     {"name": "Riya",  "score": 45},
+#     {"name": "Arjun", "score": 67},
+#     {"name": "Meera", "score": 78}
+# ]
+# passed = list(filter(lambda x: x["score"]>=50,lists))
+# grades = list(map(lambda x: (x["name"], "A" if x["score"] >= 75 else "B"), passed)) ##
+# ## important line in grade very useful trick
+# print(grades)
+
+## Question 6
