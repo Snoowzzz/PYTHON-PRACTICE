@@ -1,0 +1,236 @@
+# Python Mega Drill — Everything Combined
+**Date:** 23-08-2026
+**Format:** 1 Easy · 6 Medium · 3 Hard
+**Topics:** Loops · Strings · Functions · Lists · Dicts · Sets · Tuples · Lambda
+
+---
+
+> **Rules**
+> - Every solution must be wrapped in a function
+> - Test at least one adversarial input before marking done
+> - No built-in shortcuts where logic is explicitly asked for
+
+---
+
+## 🟢 EASY (1 Question)
+
+### E1 — The Cleaner
+Write a function `clean_string(s)` that:
+- Removes leading/trailing spaces
+- Converts to lowercase
+- Replaces all internal multiple spaces with a single space
+- Returns the cleaned string
+
+```
+Input:  "  Hello   WORLD  how  ARE you  "
+Output: "hello world how are you"
+```
+> 💡 Adversarial: empty string, all spaces, already clean string.
+
+---
+
+## 🟡 MEDIUM (6 Questions)
+
+### M1 — Dict from Two Lists
+Write a function `zip_to_dict(keys, values)` that takes two lists and returns a dict pairing them. If lengths don't match, pair only up to the shorter list. Do not use `zip()`.
+
+```
+Input:  ["name", "age", "city"], ["Soham", 21, "Pune"]
+Output: {"name": "Soham", "age": 21, "city": "Pune"}
+
+Input:  ["a", "b", "c"], [1, 2]
+Output: {"a": 1, "b": 2}
+```
+> 💡 Adversarial: both empty. One empty. Lengths differ by a lot.
+
+---
+
+### M2 — Tuple Leaderboard
+Write a function `leaderboard(scores)` that takes a list of `(name, score)` tuples, removes duplicate names keeping only their highest score, and returns the top 3 as a sorted list of tuples (highest first).
+
+```
+Input:  [("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
+Output: [("Riya", 97), ("Soham", 91), ("Arjun", 72)]
+```
+> 💡 Adversarial: fewer than 3 entries. All same score. One person appears 5 times.
+
+---
+
+### M3 — Set Membership Audit
+Write a function `audit(registered, attended)` that takes two lists and returns a dict with:
+- `"present"` → set of people who registered AND attended
+- `"absent"` → set of people who registered but did NOT attend
+- `"gate_crash"` → set of people who attended but were NOT registered
+
+```
+registered = ["Soham", "Riya", "Arjun", "Meera"]
+attended   = ["Soham", "Arjun", "Karan", "Riya"]
+
+Output: {
+    "present":    {"Soham", "Riya", "Arjun"},
+    "absent":     {"Meera"},
+    "gate_crash": {"Karan"}
+}
+```
+
+---
+
+### M4 — Lambda Pipeline
+Given a list of dicts representing students, use `filter()` and `map()` with lambdas to:
+1. Filter only students who passed (score >= 50)
+2. Map each passing student to a tuple of `(name, grade)` where grade is `"A"` if score >= 75 else `"B"`
+
+```
+Input: [
+    {"name": "Soham", "score": 91},
+    {"name": "Riya",  "score": 45},
+    {"name": "Arjun", "score": 67},
+    {"name": "Meera", "score": 78}
+]
+Output: [("Soham", "A"), ("Arjun", "B"), ("Meera", "A")]
+```
+> 💡 This is filter + map + lambda + conditional expression all in one. Plan before you write.
+
+---
+
+### M5 — Frequency Analyser
+Write a function `analyse_text(text)` that takes a string and returns a dict with:
+- `"word_count"` → total number of words
+- `"unique_words"` → set of unique words (lowercase)
+- `"most_frequent"` → the word that appears most often (lowercase)
+- `"avg_word_length"` → average word length rounded to 2 decimal places
+
+```
+Input:  "the cat sat on the mat the cat"
+Output: {
+    "word_count": 8,
+    "unique_words": {"the", "cat", "sat", "on", "mat"},
+    "most_frequent": "the",
+    "avg_word_length": 3.0
+}
+```
+> 💡 Adversarial: single word. All same word.
+
+---
+
+### M6 — List Difference
+Write a function `list_diff(a, b)` that returns a new list of elements that are in `a` but not in `b`, in their original order. Do not use sets directly — build the logic manually.
+
+```
+Input:  a = [1, 2, 3, 4, 5], b = [2, 4]
+Output: [1, 3, 5]
+
+Input:  a = [1, 1, 2, 3], b = [1]
+Output: [2, 3]   ← both 1s removed
+```
+> 💡 Adversarial: b is empty. a is empty. All elements of a are in b.
+
+---
+
+## 🔴 HARD (3 Questions)
+
+### H1 — The Grade Book
+Build a grade book system with four functions that share a single list of dicts as state:
+
+```python
+def add_student(book, name, scores):
+    # scores is a list of integers
+    # adds {"name": name, "scores": scores, "average": avg} to book
+    # if name already exists, APPEND new scores to existing list and recalculate average
+
+def get_average(book, name):
+    # returns the average score for that student
+    # returns None if student not found
+
+def top_performer(book):
+    # returns the name of the student with the highest average
+    # if tie, return alphabetically first name
+
+def remove_student(book, name):
+    # removes the student from the book
+    # returns True if removed, False if not found
+```
+
+Test:
+```python
+book = []
+add_student(book, "Soham", [88, 92, 79])
+add_student(book, "Riya", [95, 91])
+add_student(book, "Arjun", [72, 68, 80])
+add_student(book, "Soham", [95, 100])   # appends to Soham's scores
+
+print(get_average(book, "Soham"))        # (88+92+79+95+100)/5 = 90.8
+print(top_performer(book))               # "Riya" → avg 93.0
+print(remove_student(book, "Arjun"))     # True
+print(remove_student(book, "Ghost"))     # False
+```
+
+---
+
+### H2 — Recursive Word Reversal
+Write a function `reverse_words_recursive(sentence)` that reverses the order of words in a sentence **using recursion**. No loops allowed anywhere in the function.
+
+```
+Input:  "Cloud Computing is fun"
+Output: "fun is Computing Cloud"
+```
+
+Rules:
+- Split on spaces is allowed
+- No loops — only recursion
+- Must handle single word and empty string
+
+> 💡 Think: what's the base case? What's the recursive case? A sentence reversed = last word + reverse of everything before it.
+
+---
+
+### H3 — The Full Pipeline
+Write a function `process_students(raw_data)` that takes a messy list of strings in the format `"Name:Score"` and returns a fully processed report dict.
+
+Processing steps:
+1. Parse each string into name (stripped, title-cased) and score (integer)
+2. Skip any invalid entries (non-numeric score, missing colon, empty name)
+3. Remove duplicate names keeping highest score
+4. Return a dict with:
+   - `"roster"` → list of `(name, score)` tuples sorted by score descending
+   - `"class_average"` → average of all valid unique scores rounded to 2 decimals
+   - `"passed"` → set of names with score >= 50
+   - `"failed"` → set of names with score < 50
+   - `"highest"` → tuple of (name, score) of top student
+
+```
+Input: [
+    "soham:91", "RIYA:95", " arjun :72",
+    "soham:88",             # duplicate, keep 91
+    "meera:abc",            # invalid score, skip
+    ":45",                  # empty name, skip
+    "karan:38"
+]
+
+Output: {
+    "roster":        [("Riya", 95), ("Soham", 91), ("Arjun", 72), ("Karan", 38)],
+    "class_average": 74.0,
+    "passed":        {"Riya", "Soham", "Arjun"},
+    "failed":        {"Karan"},
+    "highest":       ("Riya", 95)
+}
+```
+
+> 💡 This is a real data cleaning + processing pipeline. Plan each step on paper before writing a single line. Break it into sub-problems.
+
+---
+
+## Log
+
+| Q | Status | First Try? | Edge Case Tested | Notes |
+|---|--------|------------|------------------|-------|
+| E1 | | | | |
+| M1 | | | | |
+| M2 | | | | |
+| M3 | | | | |
+| M4 | | | | |
+| M5 | | | | |
+| M6 | | | | |
+| H1 | | | | |
+| H2 | | | | |
+| H3 | | | | |
