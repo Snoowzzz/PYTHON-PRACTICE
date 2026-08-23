@@ -171,31 +171,54 @@
 # b = [1]
 # print(list_diff(a,b))
 
-## Question 8 (hard problem)
-def add_student(book,name,scores):
+# ## Question 8 (hard problem)
+# def add_student(book,name,scores):
+#     if len(book) == 0:
+#         average = sum(scores)/len(scores)
+#         dict1 ={
+#         "name": name,
+#         "scores": scores,
+#         "average": average,
+#         }
+#         book.append(dict1)        
+#     count = 0    
+#     if len(book) != 0:
+#         for i in range(len(book)):
+#             if book[i]["name"] == name:
+#                 count+=1
+#                 book[i]["scores"].append(scores)
+#                 book[i]["average"] = sum(book[i]["scores"])/len(book[i]["scores"])
+#         if count == 0:
+#             average = max(scores)/len(scores)
+#             dict2 ={
+#             "name": name,
+#             "scores": scores,
+#             "average": average,
+#            }
+#             book.append(dict2)
+#     return book    
+# def get_average(book,name):
+#     for items in book:
+#         if items["names"] == name:
+#             k = items["average"]
+#     return k
+# # def top_performer(book):
+# #    ree 
     
-    if len(book) == 0:
-        average = sum(scores)/len(scores)
-        dict1 ={
-        "name": name,
-        "scores": scores,
-        "average": average,
-        }
-        book.append(dict1)        
-    count = 0    
-    if len(book) != 0:
-        for i in range(len(book)):
-            if book[i].keys() == name:
-                count+=1
-                book[i]["scores"].append(scores)
-                book[i]["average"] = sum(book[i]["scores"])/len(book[i][scores])
-        if count == 0:
-            average = max(scores)/len(scores)
-            dict2 ={
-            "name": name,
-            "scores": scores,
-            "average": average,
-           }
-            book.append(dict2)
-    return book    
-# def get_average(book,name)
+    
+# def remove_student(book,name):
+#     count = 0
+#     for i in range(len(book)):
+#         if book[i]["name"] == name:
+#             count+=1
+#             del book[i]
+#     return count == 1
+# book = []
+# add_student(book, "Soham", [88, 92, 79])
+# add_student(book, "Riya", [95, 91])
+# add_student(book, "Arjun", [72, 68, 80])
+# add_student(book, "Soham", [95, 100])   # appends to Soham's scores
+
+# print(get_average(book, "Soham"))        # (88+92+79+95+100)/5 = 90.8
+# print(remove_student(book, "Arjun"))     # True
+# print(remove_student(book, "Ghost")) 
