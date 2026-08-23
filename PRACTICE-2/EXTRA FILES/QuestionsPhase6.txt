@@ -32,7 +32,9 @@ Output: "hello world how are you"
 ## 🟡 MEDIUM (6 Questions)
 
 ### M1 — Dict from Two Lists
-Write a function `zip_to_dict(keys, values)` that takes two lists and returns a dict pairing them. If lengths don't match, pair only up to the shorter list. Do not use `zip()`.
+Write a function `zip_to_dict(keys, values)` that takes two lists and returns a 
+dict pairing them. If lengths don't match, pair only up to the shorter list. 
+Do not use `zip()`.
 
 ```
 Input:  ["name", "age", "city"], ["Soham", 21, "Pune"]
