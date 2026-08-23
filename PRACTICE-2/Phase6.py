@@ -55,20 +55,26 @@
 # Input:  [("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
 # Output: [("Riya", 97), ("Soham", 91), ("Arjun", 72)]
 
-# def leaderboard(score):
-#     scoreboard =[]
-#     for i in range(len(score)):
-#         for j in range(len(score)):
-#             if i!= j:
-#                 if score[i][0] == score[j][0]:
-#                     t = max(score[i][1],score[j][1])
-#                     tupp = (score[i][0],t)
-#                     scoreboard.append(tupp)
-#                 else:
-#                     tupp = (score[i])
+def leaderboard(score):
+    d = {}
+    list1 = []
+    for info in score:
+        a,b = info
+        if a not in d.keys():
+            d[a] = b
+        else:
+            k = d[a]
+            if b>k:
+                d[a] = b
+    for i,v in d.items():
+       tupp = (i,v) 
+       list1.append(tupp)
+    list2 = sorted(list1,key=lambda x: -x[1]) 
+    return list2
+    
                     
-# score =[("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
-# print(leaderboard(score))
+score =[("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
+print(leaderboard(score))
 
 ## Question 4 (audit)
 
