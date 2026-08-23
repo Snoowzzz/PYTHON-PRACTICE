@@ -69,3 +69,32 @@
                     
 # score =[("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
 # print(leaderboard(score))
+
+## Question 4 (audit)
+
+# # Output: {
+#     "present":    {"Soham", "Riya", "Arjun"},
+#     "absent":     {"Meera"},
+#     "gate_crash": {"Karan"}
+# }
+def audit(registered,attended):
+    present = set()
+    absent = set()
+    gatecrash = set()
+    for i in registered:
+        if i in attended:
+            present.add(i)
+        else:
+            absent.add(i)
+    for j in attended:
+        if j not in registered:
+            gatecrash.add(j)
+    dictaudit = {
+        "present": present,
+        "absent": absent,
+        "gate_crash": gatecrash,
+    }
+    return dictaudit
+registered = ["Soham", "Riya", "Arjun", "Meera"]
+attended   = ["Soham", "Arjun", "Karan", "Riya"]
+print(audit(registered,attended))
