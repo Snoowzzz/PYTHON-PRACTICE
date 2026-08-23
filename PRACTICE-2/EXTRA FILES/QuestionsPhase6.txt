@@ -174,7 +174,9 @@ print(remove_student(book, "Ghost"))     # False
 ---
 
 ### H2 — Recursive Word Reversal
-Write a function `reverse_words_recursive(sentence)` that reverses the order of words in a sentence **using recursion**. No loops allowed anywhere in the function.
+Write a function `reverse_words_recursive(sentence)` that reverses the 
+order of words in a sentence **using recursion**. No loops allowed anywhere 
+in the function.
 
 ```
 Input:  "Cloud Computing is fun"

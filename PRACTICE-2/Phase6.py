@@ -51,30 +51,30 @@
 # zip_dict = zip_to_dict(keys,values)
 # print(zip_dict)
 
-## Question 3
+## Question 3 ( Really elegant solution self made)
 # Input:  [("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
 # Output: [("Riya", 97), ("Soham", 91), ("Arjun", 72)]
 
-def leaderboard(score):
-    d = {}
-    list1 = []
-    for info in score:
-        a,b = info
-        if a not in d.keys():
-            d[a] = b
-        else:
-            k = d[a]
-            if b>k:
-                d[a] = b
-    for i,v in d.items():
-       tupp = (i,v) 
-       list1.append(tupp)
-    list2 = sorted(list1,key=lambda x: -x[1]) 
-    return list2
+# def leaderboard(score):
+#     d = {}
+#     list1 = []
+#     for info in score:
+#         a,b = info
+#         if a not in d.keys():
+#             d[a] = b
+#         else:
+#             k = d[a]
+#             if b > k:
+#                 d[a] = b
+#     for i,v in d.items():
+#        tupp = (i,v) 
+#        list1.append(tupp)
+#     list2 = sorted(list1,key=lambda x: -x[1]) 
+#     return list2
     
                     
-score =[("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
-print(leaderboard(score))
+# score =[("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
+# print(leaderboard(score))
 
 ## Question 4 (audit)
 
@@ -170,3 +170,32 @@ print(leaderboard(score))
 # a = [1, 1, 3, 4]
 # b = [1]
 # print(list_diff(a,b))
+
+## Question 8 (hard problem)
+def add_student(book,name,scores):
+    
+    if len(book) == 0:
+        average = sum(scores)/len(scores)
+        dict1 ={
+        "name": name,
+        "scores": scores,
+        "average": average,
+        }
+        book.append(dict1)        
+    count = 0    
+    if len(book) != 0:
+        for i in range(len(book)):
+            if book[i].keys() == name:
+                count+=1
+                book[i]["scores"].append(scores)
+                book[i]["average"] = sum(book[i]["scores"])/len(book[i][scores])
+        if count == 0:
+            average = max(scores)/len(scores)
+            dict2 ={
+            "name": name,
+            "scores": scores,
+            "average": average,
+           }
+            book.append(dict2)
+    return book    
+# def get_average(book,name)
