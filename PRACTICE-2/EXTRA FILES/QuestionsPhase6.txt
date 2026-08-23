@@ -118,7 +118,9 @@ Output: {
 ---
 
 ### M6 — List Difference
-Write a function `list_diff(a, b)` that returns a new list of elements that are in `a` but not in `b`, in their original order. Do not use sets directly — build the logic manually.
+Write a function `list_diff(a, b)` that returns a new list of elements that 
+are in `a` but not in `b`, in their original order. Do not use sets directly — 
+build the logic manually.
 
 ```
 Input:  a = [1, 2, 3, 4, 5], b = [2, 4]

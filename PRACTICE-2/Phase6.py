@@ -121,30 +121,46 @@
 #     "avg_word_length": 3.0
 # }
 
-def analyse_text(word):
-    cword = word.replace(" ","")
-    newword = word.split(" ")
-    wordcount = len(newword)
-    unique = set()
-    list1 = []
+# def analyse_text(word):
+#     cword = word.replace(" ","")
+#     newword = word.split(" ")
+#     wordcount = len(newword)
+#     unique = set()
+#     list1 = []
     
-    freq = round(len(cword)/wordcount,2)
-    for i in newword:
-        unique.add(i)
-        k = newword.count(i)
-        list1.append(k)
-    lst2 = list(sorted(set(list1), reverse=True)) ## just for fun
-    for i in newword:
-        k = newword.count(i)
-        if k == lst2[0]:
-            mostrep = i
-    textdict = {
-        "word_count": wordcount,
-        "unique_words": unique,
-        "most_frequent": mostrep,
-        "avg_word_length": freq,
-    }
-    return textdict
-word = "the cat sat on the mat the cat"
-dict1 = analyse_text(word)
-print(dict1)
+#     freq = round(len(cword)/wordcount,2)
+#     for i in newword:
+#         unique.add(i)
+#         k = newword.count(i)
+#         list1.append(k)
+#     lst2 = list(sorted(set(list1), reverse=True)) ## just for fun
+#     for i in newword:
+#         k = newword.count(i)
+#         if k == lst2[0]:
+#             mostrep = i
+#     textdict = {
+#         "word_count": wordcount,
+#         "unique_words": unique,
+#         "most_frequent": mostrep,
+#         "avg_word_length": freq,
+#     }
+#     return textdict
+# word = "the cat sat on the mat the cat"
+# dict1 = analyse_text(word)
+# print(dict1)
+
+# ## Question 7 (list a-b without using sets)
+# # Input:  a = [1, 2, 3, 4, 5], b = [2, 4]
+# # Output: [1, 3, 5]
+
+# # Input:  a = [1, 1, 2, 3], b = [1]
+# # Output: [2, 3]   ← both 1s removed
+# def list_diff(a,b):
+#     newlst = []
+#     for i in a:
+#         if i not in b:
+#             newlst.append(i)
+#     return newlst
+# a = [1, 1, 3, 4]
+# b = [1]
+# print(list_diff(a,b))
