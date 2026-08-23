@@ -50,3 +50,22 @@
 # values = ["Soham", 21, "Pune"]
 # zip_dict = zip_to_dict(keys,values)
 # print(zip_dict)
+
+## Question 3
+# Input:  [("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
+# Output: [("Riya", 97), ("Soham", 91), ("Arjun", 72)]
+
+# def leaderboard(score):
+#     scoreboard =[]
+#     for i in range(len(score)):
+#         for j in range(len(score)):
+#             if i!= j:
+#                 if score[i][0] == score[j][0]:
+#                     t = max(score[i][1],score[j][1])
+#                     tupp = (score[i][0],t)
+#                     scoreboard.append(tupp)
+#                 else:
+#                     tupp = (score[i])
+                    
+# score =[("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
+# print(leaderboard(score))

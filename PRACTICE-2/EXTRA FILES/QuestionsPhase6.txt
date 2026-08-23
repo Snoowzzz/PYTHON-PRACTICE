@@ -48,7 +48,9 @@ Output: {"a": 1, "b": 2}
 ---
 
 ### M2 — Tuple Leaderboard
-Write a function `leaderboard(scores)` that takes a list of `(name, score)` tuples, removes duplicate names keeping only their highest score, and returns the top 3 as a sorted list of tuples (highest first).
+Write a function `leaderboard(scores)` that takes a list of `(name, score)` tuples,
+removes duplicate names keeping only their highest score, 
+and returns the top 3 as a sorted list of tuples (highest first).
 
 ```
 Input:  [("Soham", 91), ("Riya", 95), ("Soham", 88), ("Arjun", 72), ("Riya", 97)]
