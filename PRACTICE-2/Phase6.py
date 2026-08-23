@@ -209,9 +209,21 @@ def get_average(book,name):
         return k
     else:
         return False      
-# def top_performer(book):
-    
-    
+def top_performer(book):
+    high = book[0]["average"]
+    list1 = []
+    for i in book:
+        if i["average"] >= high:
+            high = i["average"]
+    for i in book:
+        if i["average"] == high:
+            list1.append(i["name"])
+    if len(list1) > 1:
+        list2 = sorted(list1,key=lambda x: x.lower())
+        k = list2[0]
+    else:
+        k =list1[0]
+    return k
     
 def remove_student(book,name):
     count = 0
@@ -231,6 +243,7 @@ add_student(book, "Arjun", [72, 68, 80])
 add_student(book, "Soham", [95, 100])   # appends to Soham's scores
 
 print(get_average(book, "Soham"))        # (88+92+79+95+100)/5 = 90.8
+print(top_performer(book))
 print(remove_student(book, "Arjun"))     # True
 print(remove_student(book, "Ghost"))
 # book = [{"names":"soham","scores":[23,56,78],"average":sum()}] 
