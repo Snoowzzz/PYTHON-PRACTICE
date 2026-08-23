@@ -23,7 +23,7 @@
 #            count += 1
 #         else:
 #             count = 0
-        
+  
 #     modstr = newstr.lower()
 #     return modstr
 # word ="  Hello   WORLD  how  ARE you   "
@@ -112,4 +112,39 @@
 # ## important line in grade very useful trick
 # print(grades)
 
-## Question 6
+## Question 6 (analyse_text)
+# Input:  "the cat sat on the mat the cat"
+# Output: {
+#     "word_count": 8,
+#     "unique_words": {"the", "cat", "sat", "on", "mat"},
+#     "most_frequent": "the",
+#     "avg_word_length": 3.0
+# }
+
+def analyse_text(word):
+    cword = word.replace(" ","")
+    newword = word.split(" ")
+    wordcount = len(newword)
+    unique = set()
+    list1 = []
+    
+    freq = round(len(cword)/wordcount,2)
+    for i in newword:
+        unique.add(i)
+        k = newword.count(i)
+        list1.append(k)
+    lst2 = sorted(list(set(list1))) 
+    for i in newword:
+        k = newword.count(i)
+        if k == lst2[-1]:
+            mostrep = i
+    textdict = {
+        "word_count": wordcount,
+        "unique_words": unique,
+        "most_frequent": mostrep,
+        "avg_word_length": freq,
+    }
+    return textdict
+word = "the cat sat on the mat the cat"
+dict1 = analyse_text(word)
+print(dict1)
