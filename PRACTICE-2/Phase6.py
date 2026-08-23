@@ -30,3 +30,23 @@
 # newword = clean_string(word)
 # print(newword)
 
+## QUESTION 2 (MEDIUM)
+# Input:  ["name", "age", "city"], ["Soham", 21, "Pune"]
+# Output: {"name": "Soham", "age": 21, "city": "Pune"}
+
+# Input:  ["a", "b", "c"], [1, 2]
+# Output: {"a": 1, "b": 2}
+
+# def zip_to_dict(keys,values):
+#     k = len(keys)
+#     v = len(values)
+#     d = {}
+#     t = min(k,v)
+#     for i in range(t):
+#         d[keys[i]] = values[i]          
+#     return d
+
+# keys =["a", "b", "c"]
+# values = ["Soham", 21, "Pune"]
+# zip_dict = zip_to_dict(keys,values)
+# print(zip_dict)
