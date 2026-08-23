@@ -133,10 +133,10 @@ def analyse_text(word):
         unique.add(i)
         k = newword.count(i)
         list1.append(k)
-    lst2 = sorted(list(set(list1))) 
+    lst2 = list(sorted(set(list1), reverse=True)) ## just for fun
     for i in newword:
         k = newword.count(i)
-        if k == lst2[-1]:
+        if k == lst2[0]:
             mostrep = i
     textdict = {
         "word_count": wordcount,
