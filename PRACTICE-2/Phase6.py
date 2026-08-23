@@ -198,6 +198,24 @@ def add_student(book,name,scores):
             "average": average,
            }
             book.append(dict2)
+            
+### cleaner version of this
+### suggested by claude (had thought of it)
+### wanted to do first the simple way
+    # count = 0
+    # for i in range(len(book)):
+    #     if book[i]["name"] == name:
+    #         count += 1
+    #         for k in scores:
+    #             book[i]["scores"].append(k)
+    #         book[i]["average"] = sum(book[i]["scores"]) / len(book[i]["scores"])
+    # if count == 0:
+    #     book.append({
+    #         "name": name,
+    #         "scores": scores,
+    #         "average": sum(scores) / len(scores)
+    #     })
+
     return book    
 def get_average(book,name):
     count = 0
