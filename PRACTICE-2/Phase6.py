@@ -378,9 +378,28 @@
 ## Question 4 (anagram)
 # Input:  ["eat", "tea", "tan", "ate", "nat", "bat"]
 # Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
-# def group_anagrams(words):
-#     for i in range(len(words)):
-#         if 
+def group_anagrams(words):
+    lst = []
+    d = {}
+    for i in words:
+       lst.append(i.lower())
+    for items in lst:
+        asciinum = []
+        newstr = ""
+        for i in items:
+           a = ord(i)
+           asciinum.append(a)
+        newstr = "".join(asciinum.sort())
+        if newstr not in d.keys():
+           d[newstr] = []
+        d[newstr].append(items)
+    finallst = []
+    for i,v in d.items():   
+        finallst.append(v)
+    return finallst   
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(group_anagrams(words))       
+            
         
         
 ## Question 5 (running_stats)
@@ -396,3 +415,12 @@
 #     return lst
 # num = [4, 2, 6, 1]
 # print(running_stats(num))
+
+## Question 6 (active usernames)
+# lst = [
+#     {"username": "soham", "active": True},
+#     {"username": "riya", "active": False},
+#     {"username": "arjun", "active": True}
+# ]
+# activelst = list(map(lambda x: x["username"] ,filter(lambda x: x["active"] == True,lst)))
+# print(activelst)
