@@ -398,6 +398,16 @@ def group_anagrams(words):
     for v in d.values():   
         finallst.append(v)
     return finallst   
+### modified version of this
+### very clean but did not know about it so yeah made my own method
+    for word in words:
+        key = "".join(sorted(word.lower()))  # "eat" → "aet"
+        if key not in d:
+            d[key] = []
+        d[key].append(word)
+    return list(d.values())   
+
+
 words = ["eat", "tea", "tan", "ate", "nat", "bat"]
 print(group_anagrams(words))       
             
