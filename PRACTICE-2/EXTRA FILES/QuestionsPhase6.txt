@@ -188,7 +188,8 @@ Rules:
 - No loops — only recursion
 - Must handle single word and empty string
 
-> 💡 Think: what's the base case? What's the recursive case? A sentence reversed = last word + reverse of everything before it.
+> 💡 Think: what's the base case? What's the recursive case? A sentence reversed =
+ last word + reverse of everything before it.
 
 ---
 

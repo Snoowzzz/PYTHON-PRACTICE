@@ -163,106 +163,127 @@
 # # Output: [2, 3]   ← both 1s removed
 # def list_diff(a,b):
 #     newlst = []
-#     for i in a:
-#         if i not in b:
-#             newlst.append(i)
-#     return newlst
-# a = [1, 1, 3, 4]
-# b = [1]
-# print(list_diff(a,b))
+# #     for i in a:
+# #         if i not in b:
+# #             newlst.append(i)
+# #     return newlst
+# # a = [1, 1, 3, 4]
+# # b = [1]
+# # print(list_diff(a,b))
 
-## Question 8 (hard problem)
-def add_student(book,name,scores):
-    if len(book) == 0:
-        average = sum(scores)/len(scores)
-        dict1 ={
-        "name": name,
-        "scores": scores,
-        "average": average,
-        }
-        book.append(dict1)           
-    else:
-        count = 0
-        for i in range(len(book)):
-            if book[i]["name"] == name:
-                count+=1
-                for k in range(len(scores)):
-                    book[i]["scores"].append(scores[k])
-                k = sum(book[i]["scores"])/len(book[i]["scores"])
-                book[i]["average"] = k
-        if count == 0:
-            average = sum(scores)/len(scores)
-            dict2 ={
-            "name": name,
-            "scores": scores,
-            "average": average,
-           }
-            book.append(dict2)
+# ## Question 8 (hard problem)
+# def add_student(book,name,scores):
+#     if len(book) == 0:
+#         average = sum(scores)/len(scores)
+#         dict1 ={
+#         "name": name,
+#         "scores": scores,
+#         "average": average,
+#         }
+#         book.append(dict1)           
+#     else:
+#         count = 0
+#         for i in range(len(book)):
+#             if book[i]["name"] == name:
+#                 count+=1
+#                 for k in range(len(scores)):
+#                     book[i]["scores"].append(scores[k])
+#                 k = sum(book[i]["scores"])/len(book[i]["scores"])
+#                 book[i]["average"] = k
+#         if count == 0:
+#             average = sum(scores)/len(scores)
+#             dict2 ={
+#             "name": name,
+#             "scores": scores,
+#             "average": average,
+#            }
+#             book.append(dict2)
             
-### cleaner version of this
-### suggested by claude (had thought of it)
-### wanted to do first the simple way
-    # count = 0
-    # for i in range(len(book)):
-    #     if book[i]["name"] == name:
-    #         count += 1
-    #         for k in scores:
-    #             book[i]["scores"].append(k)
-    #         book[i]["average"] = sum(book[i]["scores"]) / len(book[i]["scores"])
-    # if count == 0:
-    #     book.append({
-    #         "name": name,
-    #         "scores": scores,
-    #         "average": sum(scores) / len(scores)
-    #     })
+# ### cleaner version of this
+# ### suggested by claude (had thought of it)
+# ### wanted to do first the simple way
+#     # count = 0
+#     # for i in range(len(book)):
+#     #     if book[i]["name"] == name:
+#     #         count += 1
+#     #         for k in scores:
+#     #             book[i]["scores"].append(k)
+#     #         book[i]["average"] = sum(book[i]["scores"]) / len(book[i]["scores"])
+#     # if count == 0:
+#     #     book.append({
+#     #         "name": name,
+#     #         "scores": scores,
+#     #         "average": sum(scores) / len(scores)
+#     #     })
 
-    return book    
-def get_average(book,name):
-    count = 0
-    for items in book:
-        if items["name"] == name:
-            count+=1
-            k = items["average"]
-    if count> 0:
-        return k
-    else:
-        return False      
-def top_performer(book):
-    high = book[0]["average"]
-    list1 = []
-    for i in book:
-        if i["average"] >= high:
-            high = i["average"]
-    for i in book:
-        if i["average"] == high:
-            list1.append(i["name"])
-    if len(list1) > 1:
-        list2 = sorted(list1,key=lambda x: x.lower())
-        k = list2[0]
-    else:
-        k =list1[0]
-    return k
+#     return book    
+# def get_average(book,name):
+#     count = 0
+#     for items in book:
+#         if items["name"] == name:
+#             count+=1
+#             k = items["average"]
+#     if count> 0:
+#         return k
+#     else:
+#         return False      
+# def top_performer(book):
+#     high = book[0]["average"]
+#     list1 = []
+#     for i in book:
+#         if i["average"] >= high:
+#             high = i["average"]
+#     for i in book:
+#         if i["average"] == high:
+#             list1.append(i["name"])
+#     if len(list1) > 1:
+#         list2 = sorted(list1,key=lambda x: x.lower())
+#         k = list2[0]
+#     else:
+#         k =list1[0]
+#     return k
     
-def remove_student(book,name):
-    count = 0
-    for i in range(len(book)):
-        if book[i]["name"] == name:
-            k = i
-            count+=1
-    if count>0:
-        del book[k]
-        return True
-    else:
-        return False
-book = []
-add_student(book, "Soham", [88, 92, 79])
-add_student(book, "Riya", [95, 91])
-add_student(book, "Arjun", [72, 68, 80])
-add_student(book, "Soham", [95, 100])   # appends to Soham's scores
+# def remove_student(book,name):
+#     count = 0
+#     for i in range(len(book)):
+#         if book[i]["name"] == name:
+#             k = i
+#             count+=1
+#     if count>0:
+#         del book[k]
+#         return True
+#     else:
+#         return False
+# book = []
+# add_student(book, "Soham", [88, 92, 79])
+# add_student(book, "Riya", [95, 91])
+# add_student(book, "Arjun", [72, 68, 80])
+# add_student(book, "Soham", [95, 100])   # appends to Soham's scores
 
-print(get_average(book, "Soham"))        # (88+92+79+95+100)/5 = 90.8
-print(top_performer(book))
-print(remove_student(book, "Arjun"))     # True
-print(remove_student(book, "Ghost"))
-# book = [{"names":"soham","scores":[23,56,78],"average":sum()}] 
-# print(sum(book[0]["scores"]))
+# print(get_average(book, "Soham"))        # (88+92+79+95+100)/5 = 90.8
+# print(top_performer(book))
+# print(remove_student(book, "Arjun"))     # True
+# print(remove_student(book, "Ghost"))
+# # book = [{"names":"soham","scores":[23,56,78],"average":sum()}] 
+# # print(sum(book[0]["scores"]))
+
+
+### Question 2 HARD (Recursion)
+# Input:  "Cloud Computing is fun"
+# Output: "fun is Computing Cloud"
+
+# Rules:
+# - Split on spaces is allowed
+# - No loops — only recursion
+# - Must handle single word and empty string
+
+def reverse_words_recursive(sentence):
+    newstr = ""
+    for i in range(len(sentence)):
+        if sentence[i].isalpha():
+            newstr += reverse_words_recursive(sentence[i+1:])
+        else:
+            newstr+=" "
+    return newstr
+sentence = "Cloud Computing is fun"
+print(reverse_words_recursive(sentence))
