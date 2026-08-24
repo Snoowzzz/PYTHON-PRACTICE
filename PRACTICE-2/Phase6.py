@@ -309,8 +309,6 @@ def reverse_words_recursive_fixed(sentence):
 
 
 print(reverse_words_recursive_fixed("Cloud Computing is fun"))
-print(reverse_words_recursive_fixed("hello"))
-print(reverse_words_recursive_fixed(""))
 
 ### Question 3 Hard (Super lengthy)
 # Input: [
