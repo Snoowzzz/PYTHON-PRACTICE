@@ -358,3 +358,20 @@
 
 #### extended practice of phase 6 (questions added at the end
 #### of phase 6 questions file
+### Question 3
+# Input:  nums = [1,1,1,2,2,3], k = 2
+# Output: [(1, 3), (2, 2)]
+def num_count(nums,k):
+    lst = []
+    numlist = []
+    for i in nums:
+        if i not in numlist:
+            t = nums.count(i)
+            tupp = (i,str(t))
+            numlist.append(i)
+            lst.append(tupp)
+    return lst[:k]
+nums = [1,1,1,1,2,2,2,3,3,3,4,4] 
+k = 3
+print(num_count(nums,k))
+
