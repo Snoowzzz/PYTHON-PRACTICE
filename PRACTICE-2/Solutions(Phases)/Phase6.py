@@ -296,19 +296,19 @@
 # -> reverse_words_recursive("Computing is fun") + " " + "Cloud"
 # -> "fun is Computing Cloud"
 
-def reverse_words_recursive_fixed(sentence):
-    if sentence == "":
-        return ""
+# def reverse_words_recursive_fixed(sentence):
+#     if sentence == "":
+#         return ""
 
-    words = sentence.split(" ")
+#     words = sentence.split(" ")
 
-    if len(words) == 1:
-        return words[0]
+#     if len(words) == 1:
+#         return words[0]
 
-    return reverse_words_recursive_fixed(" ".join(words[1:])) + " " + words[0]
+#     return reverse_words_recursive_fixed(" ".join(words[1:])) + " " + words[0]
 
 
-print(reverse_words_recursive_fixed("Cloud Computing is fun"))
+# print(reverse_words_recursive_fixed("Cloud Computing is fun"))
 
 ### Question 3 Hard (Super lengthy)
 # Input: [
