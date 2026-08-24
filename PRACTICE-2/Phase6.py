@@ -361,17 +361,23 @@
 ### Question 3
 # Input:  nums = [1,1,1,2,2,3], k = 2
 # Output: [(1, 3), (2, 2)]
-def num_count(nums,k):
-    lst = []
-    numlist = []
-    for i in nums:
-        if i not in numlist:
-            t = nums.count(i)
-            tupp = (i,str(t))
-            numlist.append(i)
-            lst.append(tupp)
-    return lst[:k]
-nums = [1,1,1,1,2,2,2,3,3,3,4,4] 
-k = 3
-print(num_count(nums,k))
+# def num_count(nums,k):
+#     lst = []
+#     numlist = []
+#     for i in nums:
+#         if i not in numlist:
+#             t = nums.count(i)
+#             tupp = (i,str(t))
+#             numlist.append(i)
+#             lst.append(tupp)
+#     return lst[:k]
+# nums = [1,1,1,1,2,2,2,3,3,3,4,4] 
+# k = 3
+# print(num_count(nums,k))
 
+## Question 4 (anagram)
+# Input:  ["eat", "tea", "tan", "ate", "nat", "bat"]
+# Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+def group_anagrams(words):
+    for i in range(len(words)):
+        if 

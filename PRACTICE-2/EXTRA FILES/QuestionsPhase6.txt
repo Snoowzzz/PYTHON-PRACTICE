@@ -273,9 +273,11 @@ other. Return a list of lists.
 Input:  ["eat", "tea", "tan", "ate", "nat", "bat"]
 Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
 
-💡 Two words are anagrams if they contain the same letters. Think about what makes a good dict key here.
+💡 Two words are anagrams if they contain the same letters. 
+Think about what makes a good dict key here.
 
-Q5 — Write a function running_stats(nums) that returns a list of tuples (index, current_sum, current_avg) as you move through the list.
+Q5 — Write a function running_stats(nums) that returns a list of tuples
+ (index, current_sum, current_avg) as you move through the list.
 
 Input:  [4, 2, 6, 1]
 Output: [(0, 4, 4.0), (1, 6, 3.0), (2, 12, 4.0), (3, 13, 3.25)]
