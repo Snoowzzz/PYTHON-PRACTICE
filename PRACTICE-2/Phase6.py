@@ -354,3 +354,7 @@
 #     "karan:38"
 # ]
 # print(process_students(data))
+
+
+#### extended practice of phase 6 (questions added at the end
+#### of phase 6 questions file
