@@ -1,25 +1,40 @@
-# class Student:
-#     name = "Soham"
-#     age = "20"
-# s1 = Student()
+class Student:
+    name = "Soham"
+    age = "20"
+s1 = Student()
 # print(f"{s1.name} {s1.age}")
 # print(s1.age)
+# print(Student.age,Student.name)
 
-#constuctors in python
-# class Student:
-#     def __init__(self):
-#         print(self)
-#         print("Adding a new student to the database...")
-#     name = "Soham"
-#     age = 20
-# s1 = Student()
-# print(s1)
+# Constructors in Python:
+# You normally do not call __init__ directly. It runs automatically when you
+# create an object by calling the class, such as Student(name, age).
+class Student:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+        print("Added a new student to the database..")
+        
+        # return "Added a new student to the database.."
+    ## cannot return type str or any other type in init function
+    ## init function only returns None if u want to store something
+    ## use print()
+name = "Soham"
+age = 21
+s1 = Student(name,age)
+print(f"Name: {s1.name},Age: {s1.age}")
+
+# Calling __init__ directly is possible, but uncommon because it reinitializes
+# the same object. Normally, create another object instead:
+# s2 = Student("Tina", 21)
 
 #types of consturctors
 # class Student:
-#     college_name = "Mit-Wpu" # we define it outside self because we need 
+#     college_name = "Mit-Wpu" 
+#     # we define it outside self because we need 
 #     #store this data only once... we save a lot of memory this way because 
 #     #even for thousands of students we need to store the college name only once.
+
 #     name = "anonymous" #class attr
 #     #default constructor..
 #     def __init__(self):

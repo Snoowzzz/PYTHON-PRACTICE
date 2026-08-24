@@ -16,7 +16,6 @@ class Student:                           s1 = Student("karan")
     def __init__(self, fullname):       s1.hello()
         self.name = fullname
 
-
 def hello(self):
     print("hello", self.name)
 What is self?
