@@ -378,6 +378,21 @@
 ## Question 4 (anagram)
 # Input:  ["eat", "tea", "tan", "ate", "nat", "bat"]
 # Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
-def group_anagrams(words):
-    for i in range(len(words)):
-        if 
+# def group_anagrams(words):
+#     for i in range(len(words)):
+#         if 
+        
+        
+## Question 5 (running_stats)
+# Input:  [4, 2, 6, 1]
+# Output: [(0, 4, 4.0), (1, 6, 3.0), (2, 12, 4.0), (3, 13, 3.25)]
+# def running_stats(num):
+#     lst = []
+#     sum = 0
+#     for i in range(len(num)):
+#        sum += num[i]
+#        tupp = (i,sum,sum/(i+1))
+#        lst.append(tupp)  
+#     return lst
+# num = [4, 2, 6, 1]
+# print(running_stats(num))
