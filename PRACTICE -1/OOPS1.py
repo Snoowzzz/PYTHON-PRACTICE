@@ -9,46 +9,48 @@ s1 = Student()
 # Constructors in Python:
 # You normally do not call __init__ directly. It runs automatically when you
 # create an object by calling the class, such as Student(name, age).
-class Student:
-    def __init__(self,name,age):
-        self.name = name
-        self.age = age
-        print("Added a new student to the database..")
+# class Student:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+#         print("Added a new student to the database..")
         
-        # return "Added a new student to the database.."
-    ## cannot return type str or any other type in init function
-    ## init function only returns None if u want to store something
-    ## use print()
-name = "Soham"
-age = 21
-s1 = Student(name,age)
-print(f"Name: {s1.name},Age: {s1.age}")
+#         # return "Added a new student to the database.."
+#     ## cannot return type str or any other type in init function
+#     ## init function only returns None if u want to store something
+#     ## use print()
 
+# s1 = Student("Soham",21)
+# print(f"Name: {s1.name},Age: {s1.age}")
+# s2 = Student("Tina", 21)
+# print(f"Name: {s2.name},Age: {s2.age}")
 # Calling __init__ directly is possible, but uncommon because it reinitializes
 # the same object. Normally, create another object instead:
-# s2 = Student("Tina", 21)
 
-#types of consturctors
-# class Student:
-#     college_name = "Mit-Wpu" 
-#     # we define it outside self because we need 
-#     #store this data only once... we save a lot of memory this way because 
-#     #even for thousands of students we need to store the college name only once.
 
-#     name = "anonymous" #class attr
-#     #default constructor..
-#     def __init__(self):
-#         pass    
-#     #parametrized constructor...(We use this generally)
-#     def __init__(self,name,marks):
-#         self.name = name  # obj attr >> class attr
-#         # instance attributes basically they tell us that 
-#         self.marks = marks # every student in this class has a different name or marks
-#         print("Showing the name and marks of the student..")
-# s1 = Student("soham",90)
-# print(s1.name,s1.marks,Student.college_name)
-# s2 = Student("tina",92)
-# print(s2.name,s2.marks,Student.college_name)
+# types of consturctors
+class Student:
+    college_name = "Mit-Wpu" 
+    # we define it outside self because we need 
+    #store this data only once... we save a lot of memory this way because 
+    #even for thousands of students we need to store the college name only once.
+
+    name = "anonymous" 
+    #class attr
+    #default constructor..
+    def __init__(self):
+        pass    
+    #parametrized constructor...(We use this generally)
+    def __init__(self,name,marks):
+        self.name = name  # obj attr >> class attr
+        # instance attributes basically they tell us that 
+        # every student in this class has a different name or marks
+        self.marks = marks
+        print(f"Name,Marks for students in {Student.college_name}")
+s1 = Student("soham",90)
+print(s1.name.capitalize(),s1.marks)
+s2 = Student("tina",92)
+print(s2.name.capitalize(),s2.marks)
 
 # how to define a new function and then call it using self 
 # class Student:
