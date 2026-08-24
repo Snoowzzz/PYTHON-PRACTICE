@@ -278,15 +278,39 @@
 # - Must handle single word and empty string
 
 # def reverse_words_recursive(sentence):
-#     newstr = ""
-#     for i in range(len(sentence)):
-#         if sentence[i].isalpha():
-#             newstr += reverse_words_recursive(sentence[i+1:])
-#         else:
-#             newstr+=" "
-#     return newstr
+#    revstr = ""
+#    newstr = sentence.split(" ")
+#    revstr += reverse_words_recursive(newstr) + " "
+   
 # sentence = "Cloud Computing is fun"
 # print(reverse_words_recursive(sentence))
+
+# Recursive solution (kept below your code, without changing it):
+# Logic:
+# 1. Base case: if the sentence is empty, return "".
+# 2. If it has only one word, return that word.
+# 3. Otherwise, take the last word and move it to the front by recursively
+#    reversing the remaining words, then add the current first word at the end.
+#
+# Example: "Cloud Computing is fun"
+# -> reverse_words_recursive("Computing is fun") + " " + "Cloud"
+# -> "fun is Computing Cloud"
+
+def reverse_words_recursive_fixed(sentence):
+    if sentence == "":
+        return ""
+
+    words = sentence.split(" ")
+
+    if len(words) == 1:
+        return words[0]
+
+    return reverse_words_recursive_fixed(" ".join(words[1:])) + " " + words[0]
+
+
+print(reverse_words_recursive_fixed("Cloud Computing is fun"))
+print(reverse_words_recursive_fixed("hello"))
+print(reverse_words_recursive_fixed(""))
 
 ### Question 3 Hard (Super lengthy)
 # Input: [
@@ -378,38 +402,38 @@
 ## Question 4 (anagram)
 # Input:  ["eat", "tea", "tan", "ate", "nat", "bat"]
 # Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
-def group_anagrams(words):
-    lst = []
-    d = {}
-    for i in words:
-       lst.append(i.lower())
-    for items in lst:
-        asciinum = []
-        newstr = ""
-        for i in items:
-           a = ord(i)
-           asciinum.append(a)
-        asciinum.sort()
-        newstr = "".join(str(number) for number in asciinum)
-        if newstr not in d.keys():
-           d[newstr] = []
-        d[newstr].append(items)
-    finallst = []
-    for v in d.values():   
-        finallst.append(v)
-    return finallst   
-### modified version of this
-### very clean but did not know about it so yeah made my own method
-    for word in words:
-        key = "".join(sorted(word.lower()))  # "eat" → "aet"
-        if key not in d:
-            d[key] = []
-        d[key].append(word)
-    return list(d.values())   
+# def group_anagrams(words):
+#     lst = []
+#     d = {}
+#     for i in words:
+#        lst.append(i.lower())
+#     for items in lst:
+#         asciinum = []
+#         newstr = ""
+#         for i in items:
+#            a = ord(i)
+#            asciinum.append(a)
+#         asciinum.sort()
+#         newstr = "".join(str(number) for number in asciinum)
+#         if newstr not in d.keys():
+#            d[newstr] = []
+#         d[newstr].append(items)
+#     finallst = []
+#     for v in d.values():   
+#         finallst.append(v)
+#     return finallst   
+# ### modified version of this
+# ### very clean but did not know about it so yeah made my own method
+#     for word in words:
+#         key = "".join(sorted(word.lower()))  # "eat" → "aet"
+#         if key not in d:
+#             d[key] = []
+#         d[key].append(word)
+#     return list(d.values())   
 
 
-words = ["eat", "tea", "tan", "ate", "nat", "bat"]
-print(group_anagrams(words))       
+# words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+# print(group_anagrams(words))       
             
         
         
