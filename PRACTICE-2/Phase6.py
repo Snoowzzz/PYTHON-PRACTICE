@@ -277,13 +277,78 @@
 # - No loops — only recursion
 # - Must handle single word and empty string
 
-def reverse_words_recursive(sentence):
-    newstr = ""
-    for i in range(len(sentence)):
-        if sentence[i].isalpha():
-            newstr += reverse_words_recursive(sentence[i+1:])
+# def reverse_words_recursive(sentence):
+#     newstr = ""
+#     for i in range(len(sentence)):
+#         if sentence[i].isalpha():
+#             newstr += reverse_words_recursive(sentence[i+1:])
+#         else:
+#             newstr+=" "
+#     return newstr
+# sentence = "Cloud Computing is fun"
+# print(reverse_words_recursive(sentence))
+
+### Question 3 (Super lengthy)
+# Input: [
+#     "soham:91", "RIYA:95", " arjun :72",
+#     "soham:88",             # duplicate, keep 91
+#     "meera:abc",            # invalid score, skip
+#     ":45",                  # empty name, skip
+#     "karan:38"
+# ]
+
+# Output: {
+#     "roster":        [("Riya", 95), ("Soham", 91), ("Arjun", 72), ("Karan", 38)],
+#     "class_average": 74.0,
+#     "passed":        {"Riya", "Soham", "Arjun"},
+#     "failed":        {"Karan"},
+#     "highest":       ("Riya", 95)
+# }
+def process_students(data):
+    lst = []
+    for items in data:
+        modstr = items.replace(" ","").split(":")
+        if len(modstr) == 2:
+            a = modstr[0]
+            b = modstr[1]
+            if a.isalpha() and b.isdigit():
+                tupp = (a.capitalize(),int(b))
+                lst.append(tupp)
+    dct = {}
+    passed = set()
+    for items in lst:
+        i,v = items
+        if v>= 50:
+            passed.add(i)
+        if i not in dct.keys():
+            dct[i] = v
         else:
-            newstr+=" "
-    return newstr
-sentence = "Cloud Computing is fun"
-print(reverse_words_recursive(sentence))
+            if v > dct[i]:
+                dct[i] = v
+                
+    failed = set()
+    newlst = []
+    for i,v in dct.items():
+        if v < 50:
+            failed.add(i)
+        tupp = (i,v) 
+        newlst.append(tupp)     
+    avg = sum(dct.values()) / len(dct)
+    roster = sorted(newlst,key=lambda x: (-x[1],x[0]))
+    cleandata = {
+        "roster": roster,
+        "class_average": avg,
+        "passed": passed,
+        "failed": failed,
+        "highest": roster[0]
+    }
+    return cleandata
+    
+data = [
+    "soham:91", "RIYA:95", " arjun :72",
+    "soham:88",             # duplicate, keep 91
+    "meera:abc",            # invalid score, skip
+    ":45",                  # empty name, skip
+    "karan:38"
+]
+print(process_students(data))

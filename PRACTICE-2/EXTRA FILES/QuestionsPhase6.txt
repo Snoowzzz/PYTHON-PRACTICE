@@ -194,7 +194,8 @@ Rules:
 ---
 
 ### H3 — The Full Pipeline
-Write a function `process_students(raw_data)` that takes a messy list of strings in the format `"Name:Score"` and returns a fully processed report dict.
+Write a function `process_students(raw_data)` that takes a messy list of strings in the
+ format `"Name:Score"` and returns a fully processed report dict.
 
 Processing steps:
 1. Parse each string into name (stripped, title-cased) and score (integer)
@@ -225,7 +226,9 @@ Output: {
 }
 ```
 
-> 💡 This is a real data cleaning + processing pipeline. Plan each step on paper before writing a single line. Break it into sub-problems.
+> 💡 This is a real data cleaning + processing pipeline. 
+Plan each step on paper before writing a single line. 
+Break it into sub-problems.
 
 ---
 
