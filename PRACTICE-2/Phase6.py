@@ -389,12 +389,13 @@ def group_anagrams(words):
         for i in items:
            a = ord(i)
            asciinum.append(a)
-        newstr = "".join(asciinum.sort())
+        asciinum.sort()
+        newstr = "".join(str(number) for number in asciinum)
         if newstr not in d.keys():
            d[newstr] = []
         d[newstr].append(items)
     finallst = []
-    for i,v in d.items():   
+    for v in d.values():   
         finallst.append(v)
     return finallst   
 words = ["eat", "tea", "tan", "ate", "nat", "bat"]
@@ -424,3 +425,17 @@ print(group_anagrams(words))
 # ]
 # activelst = list(map(lambda x: x["username"] ,filter(lambda x: x["active"] == True,lst)))
 # print(activelst)
+
+## Question 2
+# Input:  [("a", 1), ("b", 2), ("a", 3), ("b", 4), ("c", 5)]
+# Output: {"a": [1, 3], "b": [2, 4], "c": [5]}
+# def flatten_dict(data):
+#     d = {}
+#     for items in data:
+#         i,v = items
+#         if i not in d.keys():
+#             d[i] =[]
+#         d[i].append(v)
+#     return d
+# data =[("a", 1), ("b", 2), ("a", 3), ("b", 4), ("c", 5)]
+# print(flatten_dict(data))
