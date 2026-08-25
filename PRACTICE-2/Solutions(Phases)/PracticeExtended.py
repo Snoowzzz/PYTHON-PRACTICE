@@ -35,4 +35,19 @@
 # lst = ["the", "cat", "sat", "on", "the", "mat", "the"]
 # print(show_index(lst))
 
-### Question 3 
+# ### Question 3 (max_consecutives)
+# Input:  [1, 1, 2, 2, 2, 1, 3, 3]
+# Output: 3   ← three 2s in a row
+def max_consec(lst):
+    count = 1
+    countlst = []
+    for i in range(len(lst)-1):
+        if lst[i] == lst[i+1]:
+            count+=1
+            continue
+        countlst.append(count)
+        count = 1
+    countlst.sort()
+    return countlst[-1]
+lst = [1, 1, 2, 2, 2, 1, 3, 3]
+print(max_consec(lst))
