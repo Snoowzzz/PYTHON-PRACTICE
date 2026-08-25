@@ -82,29 +82,44 @@
 #     "Pune":   [{"name": "Soham", ...}, {"name": "Arjun", ...}],
 #     "Mumbai": [{"name": "Riya", ...}]
 # }
-def bucket_data(lst,key):
-    finaldict = {}
-    for item in lst:
-        d = {}
-        count = 0
-        for i,v in item.items():
-            if key in item:
-                count+=1
-                if i == key:
-                    s = v
-                    continue
-                else:
-                    d[i] = v
-        if count>0:
-            if s not in finaldict.keys():
-                finaldict[s] = []
-            finaldict[s].append(d)
-    return finaldict            
-            
-lst = [
-    {"name": "Soham", "city": "Pune","favourites":"Ambience Mall"},
-    {"name": "Riya",  "city": "Mumbai","favourites":"Marine Drive"},
-    {"name": "Arjun"}
-]
-key = "city"
-print(bucket_data(lst,key))
+# def bucket_data(lst,key):
+#     finaldict = {}
+#     for item in lst:
+#         d = {}
+#         count = 0
+#         for i,v in item.items():
+#             if key in item:
+#                 count+=1
+#                 if i == key:
+#                     s = v
+#                     continue
+#                 else:
+#                     d[i] = v
+#         if count>0:
+#             if s not in finaldict.keys():
+#                 finaldict[s] = []
+#             finaldict[s].append(d)
+#     return finaldict  
+          
+# #### cleaner version 
+# def bucket_data(lst, key):
+#     finaldict = {}
+#     for item in lst:
+#         if key not in item:
+#             continue          # decide: skip silently, or handle differently — see below
+#         d = {}
+#         for i, v in item.items():
+#             if i == key:
+#                 s = v
+#             else:
+#                 d[i] = v
+#         finaldict.setdefault(s, []).append(d)
+#     return finaldict        
+# lst = [
+#     {"name": "Soham", "city": "Pune","favourites":"Ambience Mall"},
+#     {"name": "Riya",  "city": "Mumbai","favourites":"Marine Drive"},
+#     {"name": "Arjun"}
+# ]
+# key = "city"
+# print(bucket_data(lst,key))
+
