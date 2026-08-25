@@ -246,6 +246,8 @@ Break it into sub-problems.
 | H1 | | | | |
 | H2 | | | | |
 | H3 | | | | |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EXTENDED PRACTICE Questions
 
 My bad. Here are 5-6 mixed questions on everything we've covered — loops, strings, functions, lists, dicts, sets, tuples, lambda. Do these in college.
 
@@ -292,3 +294,80 @@ Input: [
 Output: ["soham", "arjun"]
 
 Q4 is the spicy one — figure out the dict key trick on paper. Go. 🫡
+-------------------------------------------------------------------------------------------------
+Practice extended again
+Q1 — Logic — Write a function zigzag(lst) that rearranges a list so elements alternate
+between greater and smaller. Every even index should be greater than its neighbours.
+
+Input:  [3, 1, 4, 1, 5, 9, 2, 6]
+Output: [1, 3, 1, 4, 2, 9, 5, 6]  ← many valid answers exist
+
+💡 Think: swap adjacent pairs. Don't overthink.
+
+Q2 — Concept — Write a function invert_index(words) that takes a list of words and 
+returns a dict where each key is a word and the value is a list of indices where that 
+word appears.
+
+Input:  ["the", "cat", "sat", "on", "the", "mat", "the"]
+Output: {"the": [0, 4, 6], "cat": [1], "sat": [2], "on": [3], "mat": [5]}
+
+Q3 — Logic — Write a function max_consecutive(nums) that returns the length of the 
+longest consecutive sequence of the same number.
+
+Input:  [1, 1, 2, 2, 2, 1, 3, 3]
+Output: 3   ← three 2s in a row
+
+💡 Adversarial: single element, all same, all different.
+
+Q4 — Concept — Write a function bucket_by(data, key) that takes a list of dicts and 
+a key name, and groups the dicts into a dict of lists based on the value at that key.
+
+Input:  [
+    {"name": "Soham", "city": "Pune"},
+    {"name": "Riya",  "city": "Mumbai"},
+    {"name": "Arjun", "city": "Pune"}
+], key = "city"
+
+Output: {
+    "Pune":   [{"name": "Soham", ...}, {"name": "Arjun", ...}],
+    "Mumbai": [{"name": "Riya", ...}]
+}
+
+Q5 — Logic — Write a function encode_positions(s) that takes a string and returns 
+a dict where each key is a character and the value is a list of its positions in 
+the string. Ignore spaces.
+
+Input:  "hello world"
+Output: {"h":[0], "e":[1], "l":[2,3,9], "o":[4,7], "w":[6], "r":[8], "d":[10]}
+
+💡 Adversarial: empty string, all same character.
+
+Q6 — Concept — Write a function pipeline(data, funcs) that takes a list and a list 
+of functions, and applies each function to the data one after another, passing the 
+result of each into the next.
+
+python
+double  = lambda x: [i * 2 for i in x]
+add_ten = lambda x: [i + 10 for i in x]
+keep_even = lambda x: [i for i in x if i % 2 == 0]
+
+pipeline([1, 2, 3, 4], [double, add_ten, keep_even])
+# double → [2,4,6,8]
+# add_ten → [12,14,16,18]
+# keep_even → [12,14,16,18]  ← all even here, but try other inputs
+Output: [12, 14, 16, 18]
+
+💡 This is how real data pipelines work. Each function is a transformation stage.
+
+Q7 — Concept + Logic — Write a function smart_zip(lists) that takes a list of lists 
+of different lengths and zips them together, filling missing values with None.
+
+Input:  [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+Output: [(1,4,6), (2,5,7), (3,None,8), (None,None,9)]
+
+💡 Adversarial: empty list, single list, all same length. Do not use itertools.
+
+Q6 is the one that'll make you think differently — a function that takes other 
+functions as input. That's a concept called higher order functions. You've been 
+using it with map() and filter() without knowing the name. Now you'll build 
+one yourself. Go. 🫡
