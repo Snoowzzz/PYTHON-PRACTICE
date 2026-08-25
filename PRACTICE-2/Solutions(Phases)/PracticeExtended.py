@@ -147,17 +147,31 @@
 # # add_ten → [12,14,16,18]
 # # keep_even → [12,14,16,18]  ← all even here, but try other inputs
 # Output: [12, 14, 16, 18]
-def triple(data):
-        return list(map(lambda x: x*3,data))
-def add_ten(data):
-        return list(map(lambda x: x+10,data))
-def keep_even(data):
-        return list(filter(lambda x: x%2 == 0,data))
-def pipeline(data,funcs):
-    for func in funcs:
-        k = func(data)
-        data = k
-    return k
-data =[1, 2, 3, 4]
-funcs =[triple, add_ten, keep_even]
-print(pipeline(data,funcs))
+
+# def triple(data):
+#         return list(map(lambda x: x*3,data))
+# def add_ten(data):
+#         return list(map(lambda x: x+10,data))
+# def keep_even(data):
+#         return list(filter(lambda x: x%2 == 0,data))
+# def pipeline(data,funcs):
+#     for func in funcs:
+#         k = func(data)
+#         data = k
+#     return k
+# data =[1, 2, 3, 4]
+# funcs =[triple, add_ten, keep_even]
+# print(pipeline(data,funcs))
+
+### Question 7 (smart_zip) not my logic i could not solve this one
+# Input:  [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+# Output: [(1,4,6), (2,5,7), (3,None,8), (None,None,9)
+# def smart_zip(lists):
+#     if not lists:
+#         return []
+#     max_len = max(len(l) for l in lists)
+#     result = []
+#     for i in range(max_len):
+#         row = tuple(l[i] if i < len(l) else None for l in lists)
+#         result.append(row)
+#     return result
