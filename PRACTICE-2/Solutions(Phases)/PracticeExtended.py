@@ -123,3 +123,41 @@
 # key = "city"
 # print(bucket_data(lst,key))
 
+
+#### Question 5
+# Input:  "hello world"
+# Output: {"h":[0], "e":[1], "l":[2,3,9], "o":[4,7], "w":[6], "r":[8], "d":[10]}
+# def encode_pos(s):
+#     d = {}
+#     if len(s) == 0:
+#         return d
+#     for i in range(len(s)):
+#         if s[i].islower() or s[i].isupper():
+#             if s[i] not in d.keys():
+#                 d[s[i]] = []
+#             d[s[i]].append(i)
+#     return d
+# s ="hhhhhh12 hhhhhh"
+# print(encode_pos(s))
+
+#### Question 6
+
+# pipeline([1, 2, 3, 4], [double, add_ten, keep_even])
+# # double → [2,4,6,8]
+# # add_ten → [12,14,16,18]
+# # keep_even → [12,14,16,18]  ← all even here, but try other inputs
+# Output: [12, 14, 16, 18]
+def triple(data):
+        return list(map(lambda x: x*3,data))
+def add_ten(data):
+        return list(map(lambda x: x+10,data))
+def keep_even(data):
+        return list(filter(lambda x: x%2 == 0,data))
+def pipeline(data,funcs):
+    for func in funcs:
+        k = func(data)
+        data = k
+    return k
+data =[1, 2, 3, 4]
+funcs =[triple, add_ten, keep_even]
+print(pipeline(data,funcs))

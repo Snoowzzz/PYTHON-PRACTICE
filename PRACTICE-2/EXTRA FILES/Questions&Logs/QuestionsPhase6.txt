@@ -337,8 +337,8 @@ Q5 — Logic — Write a function encode_positions(s) that takes a string and re
 a dict where each key is a character and the value is a list of its positions in 
 the string. Ignore spaces.
 
-Input:  "hello world"
-Output: {"h":[0], "e":[1], "l":[2,3,9], "o":[4,7], "w":[6], "r":[8], "d":[10]}
+    Input:  "hello world"
+    Output: {"h":[0], "e":[1], "l":[2,3,9], "o":[4,7], "w":[6], "r":[8], "d":[10]}
 
 💡 Adversarial: empty string, all same character.
 
