@@ -17,11 +17,27 @@
 #     for i in range(len(lstb)):
 #         finallst.append(lsta[i])
 #         finallst.append(lstb[i])
-#     finallst.append(lsta[-1])
+#     if len(lst[a]) > len(lst)
+#       finallst.append(lsta[-1])
 #     return finallst
+
+#######  CLEANER VERSION FOR THIS ############
+# def zigzag(lst):
+    # lst.sort()
+    # k = len(lst)
+    # mid = (k + 1) // 2
+    # lsta, lstb = lst[:mid], lst[mid:]
+    # finallst = []
+    # for i in range(len(lstb)):
+    #     finallst.append(lsta[i])
+    #     finallst.append(lstb[i])
+    # if len(lsta) > len(lstb):        # only true when k is odd
+    #     finallst.append(lsta[-1])
+    # return finallst
+        
 # lst = [3, 1, 4, 1, 5, 9, 2]   
 # print(zigzag(lst))    
-        
+##--------------------------------------------------------------------------------------
 ### Question 2 (show index)
 # Input:  ["the", "cat", "sat", "on", "the", "mat", "the"]
 # Output: {"the": [0, 4, 6], "cat": [1], "sat": [2], "on": [3], "mat": [5]}
@@ -32,9 +48,10 @@
 #             dct[lst[i]]= []
 #         dct[lst[i]].append(i)
 #     return dct
+
 # lst = ["the", "cat", "sat", "on", "the", "mat", "the"]
 # print(show_index(lst))
-
+##---------------------------------------------------------------------------------------------
 # ### Question 3 (max_consecutives)
 # Input:  [1, 1, 2, 2, 2, 1, 3, 3]
 # Output: 3   ← three 2s in a row
@@ -47,11 +64,13 @@
 #             continue
 #         countlst.append(count)
 #         count = 1
+#     countlst.append(count)
 #     countlst.sort()
 #     return countlst[-1]
+
 # lst = [1, 1, 2, 2, 2, 1, 3, 3]
 # print(max_consec(lst))
-
+###-----------------------------------------------------------------------------------
 #### Question 4
 # Input:  [
 #     {"name": "Soham", "city": "Pune"},
@@ -63,25 +82,29 @@
 #     "Pune":   [{"name": "Soham", ...}, {"name": "Arjun", ...}],
 #     "Mumbai": [{"name": "Riya", ...}]
 # }
-# def bucket_data(lst,key):
-#     finaldict = {}
-#     for item in lst:
-#         d = {}
-#         for i,v in item.items():
-#             if i == key:
-#                 s = v
-#                 continue
-#             else:
-#                 d[i] = v
-#         if s not in finaldict.keys():
-#             finaldict[s] = []
-#         finaldict[s].append(d)
-#     return finaldict            
+def bucket_data(lst,key):
+    finaldict = {}
+    for item in lst:
+        d = {}
+        count = 0
+        for i,v in item.items():
+            if key in item:
+                count+=1
+                if i == key:
+                    s = v
+                    continue
+                else:
+                    d[i] = v
+        if count>0:
+            if s not in finaldict.keys():
+                finaldict[s] = []
+            finaldict[s].append(d)
+    return finaldict            
             
-# lst = [
-#     {"name": "Soham", "city": "Pune","favourites":"Ambience Mall"},
-#     {"name": "Riya",  "city": "Mumbai","favourites":"Marine Drive"},
-#     {"name": "Arjun", "city": "Pune"}
-# ]
-# key = "city"
-# print(bucket_data(lst,key))
+lst = [
+    {"name": "Soham", "city": "Pune","favourites":"Ambience Mall"},
+    {"name": "Riya",  "city": "Mumbai","favourites":"Marine Drive"},
+    {"name": "Arjun"}
+]
+key = "city"
+print(bucket_data(lst,key))
