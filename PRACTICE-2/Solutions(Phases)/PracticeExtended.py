@@ -10,15 +10,16 @@ def zigzag(lst):
         lsta = lst[:int(k/2)]
         lstb = lst[int(k/2) :]
     else:
-        lsta = lst[:int((k+1)/2)]
-        lstb = lst[int((k+1))/2:]
+        t = (k+1)/2
+        lsta = lst[:int(t)]
+        lstb = lst[int(t):]
     finallst = []
     for i in range(len(lstb)):
         finallst.append(lsta[i])
         finallst.append(lstb[i])
     finallst.append(lsta[-1])
     return finallst
-lst = [3, 1, 4, 1, 5, 9, 2, 6]   
+lst = [3, 1, 4, 1, 5, 9, 2]   
 print(zigzag(lst))    
         
         
