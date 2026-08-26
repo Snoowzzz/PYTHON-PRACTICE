@@ -80,3 +80,33 @@
 #         return f"{self.name} is a {self.breed}.Species: {Dog.species}"
 # s1 = Dog("Andrew","German Shepherd")
 # print(s1.describe())
+
+# Q5) Create a class BankAccount with __init__(self, owner, balance=0). 
+# Add deposit(amount) (adds to balance) and withdraw(amount) 
+# (subtracts from balance, but never let it go negative — return False on 
+#  insufficient funds, True on success).
+# class BankAccount:
+#     def __init__(self,owner,balance = 0):
+#         self.owner = owner
+#         self.balance = balance
+#     def deposit(self,amount):
+#         self.balance+= amount
+#     def withdraw(self,amount):
+#         if self.balance - amount < 0:
+#             print(f"{False} .. Insufficient Funds")
+#         else:
+#             self.balance -= amount
+#             print(f"{True}.. Withdrawal was a Success")
+#     def checkbalance(self):
+#         return self.balance
+# s1 = BankAccount("Tina") 
+# s1.deposit(5000)
+# print(s1.checkbalance())
+# s1.deposit(10000)
+# print(s1.checkbalance())
+# s1.withdraw(3000)
+# print(s1.checkbalance())
+# s1.withdraw(14000)
+# print(s1.checkbalance())
+
+            
