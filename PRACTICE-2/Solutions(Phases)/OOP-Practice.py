@@ -112,13 +112,53 @@
 # Q6) Create a class Book with __init__(self, title, author, pages). 
 # Add a __str__ method so print(book) outputs: 
 # "<title> by <author> (<pages> pages)".
-class Book:
-    def __init__(self, title, author, pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
-    def __str__(self):  ## now we can call the class directly
-        return f"{self.title} by {self.author} ({self.pages} pages)"
+# class Book:
+#     def __init__(self, title, author, pages):
+#         self.title = title
+#         self.author = author
+#         self.pages = pages
+#     def __str__(self):  ## now we can call the class directly
+#         return f"{self.title} by {self.author} ({self.pages} pages)"
 
-book = Book("Three Body Problem", "Cixin Liu", 567)
-print(book)
+# book = Book("Three Body Problem", "Cixin Liu", 567)
+# print(book)
+
+
+#### Session 2
+### PHASE — OOP: Inheritance & super()
+##### Notes ########
+
+
+
+# Q1. Create a class Vehicle with __init__(self, brand, speed). Create a
+#     class Car(Vehicle) that inherits from it, using super().__init__()
+#     for brand and speed, and adds its own attribute doors. Add a method
+#     info() on Car returning "<brand> car with <doors> doors, top speed <speed>."
+
+
+
+
+# Q2. Create a class Shape with a method area() that returns 0. Create
+#     Square(Shape) with __init__(self, side) and an overridden area()
+#     returning side ** 2.
+
+
+# Q3. Create a class Person with __init__(self, name, age) and a method
+#     intro() returning "<name>, <age> years old.". Create Student(Person)
+#     that inherits from it, adds roll_no via its own __init__ (using
+#     super() for name/age), and overrides intro() to return
+#     "<name>, <age> years old, Roll No: <roll_no>."
+
+
+# Q4. Create a class Employee with __init__(self, name, salary) and a
+#     method details() returning "<name> earns <salary>.". Create
+#     Manager(Employee) that inherits, adds team_size via super(), and
+#     overrides details() to return
+#     "<name> earns <salary> and manages <team_size> people."
+
+
+# Q5. Create a class Animal with __init__(self, name) and a method sound()
+#     returning "Some generic sound." Create two subclasses, Cat(Animal)
+#     and Bird(Animal), each overriding sound() — Cat returns
+#     "<name> says Meow.", Bird returns "<name> says Tweet." No new
+#     attributes needed in the children, just super().__init__(name).
