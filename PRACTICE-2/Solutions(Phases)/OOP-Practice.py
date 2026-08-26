@@ -196,30 +196,45 @@
 #     super() for name/age), and overrides intro() to return
 #     "<name>, <age> years old, Roll No: <roll_no>."
 
-class Person:
-    def __init__(self,name,age):
-        self.name = name
-        self.age = age
-    def intro(self):
-        return f"{self.name}, {self.age} years old."
-class Student(Person):
-    def __init__(self,name,age,rollno):
-        super().__init__(name,age)
-        self.rollno = rollno
-    def intro(self):
-        return f"{self.name}, {self.age} years old, Roll No: {self.rollno}"
-s1 = Person("Soham",20)
-print(s1.intro())
-s2 = Student("Soham",20,48)
-print(s2.intro())
+# class Person:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+#     def intro(self):
+#         return f"{self.name}, {self.age} years old."
+# class Student(Person):
+#     def __init__(self,name,age,rollno):
+#         super().__init__(name,age)
+#         self.rollno = rollno
+#     def intro(self):
+#         return f"{self.name}, {self.age} years old, Roll No: {self.rollno}"
+# s1 = Person("Soham",20)
+# print(s1.intro())
+# s2 = Student("Soham",20,48)
+# print(s2.intro())
 
 # Q4. Create a class Employee with __init__(self, name, salary) and a
 #     method details() returning "<name> earns <salary>.". Create
 #     Manager(Employee) that inherits, adds team_size via super(), and
 #     overrides details() to return
 #     "<name> earns <salary> and manages <team_size> people."
-
-
+# class Employee:
+#     def __init__(self,name,salary):
+#         self.name = name
+#         self.salary = salary
+#     def details(self):
+#         return f"{self.name} earns {self.salary}"
+# class Manager(Employee):
+#     def __init__(self,name,salary,team_size):
+#         super().__init__(name,salary)
+#         self.teamsize = team_size
+#     def details(self):
+#         return f"{self.name} earns {self.salary} and manages {self.teamsize} people"
+# s1 = Employee("Karan",90000)
+# print(s1.details())
+# s2 = Manager("Sachin",150000,24)
+# print(s2.details()) 
+ 
 # Q5. Create a class Animal with __init__(self, name) and a method sound()
 #     returning "Some generic sound." Create two subclasses, Cat(Animal)
 #     and Bird(Animal), each overriding sound() — Cat returns
