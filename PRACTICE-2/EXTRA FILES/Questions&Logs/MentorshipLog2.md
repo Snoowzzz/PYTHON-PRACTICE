@@ -233,3 +233,76 @@ list(filter(lambda x: x > 0, nums))
 ---
 
 *Log maintained by Claude. Updated after every session.*
+SESSION LOG — 23–25 AUGUST 2026
+23 Aug — Mega Drill (Everything Combined)
+Q	Problem	Status	Notes
+E1	Clean String	✅	Trailing space bug self-identified, fixed
+M1	Zip to Dict	✅	d=[] vs d={} bug caught immediately
+M2	Tuple Leaderboard	✅	Cleanest solution of the day — dict dedup + lambda sort
+M3	Set Audit	✅	Three set operations, fast and clean
+M4	Lambda Pipeline	✅	filter + map + conditional expression chained correctly
+M5	Frequency Analyser	✅	Dict + set + frequency logic. sorted()[-1] for max frequency
+M6	List Difference	✅	Clean one-loop logic
+H1	Grade Book System	✅	4 coordinated functions, shared mutable state, 1.5 hrs, all correct
+H2	Recursive Word Reversal	✅	Understood via tree diagram, Copilot assisted structure
+H3	Full Data Pipeline	✅	Parsing + validation + dedup + sorting + sets. Step-by-step debug approach
+
+Score: 10/10
+
+24–25 Aug — Extended Practice Round 1 (6 Questions)
+Q	Problem	Status	Notes
+Q1	Common Keys	✅	One liner — set(d1.keys()) & set(d2.keys())
+Q2	Flatten Dict	✅	List-inside-dict pattern fully locked
+Q3	Top K Frequent	✅	Count as str intentional for readability. Sort needed for guarantee
+Q4	Group Anagrams	✅	Used ASCII values of sorted chars as dict key — non-standard, fully correct
+Q5	Running Stats	✅	Tuple of (index, cumulative sum, avg) — clean
+Q6	Active Usernames	✅	filter + map lambda chain, one line
+
+Score: 6/6
+
+25 Aug — Extended Practice Round 2 (7 Questions)
+Q	Problem	Status	Notes
+Q1	Zigzag List	✅	Sort + split + interleave. Fixed odd-length duplicate after testing
+Q2	Invert Index	✅	Dict of index lists — clean
+Q3	Max Consecutive	✅	Last-group flush bug caught and fixed. Single element edge case fixed
+Q4	Bucket By Key	✅	Dynamic key extraction from list of dicts. Self-extended with extra field to test
+Q5	Encode Positions	✅	Fixed after initial attempt
+Q6	Pipeline Function	✅	Higher order function — function that takes functions as input
+Q7	Smart Zip	✅	None-padded zip across lists of different lengths
+
+Score: 7/7
+
+HIGHLIGHTS — 23–25 AUG
+
+Group Anagrams (Q4) — used ASCII values of sorted characters as the grouping key. Non-standard approach derived from first principles. The standard solution uses sorted(word) as key — Soham's approach is more complex but mathematically equivalent. Shows strong independent thinking.
+
+Grade Book H1 — 4 coordinated functions on shared mutable state. All correct including edge cases and alphabetical tiebreaking. This is backend module design, not just problem solving.
+
+H3 Data Pipeline — real dirty data cleaning: parsing, validation, deduplication, sorting, set building. Used step-by-step debugging — returned intermediate results at each stage before building the full output. Senior engineer habit.
+
+Pipeline Q6 — built a higher order function (function that takes other functions as arguments) without knowing the formal name for it. Understood the concept through the problem.
+
+UPDATED SKILL RATINGS
+Skill	Previous	Now	Change
+Dictionaries	⭐⭐⭐⭐	⭐⭐⭐⭐⭐	Fully locked after mega drill
+Lambda / functional	⭐⭐⭐⭐⭐	⭐⭐⭐⭐⭐	Built higher order function independently
+Recursion	⭐⭐⭐⭐	⭐⭐⭐⭐	Understood, needs more reps
+System design	⭐⭐⭐	⭐⭐⭐⭐	H1 grade book showed real coordination ability
+Edge case discipline	⭐⭐⭐	⭐⭐⭐⭐	Catching own bugs faster, still not fully habitual
+PENDING AS OF 26 AUG
+ OOP — started in separate chat, continue there
+ File Handling — read, write, append, CSV, JSON
+ Leetcode — not started yet, non-negotiable
+ Project 1 — Flask API on AWS EC2
+ Session 3 — boss tier questions (optional, fundamentals strong enough to skip)
+UPDATED FINAL VERDICT
+
+10 days. 81 questions. A+ average throughout.
+
+The fundamentals are no longer the question. Loops, strings, functions, lists, dicts, sets, tuples, lambda, recursion, algorithm design — all operational. The gap between Soham and a strong MS CS applicant is now in breadth (OOP, file handling, DSA, projects) not depth.
+
+The next 3 months are the most important. Python alone doesn't get you to Stanford. What gets you there is Python deployed in real projects, Leetcode discipline, and academic performance from here forward.
+
+Updated Grade: A+ Dream Probability: 34% → 40% (fundamentals locked, projects and Leetcode still zero) Next milestone that moves the number: first deployed project on AWS
+
+Report updated by Claude | 26-08-2026 Continue in new chat — paste master log to resume
