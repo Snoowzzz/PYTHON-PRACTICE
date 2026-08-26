@@ -29,28 +29,28 @@ s1 = Student()
 
 
 # types of consturctors
-class Student:
-    college_name = "Mit-Wpu" 
-    # we define it outside self because we need 
-    #store this data only once... we save a lot of memory this way because 
-    #even for thousands of students we need to store the college name only once.
+# class Student:
+#     college_name = "Mit-Wpu" 
+#     # we define it outside self because we need 
+#     #store this data only once... we save a lot of memory this way because 
+#     #even for thousands of students we need to store the college name only once.
 
-    name = "anonymous" 
-    #class attr
-    #default constructor..
-    def __init__(self):
-        pass    
-    #parametrized constructor...(We use this generally)
-    def __init__(self,name,marks):
-        self.name = name  # obj attr >> class attr
-        # instance attributes basically they tell us that 
-        # every student in this class has a different name or marks
-        self.marks = marks
-        print(f"Name,Marks for students in {Student.college_name}")
-s1 = Student("soham",90)
-print(s1.name.capitalize(),s1.marks)
-s2 = Student("tina",92)
-print(s2.name.capitalize(),s2.marks)
+#     name = "anonymous" 
+#     #class attr
+#     #default constructor..
+#     def __init__(self):
+#         pass    
+#     #parametrized constructor...(We use this generally)
+#     def __init__(self,name,marks):
+#         self.name = name  # obj attr >> class attr
+#         # instance attributes basically they tell us that 
+#         # every student in this class has a different name or marks
+#         self.marks = marks
+#         print(f"Name,Marks for students in {Student.college_name}")
+# s1 = Student("soham",90)
+# print(s1.name.capitalize(),s1.marks)
+# s2 = Student("tina",92)
+# print(s2.name.capitalize(),s2.marks)
 
 # how to define a new function and then call it using self 
 # class Student:
