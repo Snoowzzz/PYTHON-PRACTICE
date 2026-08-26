@@ -1,0 +1,66 @@
+### PHASE — OOP: Mixed with prior topics (step 1)
+
+# Q1. [OOP + loops/lists] — Playlist
+# Create a class Playlist with __init__(self, songs) where songs is a
+# list of (title, duration_in_minutes) tuples. Add total_duration()
+# that loops through songs and returns the sum of all durations.
+#
+# Input:  songs = [("Blinding Lights", 3), ("Levitating", 4), ("Peaches", 3)]
+# Output: total_duration() -> 10
+#
+# 💡 Adversarial: empty songs list (should return 0), single song.
+
+
+# Q2. [OOP + dict] — Inventory
+# Create a class Inventory with __init__(self) starting with an empty
+# dict self.stock. Add add_item(name, qty) — if name exists, increase
+# its quantity; if not, add it. Add total_items() returning the sum
+# of all quantities.
+#
+# Input:  add_item("apple", 5); add_item("banana", 2); add_item("apple", 3)
+# Output: self.stock -> {"apple": 8, "banana": 2}
+#         total_items() -> 10
+#
+# 💡 Adversarial: add_item with qty=0, calling total_items() on an
+# empty inventory (should return 0).
+
+
+# Q3. [OOP + string methods] — Message
+# Create a class Message with __init__(self, text). Add word_count()
+# returning number of words (use .split()), and shout() returning
+# text fully uppercased.
+#
+# Input:  text = "Hello World this is Python"
+# Output: word_count() -> 5
+#         shout() -> "HELLO WORLD THIS IS PYTHON"
+#
+# 💡 Adversarial: text with extra spaces ("  Hi   there  "), empty string.
+
+
+# Q4. [OOP + lambda/sorted] — Leaderboard
+# Create a class Leaderboard with __init__(self, players) where players
+# is a list of (name, score) tuples. Add top_player() returning the
+# name with the highest score — use sorted() with a lambda key, no
+# manual loop.
+#
+# Input:  players = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
+# Output: top_player() -> "Riya"
+#
+# 💡 Adversarial: two players tied for highest score — decide and
+# document what your function does (returns first found is fine,
+# just be intentional about it, don't let it be accidental).
+
+
+# Q5. [OOP + composition] — Team
+# Create a class Player with __init__(self, name, score). Create a
+# class Team with __init__(self, team_name, players) where players is
+# a LIST OF Player OBJECTS (not tuples). Add average_score() that
+# loops through self.players, pulls player.score off each one, and
+# returns the average.
+#
+# Input:  players = [Player("Soham", 91), Player("Riya", 95), Player("Arjun", 72)]
+#         team = Team("Alpha", players)
+# Output: team.average_score() -> 86.0
+#
+# 💡 Adversarial: team with zero players (guard against division by
+# zero — decide what average_score() should return in that case).
