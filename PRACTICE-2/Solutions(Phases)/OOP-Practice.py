@@ -30,37 +30,53 @@
 # 3) Q3. Create a class Counter with instance attribute count starting
 # at 0.Add increment() (adds 1), reset() (sets back to 0), and
 # get_count() (returns current count).
-class Counter:
-    # A class attribute belongs to the class itself and is shared by all
-    # instances. It is defined directly inside the class, outside methods.
-    # Example: every Counter object could read Counter.counter.
-    # Use a class attribute for data that should be common to every object.
-    # counter = 0
 
-    def __init__(self):
-        # An instance attribute belongs to one particular object. It is
-        # usually created with self inside __init__, so each object gets its
-        # own independent value.
-        # Use an instance attribute for data that can differ between objects.
-        self.count = 0
+# class Counter:
+# #     # A class attribute belongs to the class itself and is shared by all
+# #     # instances. It is defined directly inside the class, outside methods.
+# #     # Example: every Counter object could read Counter.counter.
+# #     # Use a class attribute for data that should be common to every object.
+# #     # counter = 0
 
-    def increment(self):
-        self.count += 1
+#     def __init__(self):
+#         # An instance attribute belongs to one particular object. It is
+#         # usually created with self inside __init__, so each object gets its
+#         # own independent value.
+#         # Use an instance attribute for data that can differ between objects.
+#         self.count = 0
 
-    def reset(self):
-        self.count = 0
+#     def increment(self):
+#         self.count += 1
 
-    def get_count(self):
-        return self.count
+#     def reset(self):
+#         self.count = 0
+
+#     def get_count(self):
+#         return self.count
 
 
-# Example usage:
+# # Example usage:
 # first = Counter()
 # second = Counter()
+# first.increment()
 # first.increment()
 # print(first.get_count())   # 1
 # print(second.get_count())  # 0; each object has its own instance attribute
 
-# Class attributes are accessed through the class or an instance:
-# Counter.counter = 10
-# print(Counter.counter)     # shared class-level value
+# # Class attributes are accessed through the class or an instance:
+# # Counter.counter = 10
+# # print(Counter.counter)     # shared class-level value
+
+# Q4.Create a class Dog with a class attribute species = "Canine" and 
+# instance attributes name and breed. 
+# Add describe() returning "<name> is a <breed>. Species: <species>." — 
+# pull species from the class, don't hardcode it in the string.
+# class Dog:
+#     species = "Canine"
+#     def __init__(self,name,breed):
+#         self.name = name
+#         self.breed = breed
+#     def describe(self):
+#         return f"{self.name} is a {self.breed}.Species: {Dog.species}"
+# s1 = Dog("Andrew","German Shepherd")
+# print(s1.describe())
