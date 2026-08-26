@@ -241,3 +241,49 @@
 #     and Bird(Animal), each overriding sound() — Cat returns
 #     "<name> says Meow.", Bird returns "<name> says Tweet." No new
 #     attributes needed in the children, just super().__init__(name).
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def sound():
+#         return "Some generic sound."
+
+# class Cat(Animal):
+#     def sound(self):
+#         return f"{self.name} says Meow."
+
+# class Bird(Animal):
+#     def sound(self):
+#         return f"{self.name} says Tweet."
+
+# s1 = Cat("Minny")
+# s2 = Bird("Andy")
+# print(s1.sound())
+# print(s2.sound())
+
+# Solution using super() in the child classes:
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def sound(self):
+#         return "Some generic sound."
+
+# class Cat(Animal):
+#     def __init__(self, name):
+#         super().__init__(name)
+
+#     def sound(self):
+#         return f"{self.name} says Meow."
+
+# class Bird(Animal):
+#     def __init__(self, name):
+#         super().__init__(name)
+
+#     def sound(self):
+#         return f"{self.name} says Tweet."
+
+# s3 = Cat("Minny")
+# s4 = Bird("Andy")
+# print(s3.sound())
+# print(s4.sound())
