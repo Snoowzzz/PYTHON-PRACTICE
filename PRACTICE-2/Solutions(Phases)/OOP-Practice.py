@@ -207,7 +207,7 @@
 #         super().__init__(name,age)
 #         self.rollno = rollno
 #     def intro(self):
-#         return f"{self.name}, {self.age} years old, Roll No: {self.rollno}"
+#         return f"{super().intro()} Roll No: {self.rollno}" ## important
 # s1 = Person("Soham",20)
 # print(s1.intro())
 # s2 = Student("Soham",20,48)
@@ -218,6 +218,7 @@
 #     Manager(Employee) that inherits, adds team_size via super(), and
 #     overrides details() to return
 #     "<name> earns <salary> and manages <team_size> people."
+
 # class Employee:
 #     def __init__(self,name,salary):
 #         self.name = name
@@ -229,7 +230,7 @@
 #         super().__init__(name,salary)
 #         self.teamsize = team_size
 #     def details(self):
-#         return f"{self.name} earns {self.salary} and manages {self.teamsize} people"
+#         return f"{super().details()} and manages {self.teamsize} people."
 # s1 = Employee("Karan",90000)
 # print(s1.details())
 # s2 = Manager("Sachin",150000,24)
