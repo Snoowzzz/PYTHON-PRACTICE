@@ -117,9 +117,7 @@
 #         self.title = title
 #         self.author = author
 #         self.pages = pages
-#     def __str__(self):  ## now we can call the class directly
-#         return f"{self.title} by {self.author} ({self.pages} pages)"
-
+#     def __str__(self):  ## now we
 # book = Book("Three Body Problem", "Cixin Liu", 567)
 # print(book)
 
@@ -286,4 +284,6 @@
 # s3 = Cat("Minny")
 # s4 = Bird("Andy")
 # print(s3.sound())
-# print(s4.sound())
+# print(s4.sound()) can call the class directly
+#         return f"{self.title} by {self.author} ({self.pages} pages)"
+
