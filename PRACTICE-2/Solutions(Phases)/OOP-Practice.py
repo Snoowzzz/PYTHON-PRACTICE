@@ -149,40 +149,46 @@
 #     class Car(Vehicle) that inherits from it, using super().__init__()
 #     for brand and speed, and adds its own attribute doors. Add a method
 #     info() on Car returning "<brand> car with <doors> doors, top speed <speed>."
-class Vehicle:
-    def __init__(self, brand, speed):
-        self.brand = brand
-        self.speed = speed
-    def info(self):
-        return f"This {self.brand} car has a top speed of {self.speed}"
-class Car(Vehicle):
-    def __init__(self,brand,speed,model,doors):
-        # Problem: `super` is the built-in function that gives access to the
-        # parent class, but here it is referenced without being called.
-        # Therefore, `super.__init__` tries to access `__init__` on the
-        # built-in `super` object itself instead of accessing Vehicle's
-        # initializer. The parent initializer is consequently not executed,
-        # so `self.brand` and `self.speed` are not set for this Car object.
-        super().__init__(brand,speed)
-        self.model = model
-        self.doors = doors
-    def info(self):
-        return f"Model {self.model} of {self.brand} car with {self.doors} doors.\nThis car has a top speed of {self.speed}Km/h"
-s1 = Vehicle("Mercedes",280)
-s2 = Car("Mercedes",320,"AMG","Carbon-Fibre")   
-print(s1.info())  
-print(s2.info())
+# class Vehicle:
+#     def __init__(self, brand, speed):
+#         self.brand = brand
+#         self.speed = speed
+#     def info(self):
+#         return f"This {self.brand} car has a top speed of {self.speed}"
+# class Car(Vehicle):
+#     def __init__(self,brand,speed,model,doors):
+#         # Problem: `super` is the built-in function that gives access to the
+#         # parent class, but here it is referenced without being called.
+#         # Therefore, `super.__init__` tries to access `__init__` on the
+#         # built-in `super` object itself instead of accessing Vehicle's
+#         # initializer. The parent initializer is consequently not executed,
+#         # so `self.brand` and `self.speed` are not set for this Car object.
+#         super().__init__(brand,speed)
+#         self.model = model
+#         self.doors = doors
+#     def info(self):
+#         return f"Model {self.model} of {self.brand} car with {self.doors} doors.\nThis car has a top speed of {self.speed}Km/h"
+# s1 = Vehicle("Mercedes",280)
+# s2 = Car("Mercedes",320,"AMG","Carbon-Fibre")   
+# print(s1.info())  
+# print(s2.info())
         
-        
-        
-
-
-
 # Q2. Create a class Shape with a method area() that returns 0. Create
 #     Square(Shape) with __init__(self, side) and an overridden area()
 #     returning side ** 2.
-
-
+# class Shape:
+#     @staticmethod
+#     def area(radius):
+#         return 3.14 * (radius)**2
+# class Square(Shape):
+#     def __init__(self,side):
+#         self.side = side
+#     def area(self):
+#         return (self.side)**2
+# s1 = Shape()
+# print(s1.area(9))
+# s2 = Square(8)
+# print(s2.area())
 # Q3. Create a class Person with __init__(self, name, age) and a method
 #     intro() returning "<name>, <age> years old.". Create Student(Person)
 #     that inherits from it, adds roll_no via its own __init__ (using
