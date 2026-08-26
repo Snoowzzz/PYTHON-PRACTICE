@@ -189,12 +189,29 @@
 # print(s1.area(9))
 # s2 = Square(8)
 # print(s2.area())
+
 # Q3. Create a class Person with __init__(self, name, age) and a method
 #     intro() returning "<name>, <age> years old.". Create Student(Person)
 #     that inherits from it, adds roll_no via its own __init__ (using
 #     super() for name/age), and overrides intro() to return
 #     "<name>, <age> years old, Roll No: <roll_no>."
 
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def intro(self):
+        return f"{self.name}, {self.age} years old."
+class Student(Person):
+    def __init__(self,name,age,rollno):
+        super().__init__(name,age)
+        self.rollno = rollno
+    def intro(self):
+        return f"{self.name}, {self.age} years old, Roll No: {self.rollno}"
+s1 = Person("Soham",20)
+print(s1.intro())
+s2 = Student("Soham",20,48)
+print(s2.intro())
 
 # Q4. Create a class Employee with __init__(self, name, salary) and a
 #     method details() returning "<name> earns <salary>.". Create

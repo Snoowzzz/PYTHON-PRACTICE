@@ -27,23 +27,23 @@
 # # # # s1 = Student("Soham")       
 # # # # print(s1.welcome())
       
-# # # # #Inheritance in python
-# # # # class car:
-# # # #     @staticmethod
-# # # #     def start():
-# # # #         print("Car started..")
-# # # #     @staticmethod
-# # # #     def stop():
-# # # #         print("Car stoped..")
-# # # #     color = "grey"
-# # # # class new_car(car):
-# # # #     def __init__(self,name,model):
-# # # #         self.name = name
-# # # #         self.model = model
-# # # # s1 = new_car("BMW","S+Class")
-# # # # s1.start()
-# # # # print(f"Car name is {s1.name} model is {s1.model}")
-# # # # s1.stop()
+#Inheritance in python
+class car:
+    @staticmethod
+    def start():
+        print("Car started..")
+    @staticmethod
+    def stop():
+        print("Car stoped..")
+    color = "grey"
+class new_car(car):
+    def __init__(self,name,model):
+        self.name = name
+        self.model = model
+s1 = new_car("BMW","S Class")
+s1.start()
+print(f"Car name is {s1.name} model is {s1.model},Colour: {new_car.color}")
+s1.stop()
 
 # # # #SUPER METHOD IN PYTHON OOP
 # # # class Car:
@@ -72,7 +72,8 @@
 # # class Person:
 # #     # def changename(self,name):
 # #         # Person.name = name #method 1(to change name in the entire class)
-# #         # self.__class__.name = "Rahul" #method 2 (to change name in the entire class only this name is there)
+# #         # self.__class__.name = "Rahul" 
+#           # method 2 (to change name in the entire class only this name is there)
 # #     @classmethod # the clean way to change name in the entire class
 # #     def changename(cls,name):
 # #         cls.name = name
