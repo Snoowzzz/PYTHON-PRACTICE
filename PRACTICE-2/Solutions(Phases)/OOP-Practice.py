@@ -109,4 +109,16 @@
 # s1.withdraw(14000)
 # print(s1.checkbalance())
 
-            
+# Q6) Create a class Book with __init__(self, title, author, pages). 
+# Add a __str__ method so print(book) outputs: 
+# "<title> by <author> (<pages> pages)".
+class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+    def __str__(self):  ## now we can call the class directly
+        return f"{self.title} by {self.author} ({self.pages} pages)"
+
+book = Book("Three Body Problem", "Cixin Liu", 567)
+print(book)
