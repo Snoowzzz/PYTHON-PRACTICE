@@ -49,7 +49,7 @@
 # 💡 Adversarial: two players tied for highest score — decide and
 # document what your function does (returns first found is fine,
 # just be intentional about it, don't let it be accidental).
-
+    
 
 # Q5. [OOP + composition] — Team
 # Create a class Player with __init__(self, name, score). Create a

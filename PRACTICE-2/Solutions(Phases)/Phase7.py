@@ -74,5 +74,42 @@
 # s1 = Message(text)          
 # print(s1.word_count())
 # print(s1.shout())
-    
+ 
+#### Question 4 (Lambda + Sorted)      
+# Input:  players = [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
+# Output: top_player() -> "Riya"
 
+# class Leaderboard:
+#     def __init__(self,players):
+#         self.players = players
+#     def top_player(self):
+#        top_p = sorted(self.players,key=lambda x: (-x[1],x[0])) 
+#     ### even if two players tied returns the alphabetically first one
+#        return top_p[0][0]
+# players = [("Soham", 91), ("Riya", 95), ("Arjun", 72)] 
+# top = Leaderboard(players)
+# print(top.top_player())  
+
+#### Question 5 
+# Input:  players = [Player("Soham", 91), Player("Riya", 95), Player("Arjun", 72)]
+#         team = Team("Alpha", players)
+# Output: team.average_score() -> 86.0
+
+class Player:
+    def __init__(self,name,score):
+        self.name = name
+        self.score = score
+class Team(Player):   
+    def __init__(self,team_name,players):  
+        self.team_name = team_name
+        self.players = players
+
+    def average_score(self):
+        scorelst = []
+        for player in self.players:
+            scorelst.append(player.score)  #### very imp remember this
+        return sum(scorelst)/len(scorelst)
+    
+players = [Player("Soham", 91), Player("Riya", 95), Player("Arjun", 72)]
+team = Team("Alpha",players)
+print(team.average_score())
