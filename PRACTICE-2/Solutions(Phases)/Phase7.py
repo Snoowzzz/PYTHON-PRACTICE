@@ -95,21 +95,23 @@
 #         team = Team("Alpha", players)
 # Output: team.average_score() -> 86.0
 
-class Player:
-    def __init__(self,name,score):
-        self.name = name
-        self.score = score
-class Team(Player):   
-    def __init__(self,team_name,players):  
-        self.team_name = team_name
-        self.players = players
+# class Player:
+#     def __init__(self,name,score):
+#         self.name = name
+#         self.score = score
+# class Team:  
+##### do not inherit because team is not a child of player
+##### fundamentally.
+#     def __init__(self,team_name,players):  
+#         self.team_name = team_name
+#         self.players = players
 
-    def average_score(self):
-        scorelst = []
-        for player in self.players:
-            scorelst.append(player.score)  #### very imp remember this
-        return sum(scorelst)/len(scorelst)
+#     def average_score(self):
+#         scorelst = []
+#         for player in self.players:
+#             scorelst.append(player.score)  #### very imp remember this
+#         return sum(scorelst)/len(scorelst)
     
-players = [Player("Soham", 91), Player("Riya", 95), Player("Arjun", 72)]
-team = Team("Alpha",players)
-print(team.average_score())
+# players = [Player("Soham", 91), Player("Riya", 95), Player("Arjun", 72)]
+# team = Team("Alpha",players)
+# print(team.average_score())
