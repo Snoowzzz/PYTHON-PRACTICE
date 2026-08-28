@@ -5,30 +5,71 @@
 
 # Example: "Hello, World!" with shift 3 → "Khoor, Zruog!"
 
-import string
-letters = str(string.ascii_letters)
-lowercase = str(string.ascii_lowercase)
-uppercase = str(string.ascii_uppercase)
-sentence = input("Enter anything: ")
-L = len(sentence)
-shift = int(input("How many words you want to shift: "))
-newsentence = ""
-# newsentence += "abc"
-# print(newsentence)
-for i in range(L):
-    if sentence[i] in letters:
-        if sentence[i].isupper():
-            k = uppercase.find(sentence[i]) #returns the index of the position
-            t = k+3
-            t = (k+shift)%26 #Important simplifies everything
-            newsentence += uppercase[t]
-        else: 
-            k = lowercase.find(sentence[i]) #returns the index of the position
-            t = k+3
-            if t > 25:
-                t -= 26
-            newsentence += lowercase[t]
-    else:
-        newsentence += sentence[i]
+# import string
 
-print(newsentence)
+# letters = string.ascii_letters
+# lowercase = string.ascii_lowercase
+# uppercase = string.ascii_uppercase
+
+# sentence = input("Enter anything: ")
+# shift = int(input("Shift by how many positions: "))
+# newsentence = ""
+
+# for char in sentence:
+#     if char in letters:
+#         if char.isupper():
+#             k = uppercase.find(char)
+#             newsentence += uppercase[(k + shift) % 26]
+#         else:
+#             k = lowercase.find(char)
+#             newsentence += lowercase[(k + shift) % 26]
+#     else:
+#         newsentence += char
+
+# print(newsentence)
+
+def caesar_cipher(word,k,mode):
+     newstr = ""
+     if mode == "encode":
+        for i in word:
+            if i.isupper():
+              if ord(i)+k%26 > 90:
+                t = ord(i)+(k%26) - 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)+(k%26)
+                newstr+=chr(t)
+            elif i.islower():
+              if ord(i)+k%26 > 122:
+                t = ord(i)+(k%26) - 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)+(k%26)
+                newstr+=chr(t) 
+            else:
+                newstr+=i      
+     elif mode == "decode":
+        for i in word:
+            if i.isupper():
+              if ord(i)-k%26 < 65:
+                t = ord(i)-(k%26) + 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)-(k%26)
+                newstr+=chr(t)
+            elif i.islower():
+              if ord(i)-k%26 < 97:
+                t = ord(i)-(k%26) + 26 # 
+                newstr+=chr(t)
+              else:
+                t = ord(i)-(k%26)
+                newstr+=chr(t) 
+            else:
+                newstr+=i  
+     else:
+        print("Enter a Valid Mode: ")
+     return newstr
+word = input("Enter a any word: ")
+k = int(input("How many words would u like to shift: "))
+mode = input("Enter a mode (encode or decode): ")
+print(caesar_cipher(word,k,mode))

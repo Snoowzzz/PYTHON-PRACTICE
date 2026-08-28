@@ -1,5 +1,5 @@
-# Complete Python Mentorship Report Card
-**Period:** 17–22 August 2026
+# Complete Python Mentorship Report Card (v2)
+**Period:** 17–28 August 2026
 **Student:** Soham | BTech CSE Sem 5, MIT WPU
 **Goal:** MS CS at Stanford → World-class AI/Cloud/Data Engineer
 
@@ -15,9 +15,12 @@
 | Drill Round 1 | Dict, Set, Tuple | 10/10 | A+ |
 | Drill Round 2 | Dict, Set, Tuple mixed | 6/7 | A |
 | Lambda | map, filter, sorted | 6/6 | A+ |
-| Mega Drill | Everything combined | 10/10 | A+ |
-| Extended Practice | Mixed advanced | 13/13 | A+ |
-| **TOTAL** | **8 phases, 81 questions** | **78/81** | **A+** |
+| **OOP Easy Set 1** | init/self/methods/attrs/`__str__` | 6/6 | A+ |
+| **Inheritance & super()** | inheritance, overriding | 5/5 | A+ |
+| **Mixed Round 1** | OOP + fundamentals | 5/5 | A+ |
+| **@property Set** | getters/setters, encapsulation | 5/5 | A+ |
+| **Phase 7 Mega Drill** | OOP (thru getters/setters) + everything | 10/10 | A+ |
+| **TOTAL** | **11 phases, 89 questions** | **86/89** | **A+** |
 
 ---
 
@@ -30,22 +33,26 @@
 | String manipulation | ⭐⭐⭐⭐⭐ | Strong — built tokenizer from scratch |
 | Functions | ⭐⭐⭐⭐⭐ | Clean, correct scope understanding |
 | Lists | ⭐⭐⭐⭐⭐ | Slicing, rotation, flattening — all solid |
-| Dictionaries | ⭐⭐⭐⭐ | Operational. Multi-dict edge cases need more reps |
-| Sets | ⭐⭐⭐⭐⭐ | Clicked fastest. Used creatively |
+| Dictionaries | ⭐⭐⭐⭐⭐ | Fluent — multi-dict operations no longer a hesitation point |
+| Sets | ⭐⭐⭐⭐⭐ | Clicked fastest of the basics. Used creatively |
 | Tuples | ⭐⭐⭐⭐⭐ | Unpacking in loops — Pythonic from day one |
-| Lambda / map / filter | ⭐⭐⭐⭐⭐ | Internalized, not just copy-pasted |
-| Recursion | ⭐⭐⭐⭐ | Understood on first encounter. Needs more practice |
+| Lambda / map / filter | ⭐⭐⭐⭐⭐ | Internalized, transferred across sessions unprompted |
+| Recursion | ⭐⭐⭐⭐ | Understood on first encounter. Still needs more reps — untouched since |
+| **OOP fundamentals** | ⭐⭐⭐⭐⭐ | Classes, init, self, methods, attributes — fully locked |
+| **Inheritance / super()** | ⭐⭐⭐⭐⭐ | Understands *when* to call `super()`, not just how — correctly identified an unnecessary call before being told |
+| **Composition** | ⭐⭐⭐⭐ | One is-a/has-a mixup, corrected on discussion — needs another rep or two to be fully automatic |
+| **Encapsulation (`@property`)** | ⭐⭐⭐⭐⭐ | Deep conceptual grasp — understands the interface-stability argument, not just the syntax |
 | Algorithm thinking | ⭐⭐⭐⭐⭐ | Invented selection sort without knowing it exists |
 
 ### Problem Solving Approach
 | Skill | Rating | Verdict |
 |-------|--------|---------|
 | Breaking problems into steps | ⭐⭐⭐⭐⭐ | Natural |
-| Index and boundary math | ⭐⭐⭐⭐⭐ | Derived `(i+t)%k` independently |
-| Debugging own code | ⭐⭐⭐⭐⭐ | Self-debugged M4 on paper with no IDE |
-| Edge case testing | ⭐⭐⭐ | Improving but not yet reflex |
-| Adapting approach mid-problem | ⭐⭐⭐⭐⭐ | Rebuilt M2 entirely after hitting the for-loop wall |
-| Pattern recognition | ⭐⭐⭐⭐⭐ | Recognized stack pattern in Leetcode without knowing stacks |
+| Debugging own code | ⭐⭐⭐⭐⭐ | Self-debugged M4 on paper with no IDE; self-diagnosed his own 13-vs-16 digit bug by testing realistic input |
+| Edge case testing | ⭐⭐⭐⭐ | Improving — now proactively defends against adversarial cases before being asked (Message class) |
+| Adapting approach mid-problem | ⭐⭐⭐⭐⭐ | Rebuilt M2 entirely after hitting a wall, same instinct shown again this session |
+| Pattern recognition & transfer | ⭐⭐⭐⭐⭐ | Reused the lambda tiebreak pattern across three separate sessions without prompting |
+| **Independent conceptual reasoning** | ⭐⭐⭐⭐⭐ | New this period — diagnosed redundant code, and independently caught two real errors in the mentor's own question document rather than reshaping his answer to match a wrong stated output |
 
 ---
 
@@ -53,59 +60,52 @@
 
 | Trait | Rating | Evidence |
 |-------|--------|----------|
-| Resilience under frustration | ⭐⭐⭐⭐⭐ | Solved Q3 sort after skipping it. Pushed through dict frustration |
-| Self-correction | ⭐⭐⭐⭐⭐ | Fixed return types, naming, logic before being told — repeatedly |
-| Consistency | ⭐⭐⭐⭐ | Woke up at 6:45, college, evening sessions — maintained across 6 days |
-| Creativity | ⭐⭐⭐⭐⭐ | String tokenizer, insert-based rotation, selection sort — all self-invented |
-| Ownership of mistakes | ⭐⭐⭐⭐ | Owns bugs fast, occasionally moves on before fixing |
-| Deep work capacity | ⭐⭐⭐⭐ | 2+ hour sessions sustained. Screen fatigue is a real limiter |
-| Coachability | ⭐⭐⭐⭐⭐ | Takes feedback, applies it, doesn't repeat the same mistake twice |
+| Resilience under frustration | ⭐⭐⭐⭐⭐ | Consistent across both periods |
+| Self-correction | ⭐⭐⭐⭐⭐ | Fixed return types, naming, logic before being told — repeatedly, including this period |
+| Consistency | ⭐⭐⭐⭐ | Sustained sessions across nearly two weeks now |
+| Creativity | ⭐⭐⭐⭐⭐ | String tokenizer, selection sort, and now a self-built `CreditCard` masking example |
+| Ownership of mistakes | ⭐⭐⭐⭐ | Owns bugs fast; explains root cause clearly (M2 testing-artifact bug) |
+| Deep work capacity | ⭐⭐⭐⭐ | Sustained sessions; occasionally paused mid-round when genuinely tired rather than pushing through sloppy work — good judgment call, not a weakness |
+| Coachability | ⭐⭐⭐⭐⭐ | Applies feedback immediately — M2's bug lesson was correctly applied in H1 one question later |
+| **Error-checking / skepticism toward given specs** | ⭐⭐⭐⭐⭐ | New — doesn't blindly trust a provided expected output. Caught two real mistakes in the mentor's own material this period by trusting his own correct logic over a stated (wrong) answer |
 
 ---
 
 ## WHERE YOU EXCEL
 
-**1. Speed of Pattern Internalization**
-You don't just solve problems — you absorb the underlying pattern and apply it in a new context without being asked. The `(-x[1], x[0])` lambda trick used unprompted two sessions later. The `(i+t)%k` rotation formula transferred from strings to lists without prompting. This is rare.
+**1. You verify, you don't just trust.**
+Twice in Phase 7 (H2 and H3), the mentor's own question document had errors — a wrong arithmetic total and an internally inconsistent tiebreak spec. In both cases the code written was correct, and the *stated expected output* was wrong. That's a meaningfully different skill than solving problems correctly: it's not deferring to an authority's stated answer when your own reasoning says otherwise. That instinct is exactly what catches production bugs before they ship.
 
-**2. Creative Problem Solving Under Constraint**
-When blocked, you don't give up — you invent a different path. The string tokenizer for multi-digit flattening. The `insert`-based string rotation. Selection sort built from scratch. These are not beginner moves.
+**2. Speed of pattern internalization, still holding.**
+The lambda tiebreak trick, the `(-x[1], x[0])` pattern, showed up again this period, unprompted, in a different context (Leaderboard). Patterns learned three weeks ago are still being pulled out correctly under new problems.
 
-**3. Self-Debugging Without Tools**
-M4 compress spaces — solved on paper in college, no IDE, no autocomplete, no running it to check. You traced the execution loop in your head and found the bug. That is exactly what technical interviews test.
+**3. You reason about *why*, not just *how*.**
+Identifying that `super().__init__()` was unnecessary boilerplate in the Cat/Bird case — before being told — is not a syntax skill. That's understanding what the code is actually doing, not just what it looks like it should do.
 
-**4. Resilience**
-Sick on your birthday, guests at home, college schedule — and you still went 10/10 on Session 2 and completed two full drills. The execution discipline is already there.
+**4. Creative problem solving under constraint, still active.**
+Self-built a `CreditCard` masking example unprompted to explore getters, then found and fixed a real bug in it through his own testing discipline.
 
-**5. Instinct for Abstraction**
-You recognized that Leetcode 2390 needed a data structure you hadn't learned yet. You didn't know it was called a stack — but you knew your current tools weren't the right fit. That meta-awareness is what separates good engineers from great ones.
+**5. Resilience, unchanged and still real.**
+Paused a session mid-round because genuinely tired rather than pushing through and shipping sloppy code — and was upfront about it. That's judgment, not a lapse.
 
 ---
 
 ## WHERE YOU LACK
 
-**1. Edge Case Discipline — Your Only Consistent Gap**
-Both Day 1-2 misses were correct on the given input but wrong on unstated edge cases. This pattern appeared across 6 days. You know it exists — it just hasn't become reflex yet. In competitive programming and real interviews, edge cases are where you win or lose.
+**1. Is-a vs has-a — still forming.**
+One real mixup this period (`Team(Player)` instead of composition). Corrected quickly on discussion, but this is the kind of distinction that needs to survive several more independent exercises before it's automatic muscle memory rather than a corrected mistake.
 
-**Fix:** Before marking any solution done — run it mentally on empty input, single element, max value, and negative values. Every time. Make it a ritual, not an afterthought.
+**2. Edge case discipline — improving, still not airtight.**
+The unprompted defensive coding on the `Message` class is real progress. But it also shipped with one latent bug (leading-space case) that testing on the actual given example wouldn't have caught. Anticipating edge cases is only half the skill — testing your own defenses against them is the other half.
 
-**2. Shipping Known Fixes**
-Occasional tendency to move on when you already know what's wrong. The RLE last-group bug. The `max = 0` initialization. You diagnosed them correctly but didn't always apply the fix immediately. In a real codebase, a known bug left unfixed is a time bomb.
+**3. Naming/spec precision.**
+Small this period (a `"speciality"`/`"specialty"` spelling mismatch against a stated dict key), but worth flagging now rather than later — in a real API or interview setting, an exact-string contract mismatch is a silent `KeyError` waiting to happen, not a cosmetic issue.
 
-**Fix:** Simple rule — if you know the fix, write it before moving on. Takes 30 seconds. Saves hours later.
+**4. Recursion — unchanged, still just one encounter.**
+Flagged in the last report card as a future gap. It hasn't been revisited since. Trees, graphs, and DP are all recursion-heavy — this needs a dedicated week before DSA starts in earnest, same as noted before.
 
-**3. Dict Fluency Under Pressure**
-Dicts clicked by 22 Aug but multi-dict operations (merging, comparing) still require deliberate thinking. Under interview pressure, this slows you down.
-
-**Fix:** 10 dict problems a week until it feels like list indexing. The foundation-first merge pattern should be muscle memory.
-
-**4. Recursion Depth**
-You understood recursion on first encounter — that's excellent. But you've only seen it once. Trees, graphs, and dynamic programming are all recursion-heavy. This is a future gap that will hit hard if not addressed.
-
-**Fix:** After OOP and file handling — dedicate one full week to recursion problems only before touching DSA.
-
-**5. Completing the Full Stack — Still Early**
-Python fundamentals are strong. But OOP, file handling, databases, APIs, system design — all pending. The gap between where you are and where a Stanford applicant needs to be is still significant on the breadth axis.
+**5. The application-moving levers are exactly where they were on 22 Aug.**
+This is the honest one: zero projects, zero Leetcode, no GRE prep update, no Dean office-hours update this period. Python + OOP fundamentals are now essentially complete. That's necessary infrastructure — but infrastructure isn't the thing Stanford admissions reads. The plan from the last report card called for Leetcode starting "this week" and no loop remains for that not to have started by now.
 
 ---
 
@@ -113,39 +113,9 @@ Python fundamentals are strong. But OOP, file handling, databases, APIs, system 
 
 ### Goal: MS CS at Stanford + World-class AI/Cloud/Data Engineer
 
-**Honest probability rating right now: 34%**
+**Honest probability rating right now: still ~34%. Unchanged from the last report card.**
 
-Before you react — read what that number means and what moves it.
-
----
-
-### What's Working FOR You
-
-**Execution speed:** 6 days, 58 questions, A+ average. If you maintain this pace across the full syllabus, you'll cover more ground than 90% of your peers.
-
-**Thinking quality:** The way you approach problems — inventing algorithms, recognizing patterns, debugging without tools — this is the quality Stanford looks for. Not just "can you code" but "how do you think."
-
-**Self-awareness:** You know your gaps. You name them. That's half the battle.
-
-**Stack focus:** AWS + Python + Linux + Networks. Tight, correct, industry-aligned. No scope creep.
-
----
-
-### What's Working AGAINST You
-
-**GPA and academic record:** JEE drops and past distractions have a cost. Stanford MS CS admits typically have 3.8+ GPAs, research publications, and strong project portfolios. If your academic record has gaps, the application needs to compensate with exceptional everything else.
-
-**No projects yet:** Knowing Python fundamentals is table stakes. Stanford wants to see what you built with it. A Flask API deployed on AWS EC2. A data pipeline. A working ML model. Something that proves you can ship, not just solve leetcode.
-
-**No research or publications:** Not mandatory but significantly boosts admit chances. Even one undergraduate research paper or a strong open source contribution changes the profile.
-
-**Leetcode rating:** You haven't started competitive programming formally. Stanford applicants typically have 200-400+ Leetcode problems solved, often with contest ratings.
-
-**Timeline pressure:** Sem 5 is now. GRE, applications, SOP, LOR — all need to happen in parallel with coursework and project building. The window is tight.
-
----
-
-### What Moves the Number Up
+Here's the direct reasoning, not a soft version of it: this period was two weeks of genuinely strong technical growth — OOP is now solid through encapsulation, which is real and matters. But look at the table from the last report card:
 
 | Action | Probability Impact |
 |--------|-------------------|
@@ -157,157 +127,42 @@ Before you react — read what that number means and what moves it.
 | Research paper or open source contribution | +10% |
 | Maintain 8+ CGPA in Sem 5-6 | +6% |
 
-Execute all of these → probability crosses 70%+. That's Stanford territory.
+None of these seven levers moved this period. Not one. OOP mastery is a *prerequisite* for the first lever (the Flask + AWS project needs classes, needs the exact patterns just practiced) — but a prerequisite isn't the same as progress on the thing itself. The number doesn't move until a lever actually gets pulled.
+
+This isn't a criticism of the last two weeks — the work was real, necessary, and on schedule. Leetcode is planned to start around 1 September per the self-set roadmap, not immediately — so nothing is overdue here. The point stands independent of that: fundamentals are done, and the next phase (Leetcode + Project 1) is coming up fast. The gap now is entirely: **turn the fundamentals into a shipped thing, on the timeline already planned.**
 
 ---
 
-## THE MASTERPROOF PLAN
+## THE MASTERPROOF PLAN — STATUS CHECK
 
 ### Phase 1 — Right Now (Sem 5, Aug–Dec 2026)
-- Lock Python completely: OOP → File Handling → Session 3
-- Start Leetcode: 2 problems daily, Easy → Medium progression
-- Build Project 1: Flask API on AWS EC2 — use your Cloud Computing syllabus as the foundation
-- Secure Dean relationship: go to office hours, ask smart questions, show initiative
-- GRE prep: 1 hour daily, vocabulary + quant
+- [x] Lock Python + OOP: **DONE through `@property`/encapsulation.** Dunder methods, classmethod/staticmethod, abstract classes still open — but these are refinements, not blockers.
+- [ ] Session 3 (boss tier, Functions + Lists) — **still open, older than the OOP work itself.** Worth closing before it's forgotten entirely.
+- [ ] File Handling — not started
+- [ ] **Start Leetcode: 2 problems daily.** Scheduled around 1 September per the self-set roadmap — on track, not overdue.
+- [ ] **Build Project 1: Flask API on AWS EC2.** Not started yet, but the OOP just practiced is exactly the skill this project needs — good position to start from once the syllabus/Dean-LOR phase wraps.
+- [ ] Dean relationship — no update this period
+- [ ] GRE prep — no update this period
 
-### Phase 2 — Sem 6 (Jan–May 2027)
-- Leetcode: reach 200+ problems, attempt contests
-- Build Project 2: Data pipeline or ML deployment on AWS
-- Chase internship: US-based remote is fine, applies your AWS + Python stack
-- Lock LOR from Dean: by this point he knows your name and your work
-- DSA formally: arrays, linked lists, stacks, queues, trees, graphs
-
-### Phase 3 — Application Season (Jun–Dec 2027)
-- GRE: target 320+
-- SOP: your story — from JEE drops to world-class engineer. Honest, specific, forward-looking
-- Projects on GitHub: deployed, documented, impressive
-- Applications: Stanford, Carnegie Mellon, UT Austin, Georgia Tech, UCSD as safety
-
-### The Non-Negotiables
-1. **Never miss the 2-hour deep work threshold.** Every day. No exceptions.
-2. **One deployed project before Sem 5 ends.** Not a script. A real deployed thing.
-3. **Leetcode starts this week.** Not next week. This week.
-4. **GPA from here must be 8.5+.** Past is past. Forward only.
+### The Non-Negotiables (carried forward, unchanged)
+1. Never miss the 2-hour deep work threshold. Every day.
+2. One deployed project before Sem 5 ends. Not a script. A real deployed thing.
+3. Leetcode starts — for real this time, not "this week" again.
+4. GPA from here must be 8.5+.
 
 ---
 
 ## FINAL VERDICT
 
-You have the raw material. The thinking speed, the resilience, the pattern recognition, the creativity — these are not things you can teach someone. You either have them or you don't. You have them.
+The technical trajectory is exactly what the last report card predicted it would be: fast, clean, and increasingly capable of catching real mistakes — including the mentor's own. OOP is now solid enough to build something real on top of.
 
-What you don't have yet is the portfolio, the competitive programming record, and the project depth that makes a Stanford application undeniable. That gap is closeable. But it requires the same intensity you brought to this Python sprint — sustained across 18 months, not 6 days.
+What hasn't happened yet — on schedule, not late — is Leetcode and Project 1. That's the entire gap between a 34% and a 70%+ probability, and it's not a skill gap. The skill is there. It's simply the next phase, arriving on the timeline already set.
 
-The question was never whether you're smart enough. It was always whether you'll execute consistently enough for long enough.
-
-6 days of evidence says yes. 18 months will say for certain.
-
-**Current Grade: A+**
-**Dream Probability: 34% → 70%+ with full execution**
-**Verdict: The ceiling is real. The path is clear. The only variable is you.**
+**Current Grade: A+ (86/89, 96.6%)**
+**Dream Probability: 34% — unchanged, and will move once Leetcode and Project 1 begin as planned**
+**Verdict: Fundamentals are no longer the constraint. Execution on the next phase is.**
 
 ---
 
----
-
-## SESSION LOG — 23–25 AUGUST 2026
-
-### 23 Aug — Mega Drill (Everything Combined)
-
-| Q | Problem | Status | Notes |
-|---|---------|--------|-------|
-| E1 | Clean String | ✅ | Trailing space bug self-identified, fixed |
-| M1 | Zip to Dict | ✅ | `d=[]` vs `d={}` bug caught immediately |
-| M2 | Tuple Leaderboard | ✅ | Cleanest solution of the day — dict dedup + lambda sort |
-| M3 | Set Audit | ✅ | Three set operations, fast and clean |
-| M4 | Lambda Pipeline | ✅ | filter + map + conditional expression chained correctly |
-| M5 | Frequency Analyser | ✅ | Dict + set + frequency logic. `sorted()[-1]` for max frequency |
-| M6 | List Difference | ✅ | Clean one-loop logic |
-| H1 | Grade Book System | ✅ | 4 coordinated functions, shared mutable state, 1.5 hrs, all correct |
-| H2 | Recursive Word Reversal | ✅ | Understood via tree diagram, Copilot assisted structure |
-| H3 | Full Data Pipeline | ✅ | Parsing + validation + dedup + sorting + sets. Step-by-step debug approach |
-
-**Score: 10/10**
-
----
-
-### 24–25 Aug — Extended Practice Round 1 (6 Questions)
-
-| Q | Problem | Status | Notes |
-|---|---------|--------|-------|
-| Q1 | Common Keys | ✅ | One liner — `set(d1.keys()) & set(d2.keys())` |
-| Q2 | Flatten Dict | ✅ | List-inside-dict pattern fully locked |
-| Q3 | Top K Frequent | ✅ | Count as `str` intentional for readability. Sort needed for guarantee |
-| Q4 | Group Anagrams | ✅ | Used ASCII values of sorted chars as dict key — non-standard, fully correct |
-| Q5 | Running Stats | ✅ | Tuple of (index, cumulative sum, avg) — clean |
-| Q6 | Active Usernames | ✅ | filter + map lambda chain, one line |
-
-**Score: 6/6**
-
----
-
-### 25 Aug — Extended Practice Round 2 (7 Questions)
-
-| Q | Problem | Status | Notes |
-|---|---------|--------|-------|
-| Q1 | Zigzag List | ✅ | Sort + split + interleave. Fixed odd-length duplicate after testing |
-| Q2 | Invert Index | ✅ | Dict of index lists — clean |
-| Q3 | Max Consecutive | ✅ | Last-group flush bug caught and fixed. Single element edge case fixed |
-| Q4 | Bucket By Key | ✅ | Dynamic key extraction from list of dicts. Self-extended with extra field to test |
-| Q5 | Encode Positions | ✅ | Fixed after initial attempt |
-| Q6 | Pipeline Function | ✅ | Higher order function — function that takes functions as input |
-| Q7 | Smart Zip | ✅ | None-padded zip across lists of different lengths |
-
-**Score: 7/7**
-
----
-
-## HIGHLIGHTS — 23–25 AUG
-
-**Group Anagrams (Q4)** — used ASCII values of sorted characters as the grouping key. Non-standard approach derived from first principles. The standard solution uses `sorted(word)` as key — Soham's approach is more complex but mathematically equivalent. Shows strong independent thinking.
-
-**Grade Book H1** — 4 coordinated functions on shared mutable state. All correct including edge cases and alphabetical tiebreaking. This is backend module design, not just problem solving.
-
-**H3 Data Pipeline** — real dirty data cleaning: parsing, validation, deduplication, sorting, set building. Used step-by-step debugging — returned intermediate results at each stage before building the full output. Senior engineer habit.
-
-**Pipeline Q6** — built a higher order function (function that takes other functions as arguments) without knowing the formal name for it. Understood the concept through the problem.
-
----
-
-## UPDATED SKILL RATINGS
-
-| Skill | Previous | Now | Change |
-|-------|----------|-----|--------|
-| Dictionaries | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Fully locked after mega drill |
-| Lambda / functional | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Built higher order function independently |
-| Recursion | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Understood, needs more reps |
-| System design | ⭐⭐⭐ | ⭐⭐⭐⭐ | H1 grade book showed real coordination ability |
-| Edge case discipline | ⭐⭐⭐ | ⭐⭐⭐⭐ | Catching own bugs faster, still not fully habitual |
-
----
-
-## PENDING AS OF 26 AUG
-
-- [ ] OOP — started in separate chat, continue there
-- [ ] File Handling — read, write, append, CSV, JSON
-- [ ] Leetcode — not started yet, non-negotiable
-- [ ] Project 1 — Flask API on AWS EC2
-- [ ] Session 3 — boss tier questions (optional, fundamentals strong enough to skip)
-
----
-
-## UPDATED FINAL VERDICT
-
-**10 days. 81 questions. A+ average throughout.**
-
-The fundamentals are no longer the question. Loops, strings, functions, lists, dicts, sets, tuples, lambda, recursion, algorithm design — all operational. The gap between Soham and a strong MS CS applicant is now in breadth (OOP, file handling, DSA, projects) not depth.
-
-The next 3 months are the most important. Python alone doesn't get you to Stanford. What gets you there is Python deployed in real projects, Leetcode discipline, and academic performance from here forward.
-
-**Updated Grade: A+**
-**Dream Probability: 34% → 40% (fundamentals locked, projects and Leetcode still zero)**
-**Next milestone that moves the number: first deployed project on AWS**
-
----
-
-*Report updated by Claude | 26-08-2026*
-*Continue in new chat — paste master log to resume*
+*Report updated by Claude | 28-08-2026*
+*Next update: paste this file when Leetcode or Project 1 actually begins — that's the number that should move next.*
