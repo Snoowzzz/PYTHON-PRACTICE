@@ -323,19 +323,67 @@
 
 # Input:  p.price = -20
 # Output: raises ValueError
-class Product:
-    def __init__(self,price):
-    # The underscore shows that _price is an internal/backing attribute;
-    # it also prevents the property setter from recursively calling itself.
-        self._price = price
-    @property
-    def price(self):
-        return self._price
-    @price.setter
-    def price(self,value):
-        if value < 0:
-            raise ValueError("Price can't be negative..")
-        self._price = value
-p = Product(100)
-print(p.price)
+# class Product:
+#     def __init__(self,price):
+#     # The underscore shows that _price is an internal/backing attribute;
+#     # it also prevents the property setter from recursively calling itself.
+#         self._price = price
+#     @property
+#     def price(self):
+#         return self._price
+#     @price.setter
+#     def price(self,value):
+#         if value < 0:
+#             raise ValueError("Price can't be negative..")
+#         self._price = value
+# p = Product(100)
+# print(p.price)
 
+## Question 4
+# Input:  c = Circle(5)
+# Output: c.area -> 78.53975
+
+# Input:  c.radius = -3
+# Output: raises ValueError
+class Circle:
+    def __init__(self,radius):
+        self._radius = radius
+    @property
+    def area(self):
+        return round(22/7 * (self._radius**2),3)
+    @area.setter
+    def area(self,value):
+        if value < 0:
+            raise ValueError("Radius can't be negative")
+        self._radius = value
+c = Circle(5)
+print(c.area)
+
+# Explanation:
+# `@property` is needed to make `area` readable like an attribute:
+# `c.area` instead of `c.area()`.
+#
+# `@area.setter` is optional. It is only needed when we want to allow an
+# assignment such as `c.area = value`. However, a setter must belong to an
+# existing property, so `@area.setter` cannot be used by itself.
+#
+# The two functions have different jobs:
+# - the property getter returns or calculates the area;
+# - the setter validates and handles a value assigned to `c.area`.
+#
+# In this code, the setter changes `_radius`, so the assigned value is really
+# treated as a radius, even though it is assigned through `area`. A clearer
+# design is to make a separate `radius` property if the radius should be set:
+#
+#     @property
+#     def radius(self):
+#         return self._radius
+#
+#     @radius.setter
+#     def radius(self, value):
+#         if value < 0:
+#             raise ValueError("Radius can't be negative")
+#         self._radius = value
+#
+# Properties are not compulsory: a normal `get_area()` method can be used,
+# but then it must be called with parentheses: `c.get_area()`.
