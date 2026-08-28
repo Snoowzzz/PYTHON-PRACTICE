@@ -246,19 +246,7 @@ ClassName.class_attr     # access class attribute via the class
 # same methods on your own classes, and suddenly your custom 
 # objects work with those same operators.
 
-# python
-# class Point:
-#     def __init__(self, x, y):
-#         self.x = x
-#         self.y = y
 
-#     def __eq__(self, other):
-#         return self.x == other.x and self.y == other.y
-
-# p1 = Point(2, 3)
-# p2 = Point(2, 3)
-# print(p1 == p2)   # True — without __eq__, this would 
-# be False (compares identity, not values)
 
 # Why it exists — the actual problem: Without __eq__, == on 
 # two objects checks whether they're the same object in memory,
