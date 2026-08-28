@@ -19,15 +19,18 @@ Dicts · Sets · Tuples · Lambda
 ## 🟢 EASY (2 Questions)
 
 ### E1 — Grade Tracker (OOP + loops)
-Create a class `GradeTracker` with `__init__(self, grades)` where `grades` is a list of ints.
-Add `average()` returning the mean rounded to 2 decimals, and `highest()` returning the max.
+Create a class `GradeTracker` with `__init__(self, grades)` where `grades` is a 
+list of ints.
+Add `average()` returning the mean rounded to 2 decimals, and `highest()` 
+returning the max.
 
 ```
 Input:  GradeTracker([88, 92, 79, 95])
 Output: average() -> 88.5
         highest() -> 95
 ```
-> 💡 Adversarial: empty grades list — decide what `average()`/`highest()` should do (don't let it crash silently; be intentional).
+> 💡 Adversarial: empty grades list — decide what `average()`/`highest()` 
+should do (don't let it crash silently; be intentional).
 
 ---
 
