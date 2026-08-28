@@ -79,6 +79,7 @@
 #     def balance(self,value):
 #         if value < 0:
 #             raise ValueError("Enter a positive amount")
+#          self._balance = value
 #     def spend(self,amount):
 #         if amount <= self._balance:
 #             self._balance -= amount
@@ -106,8 +107,6 @@
 #     for i,v in d.items():
 #         lst.append((i,v))
 #     finalst = sorted(lst,key=lambda x: (-x[1],x[0]))
-#     if len(finalst) < 3:
-#         return finalst
 #     return finalst[:3]
 # text ="the cat sat on the mat the cat ran"
 # print(rank_words(text))
@@ -124,9 +123,9 @@
 #         self.name = name
 #         self.age = age
 # class Coach(Person):
-#     def __init__(self,name,age,speciality):
+#     def __init__(self,name,age,specialty):
 #         super().__init__(name,age)
-#         self.speciality = speciality
+#         self.specialty = specialty
 # class Team:
 #     def __init__(self,name,coach,players):
 #         self.coach = coach
@@ -134,7 +133,7 @@
 #     def roster_summary(self):
 #         d = {
 #          "coach" : self.coach.name,
-#          "speciality": self.coach.speciality,
+#          "specialty": self.coach.specialty,
 #          "player_count":len(self.players),
 #         }
 #         return d
