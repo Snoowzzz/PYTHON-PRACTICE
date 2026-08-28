@@ -122,7 +122,9 @@ Output: team.roster_summary() ->
 ---
 
 ### M5 — Unique Merge (plain function, sets + tuples + dict)
-Write a function `merge_unique(pairs)` that takes a list of `(category, item)` tuples and returns a dict mapping each category to a **sorted list of its unique items**. Use a set internally to dedupe before sorting.
+Write a function `merge_unique(pairs)` that takes a list of `(category, item)` 
+tuples and returns a dict mapping each category to a 
+**sorted list of its unique items**. Use a set internally to dedupe before sorting.
 
 ```
 Input:  [("fruit", "apple"), ("veg", "carrot"), ("fruit", "apple"), ("fruit", "banana")]

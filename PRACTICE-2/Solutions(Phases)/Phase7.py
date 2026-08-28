@@ -142,3 +142,19 @@
 # players = [Person("Soham", 21), Person("Riya", 22)]
 # team = Team("Alpha", coach, players)
 # print(team.roster_summary())
+
+### Question 7
+# Input:[("fruit", "apple"), ("veg", "carrot"), ("fruit", "apple"), ("fruit", "banana")]
+# Output: {"fruit": ["apple", "banana"], "veg": ["carrot"]}
+# def merge_unique(pairs):
+#     newpair = list(sorted(set(pairs),key = lambda x: (x[0],x[1])))
+#     d = {}
+#     for items in newpair:
+#         i,v = items
+#         if i not in d.keys():
+#             d[i] = []
+#         d[i].append(v)
+#     return d
+# pairs =[("fruit", "apple"), ("veg", "carrot"), ("fruit", "apple"), ("fruit", "banana")]
+# print(merge_unique(pairs))       
+    
