@@ -85,13 +85,16 @@ Know which mechanism you're using and why.
 ---
 
 ### M3 — Word Frequency Rank (plain function, dict + lambda + sorted)
-Write a function `rank_words(text)` returning the **top 3** `(word, count)` tuples, sorted by count descending, ties broken alphabetically. Use `sorted()` with a lambda key — no manual max-tracking loop.
+Write a function `rank_words(text)` returning the **top 3** `(word, count)`
+tuples, sorted by count descending, ties broken alphabetically. 
+Use `sorted()` with a lambda key — no manual max-tracking loop.
 
 ```
 Input:  "the cat sat on the mat the cat ran"
 Output: [("the", 3), ("cat", 2), ("mat", 1)]
 ```
-> 💡 Adversarial: fewer than 3 unique words — return whatever's available, don't crash trying to slice past the end.
+> 💡 Adversarial: fewer than 3 unique words — return whatever's 
+available, don't crash trying to slice past the end.
 
 ---
 
@@ -173,7 +176,10 @@ Output: {
     "topper": "Meera"
 }
 ```
-> 💡 Adversarial: this input has a genuine tie (Riya 93.0 vs Meera 93.0) — your `topper` logic and your `roster` sort order both need an explicit, deliberate tiebreak rule (alphabetical), not whatever order happens to fall out of `sorted()` by accident. Verify it, don't assume it.
+> 💡 Adversarial: this input has a genuine tie (Riya 93.0 vs Meera 93.0) — 
+your `topper` logic and your `roster` sort order both need an explicit, 
+deliberate tiebreak rule (alphabetical), not whatever order happens 
+to fall out of `sorted()` by accident. Verify it, don't assume it.
 
 ---
 

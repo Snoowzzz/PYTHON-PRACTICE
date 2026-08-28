@@ -90,6 +90,24 @@
 # w.spend(200)
 # print(w.spend(400))
 # print(w.balance)
-# # w.spend(1500)
-# # print(w.spend())
-# # print(w.balance)
+
+### Question 5 (medium)
+# Input:  "the cat sat on the mat the cat ran"
+# Output: [("the", 3), ("cat", 2), ("mat", 1)]
+# def rank_words(text):
+#     newstr = text.split(" ")
+#     d = {}
+#     for word in newstr:
+#         if word not in d.keys():
+#             d[word] = 1
+#         else:
+#             d[word] += 1
+#     lst = []
+#     for i,v in d.items():
+#         lst.append((i,v))
+#     finalst = sorted(lst,key=lambda x: (-x[1],x[0]))
+#     if len(finalst) < 3:
+#         return finalst
+#     return finalst[:3]
+# text ="the cat sat on the mat the cat ran"
+# print(rank_words(text))
