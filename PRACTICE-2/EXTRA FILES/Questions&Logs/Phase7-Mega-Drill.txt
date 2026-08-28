@@ -50,14 +50,18 @@ Output: ["coding", "gaming"]
 ## 🟡 MEDIUM (5 Questions)
 
 ### M1 — Library Shelf (OOP + composition + tuples)
-Create a class `Book` with `__init__(self, title, author, year)`. Create a class `Shelf` with `__init__(self, books)` where `books` is a list of `Book` objects. Add `sorted_by_year()` returning a list of `(title, year)` tuples, oldest first.
+Create a class `Book` with `__init__(self, title, author, year)`. 
+Create a class `Shelf` with `__init__(self, books)` where `books` is a list 
+of `Book` objects. Add `sorted_by_year()` returning a list of `(title, year)`
+tuples, oldest first.
 
 ```
-Input:  books = [Book("Dune", "Herbert", 1965), Book("Neuromancer", "Gibson", 1984), Book("1984", "Orwell", 1949)]
-        shelf = Shelf(books)
-Output: shelf.sorted_by_year() -> [("1984", 1949), ("Dune", 1965), ("Neuromancer", 1984)]
+Input:  books = [Book("Dune", "Herbert", 1965), Book("Neuromancer", "Gibson", 1984),Book("1984", "Orwell", 1949)]
+shelf = Shelf(books)
+Output: shelf.sorted_by_year() -> [("1984", 1949),("Dune", 1965),("Neuromancer", 1984)]
 ```
-> 💡 Adversarial: empty shelf. Two books published the same year — decide the tiebreak and be consistent about it.
+> 💡 Adversarial: empty shelf. Two books published the same year — 
+decide the tiebreak and be consistent about it.
 
 ---
 

@@ -36,3 +36,29 @@
 # b = ["gaming", "coding", "cooking"]
 # lst = common_interests(a,b)
 # print(lst)
+
+### Question 3 (Medium)
+# Input:  books = [Book("Dune", "Herbert", 1965), Book("Neuromancer", "Gibson", 1984),
+# Book("1984", "Orwell", 1949)]
+# shelf = Shelf(books)
+# Output: shelf.sorted_by_year() -> [("1984", 1949),("Dune", 1965),
+# ("Neuromancer", 1984)]
+
+# class Book:
+#     def __init__(self,title,author,year):
+#         self.title = title
+#         self.author = author
+#         self.year = year
+# class Shelf:
+#     def __init__(self,books):
+#         self.books = books
+#     def sorted_by_year(self):
+#         lst = []
+#         for item in self.books:
+#             tupp = (item.title,item.year)
+#             lst.append(tupp)
+#         modlst = sorted(lst,key=lambda x: (x[1],x[0]))
+#         return modlst
+# books = [Book("Dune", "Herbert", 1969), Book("Neuromancer", "Gibson", 1984),Book("1984", "Orwell", 1949)]
+# shelf = Shelf(books)
+# print(shelf.sorted_by_year())
