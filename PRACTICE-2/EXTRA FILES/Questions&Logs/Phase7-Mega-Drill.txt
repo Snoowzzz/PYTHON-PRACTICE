@@ -35,10 +35,12 @@ should do (don't let it crash silently; be intentional).
 ---
 
 ### E2 — Common Interests (plain function, sets)
-Write a function `common_interests(a, b)` that takes two lists and returns a **sorted list** of items present in both.
+Write a function `common_interests(a, b)` that takes two lists and 
+returns a **sorted list** of items present in both.
 
 ```
-Input:  a = ["reading", "gaming", "coding"], b = ["gaming", "coding", "cooking"]
+Input:  a = ["reading", "gaming", "coding"], 
+        b = ["gaming", "coding", "cooking"]
 Output: ["coding", "gaming"]
 ```
 > 💡 Adversarial: no overlap at all. Identical lists.
