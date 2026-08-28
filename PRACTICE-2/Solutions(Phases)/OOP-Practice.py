@@ -413,3 +413,29 @@
 # print(e.annualsalary)
 # e.salary = 60000
 # print(e.annualsalary)
+
+class CreditCard:
+    def __init__(self, number, balance):
+        self._number = number      # full number stored internally
+        self._balance = balance
+
+    @property
+    def number(self):
+        # getter transforms the raw stored value before exposing it
+        return "**** **** **** " + self._number[-4:]
+    @number.setter
+    def number(self,value):
+        if len(value) != 16:
+            raise ValueError("Card number should be of 16 digit")
+        self._number = value
+    @property
+    def balance(self):
+        # getter formats a raw float into a display-ready string
+        return f"${self._balance:,.2f}"
+
+card = CreditCard("4532015112830366", 15420.5)
+print(card.number)  
+# **** **** **** 0366  ← never exposes the real number
+card.number = "9999"
+print(card.number)   
+# $15,420.50            ← formatted, not the raw float
