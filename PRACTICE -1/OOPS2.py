@@ -85,30 +85,30 @@
 
 # property method(use when the value of a thing is not fixed and 
 # needs to be updated instantly)
-class Student:
-    def __init__(self,phy,cem,math):
-        self.phy = phy
-        self.cem = cem
-        self.math = math
-    @property
-    def percentage(self):
-        # This value is calculated every time it is accessed, so it stays
-        # current when phy, cem, or math changes. @property also lets us use
-        # attribute syntax (s1.percentage) instead of method syntax.
-        k = round((self.phy + self.cem +self.math)/3,2)
-        return str(k)+"%"
+# class Student:
+#     def __init__(self,phy,cem,math):
+#         self.phy = phy
+#         self.cem = cem
+#         self.math = math
+#     @property
+#     def percentage(self):
+#         # This value is calculated every time it is accessed, so it stays
+#         # current when phy, cem, or math changes. @property also lets us use
+#         # attribute syntax (s1.percentage) instead of method syntax.
+#         k = round((self.phy + self.cem +self.math)/3,2)
+#         return str(k)+"%"
 
-    # Without @property, percentage could be a regular method:
-    # def percentage(self):
-    #     return f"{round((self.phy + self.cem + self.math) / 3, 2)}%"
-    # Then it would have to be called as s1.percentage(). The result would still
-    # be recalculated, but @property makes a derived value look like an attribute.
-s1 = Student(98,97,90)
-print(s1.percentage)
-s1.phy = 86
-print(s1.percentage)
-s1.math = 80
-print(s1.percentage)
+#     # Without @property, percentage could be a regular method:
+#     # def percentage(self):
+#     #     return f"{round((self.phy + self.cem + self.math) / 3, 2)}%"
+#     # Then it would have to be called as s1.percentage(). The result would still
+#     # be recalculated, but @property makes a derived value look like an attribute.
+# s1 = Student(98,97,90)
+# print(s1.percentage)
+# s1.phy = 86
+# print(s1.percentage)
+# s1.math = 80
+# print(s1.percentage)
 
 
 # #Polymorphism
