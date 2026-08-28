@@ -137,21 +137,28 @@ Output: {"fruit": ["apple", "banana"], "veg": ["carrot"]}
 ## 🔴 HARD (3 Questions)
 
 ### H1 — Library System (OOP composition + `@property` + aggregation)
-Create a class `Book` with `__init__(self, title, author, copies)` storing `self._copies`, with a `copies` property whose setter rejects negative values. Create a class `Library` with `__init__(self)` starting with an empty list of books. Add:
+Create a class `Book` with `__init__(self, title, author, copies)` 
+storing `self._copies`, with a `copies` property whose setter 
+rejects negative values.
+Create a class `Library` with `__init__(self)` starting 
+with an empty list of books. 
+Add:
 - `add_book(book)` — appends a `Book` object
 - `total_copies()` — sum of `.copies` across every book in the library
 - `find_by_author(author)` — returns a list of titles by that author (empty list if none, never `None`)
 
 ```
-Input:  lib = Library()
-        lib.add_book(Book("Dune", "Herbert", 3))
-        lib.add_book(Book("Children of Dune", "Herbert", 2))
-        lib.add_book(Book("1984", "Orwell", 5))
+Input: 
+lib = Library()
+lib.add_book(Book("Dune", "Herbert", 3))
+lib.add_book(Book("Children of Dune", "Herbert", 2))
+lib.add_book(Book("1984", "Orwell", 5))
 Output: lib.total_copies() -> 10
         lib.find_by_author("Herbert") -> ["Dune", "Children of Dune"]
         lib.find_by_author("Tolkien") -> []
 ```
-> 💡 Adversarial: `find_by_author` on an author with zero matches must return `[]`, not `None` — check what your loop does when nothing matches.
+> 💡 Adversarial: `find_by_author` on an author with zero matches must 
+return `[]`, not `None` — check what your loop does when nothing matches.
 
 ---
 

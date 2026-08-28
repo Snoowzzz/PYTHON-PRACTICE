@@ -157,3 +157,43 @@
 # pairs =[("fruit", "apple"), ("veg", "carrot"), ("fruit", "apple"), ("fruit", "banana")]
 # print(merge_unique(pairs))       
     
+# ### Question 8 (Hard)
+# class Book:
+#     def __init__(self,title,author,copies):
+#         self.title = title
+#         self.author = author
+#         self._copies = copies
+#     @property
+#     def copies(self):
+#         return self._copies
+#     @copies.setter
+#     def copies(self,values):
+#         if values < 0:
+#             raise ValueError("Copies can't be in negative")
+#         self._copies = values
+# class Library:
+#     def __init__(self):
+#         books = []
+#         self.books = books
+#     def add_book(self,book):
+#         self.books.append(book)
+#     def total_copies(self):
+#         count = 0                       
+#         for items in self.books:
+#             count += items.copies
+#         return count
+#     def find_by_author(self,author):
+#         lst = []
+#         for items in self.books:
+#             if author == items.author:
+#                 lst.append(items.title)
+#         return lst
+# lib = Library()
+# lib.add_book(Book("Dune", "Herbert", 3))
+# lib.add_book(Book("Children of Dune", "Herbert", 2))
+# lib.add_book(Book("1984", "Orwell", 5))    
+# print(lib.total_copies())
+# print(lib.find_by_author("Herbert"))
+# print(lib.find_by_author("Tolkein"))
+
+        
