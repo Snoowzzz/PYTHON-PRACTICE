@@ -292,13 +292,28 @@
 ## Question 1
 # Input:  t = Temperature(100)
 # Output: t.fahrenheit -> 212.0
-class Temperature:
-    def __init__(self,celsius):
-        self.celsius = celsius
-    @property
-    def fahrenheit(self):
-        return (9 * self.celsius) / 5 + 32
-t = Temperature(100)
-print(t.celsius)
-print(t.fahrenheit)  
-## property makes derived value fahrenheit look like a attribute
+# class Temperature:
+#     def __init__(self,celsius):
+#         self.celsius = celsius
+#     @property
+#     def fahrenheit(self):
+#         return (9 * self.celsius) / 5 + 32
+# t = Temperature(100)
+# print(t.celsius)
+# print(t.fahrenheit)  
+# ## property makes derived value fahrenheit look like a attribute
+
+## Question 2
+# Input:  p = Person("Soham", "Kulkarni")
+# Output: p.full_name -> "Soham Kulkarni"
+# class Person:
+#     def __init__(self,first_name,last_name):
+#         self.firstname = first_name
+#         self.lastname = last_name
+#     @property
+#     def fullname(self):
+#         return f"{self.firstname} {self.lastname}"
+# p = Person("Soham","Kulkarni")
+# print(p.fullname)
+
+## Question 3
