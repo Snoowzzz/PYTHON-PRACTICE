@@ -66,7 +66,11 @@ decide the tiebreak and be consistent about it.
 ---
 
 ### M2 — Validated Wallet (OOP + `@property`)
-Create a class `Wallet` with `__init__(self, balance)` storing `self._balance`. Add a `balance` property with a setter that **raises `ValueError`** on a negative direct assignment. Add a method `spend(amount)` that reduces balance and **returns `True`/`False`** (not print) depending on whether funds were sufficient.
+Create a class `Wallet` with `__init__(self, balance)` storing `self._balance`
+Add a `balance` property with a setter that **raises `ValueError`** on 
+a negative direct assignment. Add a method `spend(amount)` that 
+reduces balance and **returns `True`/`False`** (not print) depending 
+on whether funds were sufficient.
 
 ```
 Input:  w = Wallet(1000)
@@ -74,7 +78,9 @@ Input:  w = Wallet(1000)
 Output: w.spend(200) -> True,  w.balance -> 800
         w.spend(5000) -> False, w.balance unchanged -> 800
 ```
-> 💡 Adversarial: `w.balance = -50` (direct assignment) should raise `ValueError` — this is a different failure path than `spend()` returning `False`. Know which mechanism you're using and why.
+> 💡 Adversarial: `w.balance = -50` (direct assignment) should raise `ValueError` —
+this is a different failure path than `spend()` returning `False`. 
+Know which mechanism you're using and why.
 
 ---
 

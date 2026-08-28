@@ -62,3 +62,34 @@
 # books = [Book("Dune", "Herbert", 1969), Book("Neuromancer", "Gibson", 1984),Book("1984", "Orwell", 1949)]
 # shelf = Shelf(books)
 # print(shelf.sorted_by_year())
+
+### Question 4 (Medium)
+# Input:  w = Wallet(1000)
+#         w.spend(200)
+# Output: w.spend(200) -> True,  w.balance -> 800
+#         w.spend(5000) -> False, w.balance unchanged -> 800
+
+# class Wallet:
+#     def __init__(self,balance):
+#         self._balance = balance
+#     @property
+#     def balance(self):
+#         return self._balance
+#     @balance.setter
+#     def balance(self,value):
+#         if value < 0:
+#             raise ValueError("Enter a positive amount")
+#     def spend(self,amount):
+#         if amount <= self._balance:
+#             self._balance -= amount
+#             return True
+#         else:
+#             return False
+# w = Wallet(1000)
+# w.spend(200)
+# w.spend(200)
+# print(w.spend(400))
+# print(w.balance)
+# # w.spend(1500)
+# # print(w.spend())
+# # print(w.balance)
