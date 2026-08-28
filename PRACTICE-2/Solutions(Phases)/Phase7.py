@@ -111,3 +111,34 @@
 #     return finalst[:3]
 # text ="the cat sat on the mat the cat ran"
 # print(rank_words(text))
+
+### Question 6 (Medium)
+# Input:
+#         coach = Coach("Karan", 40, "Defense")
+#         players = [Person("Soham", 21), Person("Riya", 22)]
+#         team = Team("Alpha", coach, players)
+# Output: team.roster_summary() -> 
+# {"coach": "Karan", "specialty": "Defense", "player_count": 2}
+# class Person:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+# class Coach(Person):
+#     def __init__(self,name,age,speciality):
+#         super().__init__(name,age)
+#         self.speciality = speciality
+# class Team:
+#     def __init__(self,name,coach,players):
+#         self.coach = coach
+#         self.players = players
+#     def roster_summary(self):
+#         d = {
+#          "coach" : self.coach.name,
+#          "speciality": self.coach.speciality,
+#          "player_count":len(self.players),
+#         }
+#         return d
+# coach = Coach("Karan", 40, "Defense")
+# players = [Person("Soham", 21), Person("Riya", 22)]
+# team = Team("Alpha", coach, players)
+# print(team.roster_summary())

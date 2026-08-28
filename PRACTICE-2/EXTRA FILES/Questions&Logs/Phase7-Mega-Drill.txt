@@ -99,15 +99,25 @@ available, don't crash trying to slice past the end.
 ---
 
 ### M4 — Team Roster (OOP inheritance + composition, mixed)
-Create a class `Person` with `__init__(self, name, age)`. Create `Coach(Person)` that inherits from it and adds a `specialty` attribute via `super()`. Create a class `Team` with `__init__(self, name, coach, players)` where `coach` is a `Coach` object and `players` is a list of plain `Person` objects (composition, not inheritance). Add `roster_summary()` returning a dict: `{"coach": coach.name, "specialty": coach.specialty, "player_count": len(players)}`.
+Create a class `Person` with `__init__(self, name, age)`. 
+Create `Coach(Person)` that inherits from it and adds a `specialty` 
+attribute via `super()`. 
+Create a class `Team` with __init__(self, name, coach, players)` 
+where `coach` is a `Coach` object and `players` is a list of plain 
+`Person` objects (composition, not inheritance). 
+Add `roster_summary()` returning a 
+  dict: `{"coach": coach.name, "specialty": coach.specialty, 
+          "player_count": len(players)}`.
 
 ```
 Input:  coach = Coach("Karan", 40, "Defense")
         players = [Person("Soham", 21), Person("Riya", 22)]
         team = Team("Alpha", coach, players)
-Output: team.roster_summary() -> {"coach": "Karan", "specialty": "Defense", "player_count": 2}
+Output: team.roster_summary() -> 
+{"coach": "Karan", "specialty": "Defense", "player_count": 2}
 ```
-> 💡 Adversarial: a team with zero players — `player_count` should just be `0`, not crash.
+> 💡 Adversarial: a team with zero players — 
+`player_count` should just be `0`, not crash.
 
 ---
 
