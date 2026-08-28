@@ -186,7 +186,10 @@ that's polymorphism doing its job.
 ---
 
 ### H3 — Student Report Pipeline (OOP + full mixed pipeline)
-Create a class `Student` with `__init__(self, name, scores)` where `scores` is a list of ints, and a **read-only** `average` property computing the mean. Write a **plain function** `process_students(students)` taking a list of `Student` objects and returning a report dict:
+Create a class `Student` with `__init__(self, name, scores)` where `scores` 
+is a list of ints, and a **read-only** `average` property computing the mean.
+Write a **plain function** `process_students(students)` taking a list 
+of `Student` objects and returning a report dict:
 - `"roster"` → list of `(name, average)` tuples, sorted by average **descending**
 - `"passed"` → set of names with average ≥ 50
 - `"failed"` → set of names with average < 50

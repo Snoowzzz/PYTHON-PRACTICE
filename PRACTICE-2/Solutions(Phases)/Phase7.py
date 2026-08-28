@@ -244,4 +244,49 @@
 # print(total_area(shapes))
 # print(largest_shape(shapes))    
             
-        
+### Question 10 (Hard)
+#     Input: [
+#     Student("Soham", [88, 92, 79]),
+#     Student("Riya", [95, 91]),
+#     Student("Arjun", [40, 45]),
+#     Student("Meera", [93, 93])   # ties Soham? no — check the numbers
+# ]
+# Output: {
+#     "roster": [("Riya", 93.0), ("Meera", 93.0), ("Soham", 86.33), ("Arjun", 42.5)],
+#     "passed": {"Riya", "Meera", "Soham"},
+#     "failed": {"Arjun"},
+#     "topper": "Meera"
+# }   
+
+# class Student:
+#     def __init__(self,name,scores):
+#         self.name = name
+#         self.scores = scores
+#     @property
+#     def average(self):
+#         return round(sum(self.scores)/len(self.scores),2)
+# def process_students(students):
+#     roster = []
+#     passed = set()
+#     failed = set()
+#     for items in students:
+#         roster.append((items.name,items.average))
+#         if items.average>=50:
+#             passed.add(items.name)
+#         else:
+#             failed.add(items.name)
+#     sortlst = sorted(roster,key=lambda x: (-x[1],x[0]))
+#     d = {
+#         "roster": sortlst,
+#         "passed": passed,
+#         "failed": failed,
+#         "topper": sortlst[0][0]
+#     }
+#     return d
+# students = [
+#     Student("Soham", [88, 92, 79]),
+#     Student("Riya", [95, 91]),
+#     Student("Arjun", [40, 45]),
+#     Student("Meera", [93, 93])   # ties Soham? no — check the numbers
+# ]
+# print(process_students(students))
