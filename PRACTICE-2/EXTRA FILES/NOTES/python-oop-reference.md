@@ -238,3 +238,58 @@ ClassName.class_attr     # access class attribute via the class
 ---
 
 *Reference file — Phase: OOP intro | Generated 24-08-2026*
+# Operator Overloading (Dunder Methods)
+
+# What it is: Python's built-in types (int, str, list) all support
+# ==, <, +, len() because they implement special methods under the 
+# hood — __eq__, __lt__, __add__, __len__. You can implement the
+# same methods on your own classes, and suddenly your custom 
+# objects work with those same operators.
+
+# python
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def __eq__(self, other):
+#         return self.x == other.x and self.y == other.y
+
+# p1 = Point(2, 3)
+# p2 = Point(2, 3)
+# print(p1 == p2)   # True — without __eq__, this would 
+# be False (compares identity, not values)
+
+# Why it exists — the actual problem: Without __eq__, == on 
+# two objects checks whether they're the same object in memory,
+# not whether they hold the same data. p1 == p2 above would 
+# be False by default even though both points are (2, 3) — 
+# because Python has no idea what "equal" should mean for your
+# Point class unless you tell it.
+
+# Where this actually matters:
+
+# __eq__ / __lt__ — the moment you try sorted(list_of_my_objects) or 
+# check obj in my_list, Python needs to know how to compare your objects.
+# Without these, sorted() on a list of custom objects just crashes 
+# (TypeError: '<' not supported).
+
+# __add__ — domain objects that should combine, like 
+# Money(50) + Money(30), or Vector(1,2) + Vector(3,4) in any 
+# physics/graphics/ML code. Without it, + raises TypeError.
+
+# __len__ — lets len(my_object) work naturally, e.g. len(cart) for
+# a shopping cart's item count — reads far cleaner than 
+# cart.get_item_count().
+
+# __repr__ — the debugging twin of __str__. __str__ is 
+# for humans (print(obj)); __repr__ is what shows up when you 
+# inspect an object in a debugger, a REPL, or inside a 
+# list/dict (print([obj1, obj2]) uses __repr__ on each element, 
+# not __str__). Real convention: __repr__ should ideally 
+# look like valid Python code that could recreate the object,
+# e.g. Point(2, 3).
+
+# This is exactly how libraries like NumPy, Pandas, and datetime 
+# let you write df1 + df2 or date1 < date2 — none of that is special-cased by Python; it's all dunder methods on their classes,
+# same mechanism you're about to write yourself.
