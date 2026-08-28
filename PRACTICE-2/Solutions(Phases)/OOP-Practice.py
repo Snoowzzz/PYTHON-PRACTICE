@@ -317,3 +317,25 @@
 # print(p.fullname)
 
 ## Question 3
+# Input:  p = Product(100)
+#         p.price = 150
+# Output: p.price -> 150
+
+# Input:  p.price = -20
+# Output: raises ValueError
+class Product:
+    def __init__(self,price):
+    # The underscore shows that _price is an internal/backing attribute;
+    # it also prevents the property setter from recursively calling itself.
+        self._price = price
+    @property
+    def price(self):
+        return self._price
+    @price.setter
+    def price(self,value):
+        if value < 0:
+            raise ValueError("Price can't be negative..")
+        self._price = value
+p = Product(100)
+print(p.price)
+
