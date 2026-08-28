@@ -345,19 +345,19 @@
 
 # Input:  c.radius = -3
 # Output: raises ValueError
-class Circle:
-    def __init__(self,radius):
-        self._radius = radius
-    @property
-    def area(self):
-        return round(22/7 * (self._radius**2),3)
-    @area.setter
-    def area(self,value):
-        if value < 0:
-            raise ValueError("Radius can't be negative")
-        self._radius = value
-c = Circle(5)
-print(c.area)
+# class Circle:
+#     def __init__(self,radius):
+#         self._radius = radius
+#     @property
+#     def area(self):
+#         return round(22/7 * (self._radius**2),3)
+#     @area.setter
+#     def area(self,value):
+#         if value < 0:
+#             raise ValueError("Radius can't be negative")
+#         self._radius = value
+# c = Circle(5)
+# print(c.area)
 
 # Explanation:
 # `@property` is needed to make `area` readable like an attribute:
@@ -387,3 +387,29 @@ print(c.area)
 #
 # Properties are not compulsory: a normal `get_area()` method can be used,
 # but then it must be called with parentheses: `c.get_area()`.
+
+### Question 5
+# Input:  e = Employee("Riya", 50000)
+# Output: e.annual_salary -> 600000
+
+# Input:  e.salary = 60000
+# Output: e.annual_salary -> 720000
+# class Employee:
+#     def __init__(self,name,salary):
+#         self.name = name
+#         self._salary = salary
+#     @property
+#     def salary(self):
+#         return self.salary
+#     @salary.setter
+#     def salary(self,value):
+#         if value < 0 :
+#             raise ValueError("Salary can't be negative")
+#         self._salary = value
+#     @property
+#     def annualsalary(self):
+#         return self._salary*12
+# e = Employee("Riya",50000)
+# print(e.annualsalary)
+# e.salary = 60000
+# print(e.annualsalary)
