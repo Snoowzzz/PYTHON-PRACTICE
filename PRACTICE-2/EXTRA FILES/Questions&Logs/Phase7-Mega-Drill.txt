@@ -163,14 +163,25 @@ return `[]`, not `None` — check what your loop does when nothing matches.
 ---
 
 ### H2 — Polymorphic Shapes (OOP inheritance + polymorphism + lambda/sorted)
-Create a base class `Shape` with a method `area()` returning `0` (placeholder — every subclass must override it). Create `Circle(radius)`, `Square(side)`, and `Rectangle(width, height)`, each correctly overriding `area()`. Write a **plain function** `total_area(shapes)` that takes a mixed list of shape objects and sums `.area()` across all of them — same method call, different underlying math, no `if isinstance()` branching. Write a second plain function `largest_shape(shapes)` returning the object with the biggest area, using `sorted()` with a lambda key.
+Create a base class `Shape` with a method `area()` returning `0` 
+(placeholder — every subclass must override it). 
+Create `Circle(radius)`, `Square(side)`, and `Rectangle(width, height)`, 
+each correctly overriding `area()`. 
+Write a **plain function** `total_area(shapes)` that takes a mixed list 
+of shape objects and sums `.area()` across all of them — same method call, 
+different underlying math, no `if isinstance()` branching.
+Write a second plain function `largest_shape(shapes)` returning the 
+object with the biggest area, using `sorted()` with a lambda key.
 
 ```
 Input:  shapes = [Circle(3), Square(4), Rectangle(2, 5)]
 Output: total_area(shapes) -> ~44.27  (28.27 + 16 + 10)
         largest_shape(shapes) -> the Circle object
 ```
-> 💡 Adversarial: empty `shapes` list — `total_area([])` should return `0`, not crash. This is the actual point of the exercise: `total_area()` never needs to know or care which shape it's looking at — that's polymorphism doing its job.
+> 💡 Adversarial: empty `shapes` list — `total_area([])` should return `0`, 
+not crash. This is the actual point of the exercise: 
+`total_area()` never needs to know or care which shape it's looking at — 
+that's polymorphism doing its job.
 
 ---
 

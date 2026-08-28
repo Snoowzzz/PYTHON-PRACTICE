@@ -196,4 +196,52 @@
 # print(lib.find_by_author("Herbert"))
 # print(lib.find_by_author("Tolkein"))
 
+#### Question 9 (Hard)
+# Input:  shapes = [Circle(3), Square(4), Rectangle(2, 5)]
+# Output: total_area(shapes) -> ~44.27  (28.27 + 16 + 10)
+#         largest_shape(shapes) -> the Circle object
+# import math
+
+# class Shape:
+#     def area(self):
+#         return 0
+
+# class Circle(Shape):
+#     def __init__(self, radius):
+#         self.radius = radius
+#     def area(self):
+#         return round((self.radius**2) * math.pi, 2)
+
+# class Square(Shape):
+#     def __init__(self, side):
+#         self.side = side
+#     def area(self):
+#         return self.side**2
+
+# class Rectangle(Shape):
+#     def __init__(self, length, breadth):
+#         self.length = length
+#         self.breadth = breadth
+#     def area(self):
+#         return self.length * self.breadth
+
+# def total_area(shapes):
+#     totalarea = 0
+#     for items in shapes:
+#         totalarea += items.area()
+#     return totalarea
+
+# def largest_shape(shapes):
+#     max_area = 0
+#     max_shape = None
+#     for items in shapes:
+#         if items.area() > max_area:
+#             max_area = items.area()
+#             max_shape = items
+#     return max_shape
+
+# shapes = [Circle(3), Square(4), Rectangle(2, 5)]
+# print(total_area(shapes))
+# print(largest_shape(shapes))    
+            
         
