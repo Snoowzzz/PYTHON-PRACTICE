@@ -100,8 +100,7 @@
 #         self.name = name
 #         self.score = score
 # class Team:  
-##### do not inherit because team is not a child of player
-##### fundamentally.
+##### do not inherit because team is not a child of player fundamentally.
 #     def __init__(self,team_name,players):  
 #         self.team_name = team_name
 #         self.players = players
