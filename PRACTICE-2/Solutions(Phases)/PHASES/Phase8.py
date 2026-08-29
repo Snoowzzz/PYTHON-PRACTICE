@@ -88,26 +88,45 @@
 # print(ledger.largest_credit())      
 # print(ledger.summary())
 
-### Question 3 (Medium)
-def build_leaderboards(results):
-    d = {}
-    for i,v in results:
-        if i not in d.keys():
-            d[i]= v
+# ### Question 3 (Medium)
+# def build_leaderboards(results):
+#     d = {}
+#     for i,v in results:
+#         if i not in d.keys():
+#             d[i]= v
+#         else:
+#             d[i]+=v
+#     lst = []
+#     for i,v in d.items():
+#         lst.append((i,v))
+#     newlst = sorted(lst,key=lambda x: (-x[1],x[0]))
+#     finalist = []
+#     rank = 1
+#     for idx, (k, s) in enumerate(newlst):  ### remember this
+#         if idx > 0 and s < newlst[idx-1][1]:
+#             rank = idx + 1   # only advance rank when score actually drops
+#         finalist.append((rank, k, s))
+# results = [
+#     ("Alice", 300), ("Bob", 450), ("Alice", 200),
+#     ("Charlie", 450), ("Dave", 100), ("Bob", 50)
+# ]
+# print(build_leaderboards(results))
+
+### Question 4( Medium)
+# text = "The Quick brown FOX jumped over the lazy DOG"
+# banned = ["fox", "dog", "the"]
+# sanitise(text, banned) →
+# "[REMOVED] Quick brown [REMOVED] jumped over [REMOVED] lazy [REMOVED]"
+def sanitise(text,banned_words):
+    newtext = text.split(" ")
+    banned = set(banned_words)
+    finallst = []
+    for item in newtext:
+        if item.lower() not in banned:
+            finallst.append(item)
         else:
-            d[i]+=v
-    lst = []
-    for i,v in d.items():
-        lst.append((i,v))
-    newlst = sorted(lst,key=lambda x: (-x[1],x[0]))
-    finalist = []
-    rank = 1
-    for idx, (k, s) in enumerate(newlst):
-        if idx > 0 and s < newlst[idx-1][1]:
-            rank = idx + 1   # only advance rank when score actually drops
-        finalist.append((rank, k, s))
-results = [
-    ("Alice", 300), ("Bob", 450), ("Alice", 200),
-    ("Charlie", 450), ("Dave", 100), ("Bob", 50)
-]
-print(build_leaderboards(results))
+            finallst.append("[REMOVED]")
+    return " ".join(finallst)
+text = "The Quick brown FOX jumped over the lazy DOG"
+banned = ["fox", "dog", "the"]
+print(sanitise(text,banned))

@@ -128,7 +128,6 @@ The function must not mutate the original `banned_words` list.
 ```
 text = "The Quick brown FOX jumped over the lazy DOG"
 banned = ["fox", "dog", "the"]
-
 sanitise(text, banned) →
 "[REMOVED] Quick brown [REMOVED] jumped over [REMOVED] lazy [REMOVED]"
 ```
