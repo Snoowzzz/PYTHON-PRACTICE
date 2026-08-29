@@ -218,19 +218,19 @@ to fall out of `sorted()` by accident. Verify it, don't assume it.
 
 ## Log
 
+## Log
+
 | Q | Status | First Try? | Edge Case Tested | Notes |
 |---|--------|------------|-------------------|-------|
-| E1 | | | | |
-| E2 | | | | |
-| M1 | | | | |
-| M2 | | | | |
-| M3 | | | | |
-| M4 | | | | |
-| M5 | | | | |
-| H1 | | | | |
-| H2 | | | | |
-| H3 | | | | |
-
----
+| E1 | ✅ | Yes | Yes — empty list | Implicit `None` return on empty was a deliberate choice, not an oversight |
+| E2 | ✅ | Yes | — | Clean |
+| M1 | ✅ | Yes | — | Clean, tested with a different year than the spec (1969 instead of 1965) |
+| M2 | ⚠️→✅ | No | Yes — insufficient funds path | Setter was missing `self._balance = value` on the valid path (removed while testing the error path, forgot to restore). Fixed. |
+| M3 | ✅ | Yes | — | One harmless redundant `len < 3` check before slicing — slicing already handles it safely |
+| M4 | ✅ | Yes | — | Correct logic; dict key spelled `"speciality"` instead of spec's `"specialty"` |
+| M5 | ✅ | Yes | — | Clean set-based dedup |
+| H1 | ✅ | Yes | Yes — author with no matches | Applied the M2 setter lesson immediately and correctly |
+| H2 | ✅ | Yes | — | Code was correct — mentor's stated expected total (44.27) was wrong; correct sum is 54.27 |
+| H3 | ✅ | Yes | Yes — tie between two students | Code was correct — mentor's stated roster order for the tie was inconsistent with the stated topper; his alphabetical tiebreak was the correct version |
 
 *Phase 7 — mixed OOP (through getters/setters) + full prior topic set. Dunder/operator overloading picked back up next phase.*
