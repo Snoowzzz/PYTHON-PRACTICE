@@ -117,16 +117,19 @@
 # banned = ["fox", "dog", "the"]
 # sanitise(text, banned) →
 # "[REMOVED] Quick brown [REMOVED] jumped over [REMOVED] lazy [REMOVED]"
-def sanitise(text,banned_words):
-    newtext = text.split(" ")
-    banned = set(banned_words)
-    finallst = []
-    for item in newtext:
-        if item.lower() not in banned:
-            finallst.append(item)
-        else:
-            finallst.append("[REMOVED]")
-    return " ".join(finallst)
-text = "The Quick brown FOX jumped over the lazy DOG"
-banned = ["fox", "dog", "the"]
-print(sanitise(text,banned))
+
+# def sanitise(text,banned_words):
+#     newtext = text.split(" ")
+#     banned = set(banned_words)
+#     finallst = []
+#     for item in newtext:
+#         if item.lower() not in banned:
+#             finallst.append(item)
+#         else:
+#             finallst.append("[REMOVED]")
+#     return " ".join(finallst)
+# text = "The Quick brown FOX jumped over the lazy DOG"
+# banned = ["fox", "dog", "the"]
+# print(sanitise(text,banned))
+
+### Question 5 (Medium)
