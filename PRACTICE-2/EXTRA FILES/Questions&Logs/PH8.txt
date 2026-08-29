@@ -1,0 +1,417 @@
+# Python + OOP Mega Drill — Phase 8
+**Date:** 29-08-2026
+**Format:** 1 Easy · 5 Medium · 4 Hard
+**Topics:** OOP (classes, `__init__`, methods, instance/class attrs, inheritance,
+composition, `@property`/getters/setters) + Loops · Strings · Functions · Lists ·
+Dicts · Sets · Tuples · Lambda
+**Logic Tier:** Stepped up from Phase 7 — same tools, harder reasoning chains
+
+---
+
+> **Rules**
+> - Every solution must be wrapped in a class and/or function as the question requires
+> - Test at least one adversarial input before marking done
+> - No dunder/operator overloading yet — next phase
+> - No built-in shortcuts where logic is explicitly asked for
+> - **New rule this phase:** Before writing any class, write one line comment: `# is-a or has-a?`
+>   This is not optional. Get it wrong and the design breaks.
+
+---
+
+## 🟢 EASY (1 Question)
+
+### E1 — Inventory Counter (OOP + dict + property)
+Create a class `Inventory` with `__init__(self)` starting with an empty dict
+`self._stock` mapping item names (str) to quantities (int).
+
+Add:
+- `add(item, qty)` — adds qty to existing stock (creates entry if new)
+- `remove(item, qty)` — reduces qty; **raises `ValueError`** if qty would go
+  negative OR if item doesn't exist
+- A read-only `total` property returning the sum of all quantities
+
+```
+inv = Inventory()
+inv.add("apple", 10)
+inv.add("banana", 5)
+inv.add("apple", 3)
+inv.remove("banana", 2)
+
+inv.total        → 16
+inv._stock       → {"apple": 13, "banana": 3}
+inv.remove("apple", 20)   → raises ValueError (insufficient stock)
+inv.remove("mango", 1)    → raises ValueError (item doesn't exist)
+```
+
+> 💡 Adversarial: two different `ValueError` paths — one for missing item,
+> one for insufficient qty. Know which check runs first and why that order matters.
+> `total` must reflect live state — not a cached value.
+
+---
+
+## 🟡 MEDIUM (5 Questions)
+
+### M1 — Transaction Ledger (OOP + list of tuples + property + lambda)
+Create a class `Ledger` with `__init__(self, owner)`.
+Internally maintain `self._transactions` as a list of `(type, amount)` tuples
+where type is either `"credit"` or `"debit"`.
+
+Add:
+- `credit(amount)` — appends `("credit", amount)` — raise `ValueError` if amount ≤ 0
+- `debit(amount)` — appends `("debit", amount)` — raise `ValueError` if amount ≤ 0
+- `balance` property (read-only) — sum of credits minus sum of debits
+- `largest_credit()` — returns the single largest credit amount, or `0` if none exist
+- `summary()` — returns a dict:
+  `{"owner": ..., "credits": <count>, "debits": <count>, "balance": ...}`
+
+```
+ledger = Ledger("Soham")
+ledger.credit(500)
+ledger.credit(200)
+ledger.debit(100)
+ledger.credit(800)
+ledger.debit(300)
+
+ledger.balance          → 1100
+ledger.largest_credit() → 800
+ledger.summary()        → {"owner": "Soham", "credits": 3, "debits": 2, "balance": 1100}
+```
+
+> 💡 Adversarial: `largest_credit()` on a ledger with zero credits must return `0`,
+> not crash. `debit` that pushes balance negative is **allowed** — this is a ledger,
+> not a wallet. Know the difference and make it intentional in your design.
+
+---
+
+### M2 — Ranked Leaderboard (plain function + dict + lambda + sorted)
+Write a function `build_leaderboard(results)` where `results` is a list of
+`(player, score)` tuples. A player may appear **multiple times** — their final
+entry is their total accumulated score.
+
+Return a list of `(rank, player, total_score)` tuples:
+- Sorted by total score **descending**
+- Ties broken by player name **alphabetically ascending**
+- Rank is 1-indexed — tied players share the same rank number
+
+```
+results = [
+    ("Alice", 300), ("Bob", 450), ("Alice", 200),
+    ("Charlie", 450), ("Dave", 100), ("Bob", 50)
+]
+
+build_leaderboard(results) →
+[
+  (1, "Bob",     500),
+  (2, "Alice",   500),   ← wait — check Alice's total. Is this right?
+  (3, "Charlie", 450),
+  (4, "Dave",    100)
+]
+```
+
+> 💡 The expected output above has a deliberate error baked in —
+> **catch it and fix it before submitting.** Alice's total is not 500.
+> Rank assignment for ties: if two players tie for rank 2, the next player
+> gets rank 4 (Olympic-style), not rank 3. Implement that explicitly.
+
+---
+
+### M3 — Text Sanitiser (plain function, strings + sets + lambda)
+Write a function `sanitise(text, banned_words)` where `banned_words` is a list
+of strings. Return the cleaned text with:
+1. All banned words replaced by `"[REMOVED]"` (case-insensitive match,
+   but preserve the **original casing** of non-banned words)
+2. Consecutive spaces collapsed to a single space
+3. Leading/trailing whitespace stripped
+
+The function must not mutate the original `banned_words` list.
+
+```
+text = "The Quick brown FOX jumped over the lazy DOG"
+banned = ["fox", "dog", "the"]
+
+sanitise(text, banned) →
+"[REMOVED] Quick brown [REMOVED] jumped over [REMOVED] lazy [REMOVED]"
+```
+
+> 💡 Adversarial: a banned word appearing mid-sentence vs at the start vs
+> at the end — all three must work. What happens if `banned_words` is empty?
+> What if the same word is in `banned_words` twice? (Use a set internally —
+> but remember the rule: don't mutate the original list.)
+
+---
+
+### M4 — Course Enrolment (OOP composition + sets + property)
+Build two classes:
+
+`Student(name)` — has a `name` and a read-only `courses` property
+returning a **sorted list** of enrolled course names.
+Add `enrol(course)` and `drop(course)` — `drop` raises `ValueError` if
+the student isn't enrolled.
+
+`Classroom(course_name)` — has a `course_name` and maintains
+a set of enrolled `Student` objects internally.
+Add:
+- `enrol(student)` — enrols the student in the classroom
+  AND calls `student.enrol(course_name)` so the Student object stays in sync
+- `drop(student)` — drops the student AND updates the Student object
+- `roster()` — returns a sorted list of student names (not objects)
+- `size` property — returns count of enrolled students
+
+```
+s1 = Student("Soham")
+s2 = Student("Riya")
+cn = Classroom("Networks")
+
+cn.enrol(s1)
+cn.enrol(s2)
+cn.drop(s1)
+
+cn.roster()   → ["Riya"]
+cn.size       → 1
+s1.courses    → []       ← Soham was dropped, must be in sync
+s2.courses    → ["Networks"]
+```
+
+> 💡 This is a two-way sync problem — both objects must stay consistent.
+> Write your comment: `# is-a or has-a?` for BOTH classes before you code.
+> Adversarial: dropping a student not in the classroom — decide: does Classroom
+> raise an error, or does Student's `drop` raise it? One of them will. Be deliberate.
+
+---
+
+### M5 — Flat to Nested (plain function, dicts + lists + tuples)
+Write a function `group_by_category(records)` where `records` is a list of
+`(category, subcategory, value)` tuples.
+
+Return a nested dict:
+`{category: {subcategory: [values sorted ascending]}}`
+
+Each category maps to a dict of subcategories, each mapping to a
+**sorted list** of all values that appeared under it.
+Duplicates within a subcategory are kept.
+
+```
+records = [
+    ("cloud", "aws", 3), ("cloud", "gcp", 1), ("cloud", "aws", 1),
+    ("lang", "python", 5), ("lang", "python", 2), ("cloud", "gcp", 4),
+    ("lang", "java", 3)
+]
+
+group_by_category(records) →
+{
+  "cloud": {"aws": [1, 3], "gcp": [1, 4]},
+  "lang":  {"python": [2, 5], "java": [3]}
+}
+```
+
+> 💡 Adversarial: empty input returns `{}`. A category with only one subcategory
+> still wraps it in a list. What happens if the same `(category, subcategory, value)`
+> triple appears twice? (Duplicates are kept — don't deduplicate, that's a different
+> problem.) Think carefully about how you initialise the nested structure — this is
+> where most bugs live.
+
+---
+
+## 🔴 HARD (4 Questions)
+
+### H1 — Voting System (OOP + full pipeline + tie logic)
+Build a `VotingBooth` class with `__init__(self, candidates)` where `candidates`
+is a list of strings. Internally maintain a vote count dict, initialised to 0
+for every candidate.
+
+Add:
+- `cast_vote(candidate)` — increments that candidate's count;
+  raises `ValueError` for unregistered candidates
+- `results()` — returns a list of `(candidate, votes)` tuples sorted by
+  votes **descending**, ties broken **alphabetically ascending**
+- `winner()` — returns the winning candidate's name; if there is a **true tie**
+  at the top (two candidates with equal max votes), return `"TIE"` instead
+- `total_votes` property (read-only) — total votes cast so far
+
+```
+booth = VotingBooth(["Alice", "Bob", "Charlie"])
+for candidate in ["Alice", "Bob", "Alice", "Charlie", "Bob", "Alice"]:
+    booth.cast_vote(candidate)
+
+booth.results()      → [("Alice", 3), ("Bob", 2), ("Charlie", 1)]
+booth.winner()       → "Alice"
+booth.total_votes    → 6
+
+# Now add two Bob votes to create a tie at the top:
+booth.cast_vote("Bob")
+booth.cast_vote("Bob")  # Bob is now 4... wait, is that a tie? Check your math.
+
+booth.winner()       → ???   ← work this out yourself; don't guess
+```
+
+> 💡 The expected output for the tie scenario is intentionally left blank.
+> Trace the numbers manually and write what you expect BEFORE running your code.
+> `winner()` returning `"TIE"` only applies to the top position — second-place
+> ties don't affect it. Adversarial: all candidates with 0 votes — what does
+> `winner()` return? Decide intentionally; document it in a comment.
+
+---
+
+### H2 — Warehouse (OOP multi-class + composition + aggregation)
+Build three classes:
+
+`Item(name, price, qty)` — stores `self._price` and `self._qty`.
+Add a `price` property with a setter that rejects values ≤ 0.
+Add a `qty` property with a setter that rejects negative values.
+Add a `value()` method returning `price × qty`.
+
+`Shelf(shelf_id)` — holds a list of `Item` objects (composition, not inheritance).
+Add:
+- `add_item(item)` — appends an Item
+- `shelf_value()` — total value of all items on this shelf
+- `find_item(name)` — returns the Item object if found, else `None`
+  (case-insensitive name match)
+- `most_expensive()` — returns the Item with highest price;
+  if two items share the highest price, return the one added first
+
+`Warehouse` — holds a list of `Shelf` objects.
+Add:
+- `add_shelf(shelf)` — appends a Shelf
+- `total_value()` — sum of all shelf values
+- `find_item(name)` — searches ALL shelves, returns the first Item found
+  (or `None`). Search shelves in order of insertion.
+
+```
+w = Warehouse()
+s1 = Shelf("A1")
+s2 = Shelf("A2")
+s1.add_item(Item("Keyboard", 1500, 4))
+s1.add_item(Item("Mouse", 800, 10))
+s2.add_item(Item("Monitor", 12000, 2))
+s2.add_item(Item("HDMI", 400, 15))
+w.add_shelf(s1)
+w.add_shelf(s2)
+
+w.total_value()              → 1500*4 + 800*10 + 12000*2 + 400*15 = ?
+s1.find_item("mouse")        → the Mouse Item object (case-insensitive)
+s1.most_expensive()          → the Keyboard Item
+w.find_item("HDMI")          → the HDMI Item (found in s2)
+w.find_item("SSD")           → None
+```
+
+> 💡 Compute `total_value()` manually before running — verify your answer.
+> `most_expensive()` on an empty shelf must return `None`, not crash.
+> `find_item` on Warehouse searches shelf by shelf — the first match wins.
+> The case-insensitive match applies to Shelf only (you decide for Warehouse —
+> but be consistent and document your decision with a comment).
+
+---
+
+### H3 — Student Progression Engine (OOP + full pipeline + multi-key sort)
+Create a class `Student` with `__init__(self, name, scores)` where `scores`
+is a dict mapping subject names (str) to integer scores.
+
+Add:
+- `average` property (read-only) — mean of all scores, rounded to 2 decimals
+- `passed_subjects` property (read-only) — sorted list of subjects where score ≥ 50
+- `grade` property (read-only) — returns `"Distinction"` (avg ≥ 85),
+  `"Pass"` (avg ≥ 50), or `"Fail"` (avg < 50)
+- `weakest_subject()` — returns the subject name with the lowest score;
+  if tied, return the alphabetically first subject name
+
+Write a **plain function** `class_report(students)` taking a list of `Student`
+objects and returning a dict:
+
+```python
+{
+    "distinction": [names sorted alphabetically],
+    "pass":        [names sorted alphabetically],
+    "fail":        [names sorted alphabetically],
+    "class_topper": name of student with highest average (tie → alphabetically first),
+    "most_improved_subject": the subject name that appears MOST frequently
+                             as a weakest_subject() across all students
+                             (tie → alphabetically first subject name)
+}
+```
+
+```
+students = [
+    Student("Soham",   {"Networks": 88, "Cloud": 92, "AI": 55}),
+    Student("Riya",    {"Networks": 91, "Cloud": 87, "AI": 90}),
+    Student("Arjun",   {"Networks": 40, "Cloud": 48, "AI": 35}),
+    Student("Meera",   {"Networks": 78, "Cloud": 60, "AI": 49}),
+    Student("Priya",   {"Networks": 50, "Cloud": 50, "AI": 50}),
+]
+```
+
+> 💡 `most_improved_subject` requires calling `weakest_subject()` on every
+> student and then doing a frequency count — this is a multi-step pipeline,
+> not a one-liner. Work it through on paper first.
+> Trace Meera's grade: avg = (78 + 60 + 49) / 3 = ? It's not obvious — compute it.
+> Adversarial: what if ALL students have the same weakest subject?
+> What if the student list is empty — every key in the report should return
+> a sensible empty value, never crash.
+
+---
+
+### H4 — Event Scheduler (OOP + multi-class + full logic pipeline)
+Build a scheduling system with two classes:
+
+`Event(name, day, priority)` — `day` is an int (1–7, Mon–Sun),
+`priority` is an int (1 = highest, 5 = lowest).
+All attributes stored with leading underscore, exposed via read-only properties.
+
+`Scheduler` — maintains an internal list of `Event` objects.
+Add:
+- `add_event(event)` — raises `ValueError` if `day` not in 1–7
+  or `priority` not in 1–5
+- `events_on(day)` — returns a list of Event names for that day,
+  sorted by priority ascending (lowest number = highest priority first);
+  ties broken by event name alphabetically
+- `busiest_day()` — returns the day number with the most events;
+  if tied, return the **lowest** day number
+- `priority_queue()` — returns ALL events as `(priority, name)` tuples,
+  sorted by priority ascending then name alphabetically;
+  **deduplicated by name** (if same event name added twice on different days,
+  keep only the first occurrence in the sorted output)
+- `daily_summary()` — returns a dict mapping day numbers (only days with
+  at least one event) to a count of events on that day
+
+```
+sched = Scheduler()
+sched.add_event(Event("Standup",   1, 2))
+sched.add_event(Event("Deploy",    1, 1))
+sched.add_event(Event("Review",    3, 2))
+sched.add_event(Event("Retro",     5, 3))
+sched.add_event(Event("Standup",   3, 2))   # same name, different day
+
+sched.events_on(1)      → ["Deploy", "Standup"]
+sched.events_on(3)      → ["Review", "Standup"]
+sched.busiest_day()     → 1   (tied with day 3 — lowest day wins)
+sched.daily_summary()   → {1: 2, 3: 2, 5: 1}
+sched.priority_queue()  → [(1, "Deploy"), (2, "Review"), (2, "Standup"), (3, "Retro")]
+                           ← "Standup" appears once only (first occurrence kept)
+```
+
+> 💡 `priority_queue()` deduplication is the hardest part — think about
+> what "first occurrence" means when the list may not be sorted yet.
+> Do you deduplicate before or after sorting? The answer matters.
+> Adversarial: `events_on(day)` for a day with no events returns `[]`, not crash.
+> `busiest_day()` on an empty scheduler — decide and document your response.
+> `add_event` with invalid day/priority: test both failure paths independently.
+
+---
+
+## Log
+
+| Q  | Status | First Try? | Edge Case Tested | Notes |
+|----|--------|------------|-------------------|-------|
+| E1 |        |            |                   |       |
+| M1 |        |            |                   |       |
+| M2 |        |            |                   |       |
+| M3 |        |            |                   |       |
+| M4 |        |            |                   |       |
+| M5 |        |            |                   |       |
+| H1 |        |            |                   |       |
+| H2 |        |            |                   |       |
+| H3 |        |            |                   |       |
+| H4 |        |            |                   |       |
+
+---
+
+*Phase 8 — same scope as Phase 7, harder reasoning chains. Dunder/operator overloading next phase.*
