@@ -36,54 +36,78 @@
 
 
 ### Question 2 (Medium)
-class Ledger:
-    def __init__(self,owner):
-        self.owner = owner
-        self._transcation = []
-    def credit(self,amount):
-        if amount <= 0:
-            raise ValueError("Enter a Valid amount")
-        self._transcation.append(("credit",amount))
-    def debit(self,amount):
-        if amount <= 0:
-            raise ValueError("Enter a Valid amount")
-        self._transcation.append(("debit",amount))
-    @property
-    def balance(self):
-        total = 0
-        for i,v in self._transcation:
-            if i == "credit":
-                total += v
-            elif i =="debit":
-               total -= v
-        return total
-    def largest_credit(self):
-        k = sorted(self._transcation,key=lambda x: (-x[1],x[0]))
-        filterlst = list(filter(lambda x:  x[0] == "credit",k))
-        if len(filterlst) == 0:
-            return 0
-        return filterlst[0][1]
-    def summary(self):
-        countcredit = 0
-        countdebit = 0
-        for i,v in self._transcation:
-            if i == "credit":
-                countcredit+=1
-            elif i == "debit":
-                countdebit+=1
-        d = {
-         "owner": self.owner,
-         "credits": countcredit,
-         "debits":  countdebit,
-         "balance": self.balance,
-        }
-        return d
-ledger = Ledger("Soham")
-ledger.credit(500)
-ledger.credit(200)
-ledger.debit(100)
-ledger.credit(800)
-ledger.debit(300) 
-print(ledger.balance)
-print(ledger.largest_credit())      
-print(ledger.summary())
+# class Ledger:
+#     def __init__(self,owner):
+#         self.owner = owner
+#         self._transcation = []
+#     def credit(self,amount):
+#         if amount <= 0:
+#             raise ValueError("Enter a Valid amount")
+#         self._transcation.append(("credit",amount))
+#     def debit(self,amount):
+#         if amount <= 0:
+#             raise ValueError("Enter a Valid amount")
+#         self._transcation.append(("debit",amount))
+#     @property
+#     def balance(self):
+#         total = 0
+#         for i,v in self._transcation:
+#             if i == "credit":
+#                 total += v
+#             elif i =="debit":
+#                total -= v
+#         return total
+#     def largest_credit(self):
+#         k = sorted(self._transcation,key=lambda x: (-x[1],x[0]))
+#         filterlst = list(filter(lambda x:  x[0] == "credit",k))
+#         if len(filterlst) == 0:
+#             return 0
+#         return filterlst[0][1]
+#     def summary(self):
+#         countcredit = 0
+#         countdebit = 0
+#         for i,v in self._transcation:
+#             if i == "credit":
+#                 countcredit+=1
+#             elif i == "debit":
+#                 countdebit+=1
+#         d = {
+#          "owner": self.owner,
+#          "credits": countcredit,
+#          "debits":  countdebit,
+#          "balance": self.balance,
+#         }
+#         return d
+# ledger = Ledger("Soham")
+# ledger.credit(500)
+# ledger.credit(200)
+# ledger.debit(100)
+# ledger.credit(800)
+# ledger.debit(300) 
+# print(ledger.balance)
+# print(ledger.largest_credit())      
+# print(ledger.summary())
+
+### Question 3 (Medium)
+def build_leaderboards(results):
+    d = {}
+    for i,v in results:
+        if i not in d.keys():
+            d[i]= v
+        else:
+            d[i]+=v
+    lst = []
+    for i,v in d.items():
+        lst.append((i,v))
+    newlst = sorted(lst,key=lambda x: (-x[1],x[0]))
+    finalist = []
+    rank = 1
+    for idx, (k, s) in enumerate(newlst):
+        if idx > 0 and s < newlst[idx-1][1]:
+            rank = idx + 1   # only advance rank when score actually drops
+        finalist.append((rank, k, s))
+results = [
+    ("Alice", 300), ("Bob", 450), ("Alice", 200),
+    ("Charlie", 450), ("Dave", 100), ("Bob", 50)
+]
+print(build_leaderboards(results))
