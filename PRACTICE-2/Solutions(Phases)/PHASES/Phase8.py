@@ -50,13 +50,13 @@ class Ledger:
         self._transcation.append(("debit",amount))
     @property
     def balance(self):
-        self.balance = 0
+        total = 0
         for i,v in self._transcation:
             if i == "credit":
-                self.balance += v
+                total += v
             elif i =="debit":
-                self.balance -= v
-        return self.balance
+               total -= v
+        return total
     def largest_credit(self):
         k = sorted(self._transcation,key=lambda x: (-x[1],x[0]))
         filterlst = list(filter(lambda x:  x[0] == "credit",k))
