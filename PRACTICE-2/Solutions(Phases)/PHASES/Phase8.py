@@ -212,3 +212,97 @@
 # print(booth.winner())
 # booth.cast_vote("Bob")
 # print(booth.winner())
+
+### Question 8(Hard)
+# class Item:
+#     def __init__(self,name,price,quantity):
+#         self.name = name
+#         self._price = price
+#         self._quantity = quantity
+#     @property
+#     def price(self):
+#         return self._price
+#     @price.setter
+#     def price(self,value):
+#         if value  <= 0:
+#             raise ValueError("not a valid price")
+#         self._price = value
+#     @property
+#     def qty(self):
+#         return self._quantity
+#     @qty.setter
+#     def qty(self,value):
+#         if value<= 0:
+#             raise ValueError("not a valid qty")
+#         self._quantity = value
+#     def value(self):
+#         return self._price * self._quantity
+# class Shelf:
+#     def __init__(self,shelf_id):
+#         self.shelf_id = shelf_id
+#         self.lst = []
+#         self.value = []
+#     def add_item(self,items):
+#         self.lst.append(items)
+#         self.value.append((items.name,items.value()))
+#     def shelf_value(self):
+#         sum = 0
+#         for item in self.value:
+#             sum+=item[1]
+#         return sum
+#     def find_item(self,name):
+#         count = 0
+#         for item in self.lst:
+#             i = item[0]
+#             if i.lower() == name.lower():
+#                 count+=1
+#                 k = i
+#         if count > 0:
+#             return f"Item {k} found.."
+#         else:
+#             return None
+#     def most_expensive(self):
+#         if len(self.lst) == 0:
+#             return None
+#         lst = sorted(self.lst,key=lambda x: -x[1])  
+#         for items in self.lst:
+#              if items[1] == lst[0][1]:
+#                 k = items[0]
+#                 break
+#         return k
+# class Warehouse:
+#     def __init__(self):
+#         self.lst = []
+#     def add_shelf(self,shelf):
+#         self.lst.append(shelf)
+#     def total_value(self):
+#         totalvalue = 0
+#         for items in self.lst:
+#             totalvalue += items.shelf_value()
+#         return totalvalue
+#     def find_item(self,name):
+#         for items in self.lst:
+#             k = items.find_item(name)
+#             if k is not None:
+#                 return k
+#         return None  
+            
+# w = Warehouse()           
+# s1 = Shelf("A1")
+# s2 = Shelf("A2")
+# s1.add_item(Item("Keyboard", 1500, 4))
+# s1.add_item(Item("Mouse", 800, 10))
+# s2.add_item(Item("Monitor", 12000, 2))
+# s2.add_item(Item("HDMI", 400, 15))  
+# print(s1.find_item("mouse"))       #
+# print(s1.most_expensive())
+# print(s1.shelf_value())
+# print(s2.shelf_value())
+# w.add_shelf(s1)
+# w.add_shelf(s2)
+# print(w.total_value())
+# print(w.find_item("HDMI"))         # → the HDMI Item (found in s2)
+# print(w.find_item("SSD"))    
+            
+                
+            
