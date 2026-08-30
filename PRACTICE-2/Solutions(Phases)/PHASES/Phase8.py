@@ -133,3 +133,37 @@
 # print(sanitise(text,banned))
 
 ### Question 5 (Medium)
+
+
+
+
+### Question 6 (Medium)
+# records = [
+#     ("cloud", "aws", 3), ("cloud", "gcp", 1), ("cloud", "aws", 1),
+#     ("lang", "python", 5), ("lang", "python", 2), ("cloud", "gcp", 4),
+#     ("lang", "java", 3)
+# ]
+# group_by_category(records) →
+# {
+#   "cloud": {"aws": [1, 3], "gcp": [1, 4]},
+#   "lang":  {"python": [2, 5], "java": [3]}
+# }
+# def group_by_dictionary(records):
+#     d = {}
+#     for c, s, v in records:
+#         if c not in d:
+#             d[c] = {}
+#         if s not in d[c]:
+#             d[c][s] = []
+#         d[c][s].append(v)
+#         d[c][s].sort()
+#     return d
+
+# records = [
+#     ("cloud", "aws", 3), ("cloud", "gcp", 1), ("cloud", "aws", 1),
+#     ("lang", "python", 5), ("lang", "python", 2), ("cloud", "gcp", 4),
+#     ("lang", "java", 3)
+# ]
+# print(group_by_dictionary(records))
+
+### Question 7 ()
