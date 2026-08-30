@@ -118,19 +118,19 @@
 # sanitise(text, banned) →
 # "[REMOVED] Quick brown [REMOVED] jumped over [REMOVED] lazy [REMOVED]"
 
-def sanitise(text,banned_words):
-    newtext = text.split(" ")
-    banned = set(banned_words)
-    finallst = []
-    for item in newtext:
-        if item.lower() not in banned:
-            finallst.append(item)
-        else:
-            finallst.append("[REMOVED]")
-    return " ".join(finallst)
-text = "The Quick brown FOX jumped over the lazy DOG"
-banned = ["fox", "dog", "the"]
-print(sanitise(text,banned))
+# def sanitise(text,banned_words):
+#     newtext = text.split(" ")
+#     banned = set(banned_words)
+#     finallst = []
+#     for item in newtext:
+#         if item.lower() not in banned:
+#             finallst.append(item)
+#         else:
+#             finallst.append("[REMOVED]")
+#     return " ".join(finallst)
+# text = "The Quick brown FOX jumped over the lazy DOG"
+# banned = ["fox", "dog", "the"]
+# print(sanitise(text,banned))
 
 ### Question 5 (Medium)
 
@@ -148,23 +148,23 @@ print(sanitise(text,banned))
 #   "cloud": {"aws": [1, 3], "gcp": [1, 4]},
 #   "lang":  {"python": [2, 5], "java": [3]}
 # }
-def group_by_dictionary(records):
-    d = {}
-    for c, s, v in records:
-        if c not in d:
-            d[c] = {}
-        if s not in d[c]:
-            d[c][s] = []
-        d[c][s].append(v)
-        d[c][s].sort()
-    return d
+# def group_by_category(records):
+#     d = {}
+#     for c, s, v in records:
+#         if c not in d:
+#             d[c] = {}
+#         if s not in d[c]:
+#             d[c][s] = []
+#         d[c][s].append(v)
+#         d[c][s].sort()
+#     return d
 
-records = [
-    ("cloud", "aws", 3), ("cloud", "gcp", 1), ("cloud", "aws", 1),
-    ("lang", "python", 5), ("lang", "python", 2), ("cloud", "gcp", 4),
-    ("lang", "java", 3)
-]
-print(group_by_dictionary(records))
+# records = [
+#     ("cloud", "aws", 3), ("cloud", "gcp", 1), ("cloud", "aws", 1),
+#     ("lang", "python", 5), ("lang", "python", 2), ("cloud", "gcp", 4),
+#     ("lang", "java", 3)
+# ]
+# print(group_by_category(records))
 
 ## Question 7 (Hard)
 
