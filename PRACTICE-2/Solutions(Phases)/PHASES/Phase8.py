@@ -166,4 +166,49 @@
 # ]
 # print(group_by_dictionary(records))
 
-### Question 7 ()
+### Question 7 (Hard)
+
+# class VotingBooth:
+#     def __init__(self,candidates):
+#         self.d = {}
+#         self.candidates = candidates
+#         for person in self.candidates:
+#             self.d[person] = 0 
+#     def cast_vote(self,candidate):
+#         if candidate not in self.candidates:
+#             raise ValueError("Unregistered Candidate!!")
+#         self.d[candidate] += 1
+        
+#     def results(self):
+#         lst = []
+#         for person in self.candidates:
+#             lst.append((person,self.d[person]))
+#         newlst = sorted(lst,key=lambda x: (-x[1],x[0]))
+#         return newlst
+#     def winner(self):
+#         k = self.results()
+#         diff = 0 
+#         for char, (i,v) in enumerate(k):
+#             if char == 0:
+#                 diff += v
+#             elif char == 1:
+#                 diff -= v
+#         if diff == 0:
+#             return "TIE" ### if all votes = 0 winner is a tie (and the first position)
+#                          ### will go to the alphabetically ascending name
+#         else:
+#             return k[0][0]
+#     @property
+#     def total_votes(self):
+#         votes = 0
+#         k = self.results()   
+#         for i,v in k:
+#             votes += v
+#         return votes
+# booth = VotingBooth(["Alice", "Bob", "Charlie"])
+# for candidate in ["Alice", "Bob", "Alice", "Charlie", "Bob", "Alice"]:
+#     booth.cast_vote(candidate)
+# print(booth.results())    
+# print(booth.winner())
+# booth.cast_vote("Bob")
+# print(booth.winner())
