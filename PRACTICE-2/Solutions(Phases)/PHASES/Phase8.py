@@ -311,5 +311,95 @@
 # print(w.find_item("HDMI"))         # → the HDMI Item (found in s2)
 # print(w.find_item("SSD"))    
             
-                
+### Question 9 (hard)
+# students = [
+#     Student("Soham",   {"Networks": 88, "Cloud": 92, "AI": 55}),
+#     Student("Riya",    {"Networks": 91, "Cloud": 87, "AI": 90}),
+#     Student("Arjun",   {"Networks": 40, "Cloud": 48, "AI": 35}),
+#     Student("Meera",   {"Networks": 78, "Cloud": 60, "AI": 49}),
+#     Student("Priya",   {"Networks": 50, "Cloud": 50, "AI": 50}),
+# ]
+# Expected Output:
+# {
+#     "distinction": [names sorted alphabetically],
+#     "pass":        [names sorted alphabetically],
+#     "fail":        [names sorted alphabetically],
+#     "class_topper": name of student with highest average (tie → alphabetically first),
+#     "most_improved_subject": the subject name that appears MOST frequently
+#                              as a weakest_subject() across all students
+#                              (tie → alphabetically first subject name)
+# }              
+class Student:
+    def __init__(self,name,scores):
+        self.name = name
+        self.scores = scores
+    @property
+    def average(self):
+        avg = sum(self.scores.values())/len(self.scores)
+        return round(avg,2)
+    @property
+    def passed_subjects(self):
+        pass_sub = []
+        for i,v in self.scores.items():
+            if v >= 50:
+                pass_sub.append(i)
+        pass_sub.sort()
+        return pass_sub
+    @property
+    def grade(self):
+        if self.average >= 85:
+            return "Distinction"
+        elif 50 <= self.average < 85:
+            return "Pass"
+        else:
+            return "Fail"
+    def weakest_subject(self):
+        lst = []
+        for i,v in self.scores.items():
+            lst.append((i,v))
+        newlst = sorted(lst,key=lambda x: (x[1],x[0]))
+        return newlst[0][0]
+def class_report(students):
+    distinct = []
+    passed = []
+    fail = []
+    marks = []
+    weaksub = []
+    for student in students:
+        if student.grade == "Distinction":
+            distinct.append(student.name)
+        elif student.grade == "Pass":
+            passed.append(student.name)
+        else:
+            fail.append(student.name)
+        marks.append((student.name,student.average))
+        weaksub.append(student.weakest_subject())
+    topperlst = sorted(marks,key=lambda x: (-x[1],x[0]))
+    distinct.sort()
+    passed.sort()
+    fail.sort()
+    weakestsub = []
+    for i in weaksub:
+        weakestsub.append((i,weaksub.count(i)))
+    tsub = list(set(weakestsub))
+    wsub = sorted(tsub,key=lambda x: (-x[1],x[0]))
+    dct = {
+        "distinction": distinct,
+        "pass": passed,
+        "fail": fail,
+        "class_topper": topperlst[0][0],
+        "most_weakest_subject": wsub[0][0]
+    }
+    return dct
+students = [
+    Student("Soham",   {"Networks": 88, "Cloud": 92, "AI": 55}),
+    Student("Riya",    {"Networks": 91, "Cloud": 87, "AI": 90}),
+    Student("Arjun",   {"Networks": 40, "Cloud": 48, "AI": 35}),
+    Student("Meera",   {"Networks": 78, "Cloud": 60, "AI": 49}),
+    Student("Priya",   {"Networks": 50, "Cloud": 50, "AI": 50}),
+]
+print(class_report(students))    
+          
             
+            
+        
