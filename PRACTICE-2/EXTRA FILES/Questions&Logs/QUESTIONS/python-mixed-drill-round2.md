@@ -33,9 +33,9 @@ Output: {"Arjun", "Meera"}
 Write a function `sort_by_score(data)` that takes a list of `(name, score)` tuples and returns them sorted by score descending. No built-in `sorted` with lambda — use your own logic to sort.
 
 ```
-Input:  [("Soham", 91),("Riya", 95),("Arjun", 72)]
-Output: [("Riya", 95),("Soham", 91),("Arjun", 72)]
-
+Input:  [("Soham", 91), ("Riya", 95), ("Arjun", 72)]
+Output: [("Riya", 95), ("Soham", 91), ("Arjun", 72)]
+```
 > 💡 Think: bubble sort or selection sort. You know loops. Apply them to tuples.
 
 ---
