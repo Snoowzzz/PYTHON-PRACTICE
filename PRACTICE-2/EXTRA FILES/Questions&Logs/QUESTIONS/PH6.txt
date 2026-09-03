@@ -371,3 +371,27 @@ Q6 is the one that'll make you think differently — a function that takes other
 functions as input. That's a concept called higher order functions. You've been 
 using it with map() and filter() without knowing the name. Now you'll build 
 one yourself. Go. 🫡
+
+-------------------------------------------------------------------------
+LOG 
+
+Q	Status	First Try?	Edge Case Tested	Notes
+E1	✅	Yes	✅	Built two versions — first had trailing space bug, self-corrected to cleaner logic
+M1	✅	Yes	✅	Clean min() approach for length mismatch
+M2	✅	Yes	✅	Elegant — dict for dedup, then sorted with lambda. Self-described as elegant and it is
+M3	✅	Yes	✅	Three-set logic clean, all paths covered
+M4	✅	Yes	✅	filter + map + conditional lambda — all in one clean chain
+M5	✅	Yes	✅	Creative avg_word_length via replace(" ","") — unusual approach that works
+M6	✅	Yes	✅	Clean loop, both cases handled
+H1	✅	Yes	✅	Built verbose version first intentionally, then noted cleaner version — that's maturity
+H2	❌	No	❌	Couldn't crack it independently — understood Claude's recursive solution after explanation
+H3	✅	Yes	✅	Multi-stage pipeline — parse, validate, dedup, sort, aggregate. All correct
+
+Extended Practice
+
+Q	Status	First Try?	Notes
+Q2 (flatten_dict)	✅	Yes	Clean
+Q3 (top_k_frequent)	✅	Yes	Minor: stored count as str instead of int — cosmetic
+Q4 (group_anagrams)	✅	Yes	Built ASCII sort method independently, then saw sorted(word) shortcut
+Q5 (running_stats)	✅	Yes	Clean one-pass loop
+Q6 (active usernames)	✅	Yes	Clean filter + map chain

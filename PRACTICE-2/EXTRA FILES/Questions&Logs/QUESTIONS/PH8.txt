@@ -398,18 +398,17 @@ sched.priority_queue()  → [(1, "Deploy"), (2, "Review"), (2, "Standup"), (3, "
 
 ## Log
 
-| Q  | Status | First Try? | Edge Case Tested | Notes |
-|----|--------|------------|-------------------|-------|
-| E1 |        |            |                   |       |
-| M1 |        |            |                   |       |
-| M2 |        |            |                   |       |
-| M3 |        |            |                   |       |
-| M4 |        |            |                   |       |
-| M5 |        |            |                   |       |
-| H1 |        |            |                   |       |
-| H2 |        |            |                   |       |
-| H3 |        |            |                   |       |
-| H4 |        |            |                   |       |
+Q	Status	First Try?	Edge Case Tested	Notes
+E1	✅ Done	Yes	✅	Both ValueError paths correct, order deliberate
+M1	✅ Done	After fixes	✅	Property shadowing bug caught and fixed
+M2	✅ Done	After fixes	✅	Caught planted error, Olympic ranking implemented
+M3	✅ Done	Yes	✅	Clean first attempt
+M4	✅ Done	Yes	✅	Two-way sync correct
+M5	✅ Done	Yes	✅	Renamed correctly, nested dict clean
+H1	✅ Done	Yes	✅	Tie logic correct, zero-vote case documented
+H2	✅ Done	After fixes	✅	Three-layer composition working after tuple→object fix
+H3	✅ Done	Yes	✅	Multi-step pipeline clean
+H4	⏳ Pending	—	—	Deferred for midsems
 
 ---
 

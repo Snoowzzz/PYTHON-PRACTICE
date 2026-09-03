@@ -175,19 +175,19 @@ print(has_qualified(board, 90))
 
 ## Session 1 Log (fill after solving)
 
-| Q | Status | First Try? | Edge Case Tested | Notes |
-|---|--------|------------|------------------|-------|
-| E1 | | | | |
-| E2 | | | | |
-| E3 | | | | |
-| E4 | | | | |
-| M1 | | | | |
-| M2 | | | | |
-| M3 | | | | |
-| M4 | | | | |
-| H1 | | | | |
-| H2 | | | | |
+Phase 4:
 
+Q	Status	First Try?	Edge Case Tested	Notes
+E1	✅	Yes	✅	Minor: unnecessary pass, count via math cleaner
+E2	✅	Yes	✅	Minor: returned new_word instead of just count
+E3	✅	Yes	✅	Cleaner with range(1, n+1)
+E4	✅	Yes	✅	Used enumerate + for-else — strongest easy of session
+M1	✅	Yes	✅	Arrived at seen-tracker naturally without hints
+M2	✅	Yes	✅	Self-caught hardcoded bug
+M3	✅	Yes	✅	Caught mentor's question error
+M4	✅	Yes	✅	Self-debugged 15min bug on paper, no IDE
+H1	✅	No	✅	Built two versions independently
+H2	❌	No	❌	Dict syntax gap, logic correct, pending redo
 ---
 
 *Session 2 and 3 will escalate — even the easy tier will hit harder. Lock Session 1 in first.*
