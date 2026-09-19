@@ -1,4 +1,5 @@
 # Python Practice Log — Functions + Lists
+
 **Session 1 of 3** | Date: 19-08-2026
 **Topics:** Functions · Lists · Loops · Strings (mixed)
 **Format:** 4 Easy · 4 Medium · 2 Hard
@@ -6,6 +7,7 @@
 ---
 
 > **Ground Rules**
+>
 > - Write a function for *every* question — no bare scripts.
 > - Test with at least **one adversarial input** before marking solved (your recurring gap from Days 1–2).
 > - Time yourself. Note first-try vs. corrected.
@@ -17,39 +19,46 @@
 ---
 
 ### E1 — List Surgeon
+
 Write a function `remove_negatives(nums)` that takes a list of integers and returns a **new list** with all negative numbers removed. The original list must remain unchanged.
 
 ```
 Input:  [3, -1, 0, -7, 5, -2, 8]
 Output: [3, 0, 5, 8]
 ```
+
 > 💡 Adversarial check: What does your function return for `[]`? What about `[-1, -2, -3]`?
 
 ---
 
 ### E2 — Function Meets Loop
+
 Write a function `count_vowels(s)` that takes a string and returns the count of vowels (a, e, i, o, u — both cases).
 
 ```
 Input:  "Cloud Computing"
 Output: 5
 ```
+
 > 💡 Adversarial check: Try `""` and `"RHYTHMS"`.
 
 ---
 
 ### E3 — List Builder
+
 Write a function `squares_list(n)` that returns a list of squares of numbers from 1 to n (inclusive).
 
 ```
 Input:  5
 Output: [1, 4, 9, 16, 25]
 ```
+
 > 💡 Adversarial check: What does `squares_list(0)` return?
 
 ---
 
 ### E4 — Return the Index
+
 Write a function `first_even_index(nums)` that returns the **index** of the first even number in a list. If no even number exists, return `-1`.
 
 ```
@@ -59,6 +68,7 @@ Output: 3
 Input:  [1, 3, 5]
 Output: -1
 ```
+
 > 💡 Adversarial check: Try `[2, 4, 6]` — should return `0`.
 
 ---
@@ -68,17 +78,20 @@ Output: -1
 ---
 
 ### M1 — Deduplicator
+
 Write a function `unique_ordered(nums)` that takes a list and returns a new list with **duplicates removed**, preserving the original order of first appearance. You may **not** use `set()` directly on the full list.
 
 ```
 Input:  [4, 1, 2, 1, 4, 3, 2]
 Output: [4, 1, 2, 3]
 ```
+
 > 💡 Adversarial check: All duplicates — `[5, 5, 5, 5]`. All unique — `[1, 2, 3]`.
 
 ---
 
 ### M2 — Rotating Strings
+
 Write a function `rotate_string(s, k)` that rotates the string `s` to the **right** by `k` positions.
 
 ```
@@ -88,30 +101,36 @@ Output: "efabcd"
 Input:  s = "hello", k = 7
 Output: "llohe"   ← k > len(s), handle it
 ```
+
 > 💡 Think: what operation naturally handles wrapping without a loop?
 
 ---
 
 ### M3 — Function + Nested Logic
+
 Write a function `categorize_scores(scores)` that takes a list of integers (0–100)
 and returns a dictionary with counts for each grade band:
+
 - A: 90–100 · B: 75–89 · C: 50–74 · F: 0–49
 
 ```
 Input:  [92, 45, 76, 55, 89, 100, 38]
 Output: {'A': 2, 'B': 2, 'C': 2, 'F': 1}
 ```
+
 > 💡 Adversarial check: Empty list. Score exactly at a boundary (90, 75, 50).
 
 ---
 
 ### M4 — String Reconstructor (Loop + String)
+
 Write a function `compress_spaces(s)` that collapses multiple consecutive spaces into exactly one space, and strips leading/trailing spaces. Do **not** use `.replace()` or `re` module — use a loop.
 
 ```
 Input:  "  cloud   computing   is   fun  "
 Output: "cloud computing is fun"
 ```
+
 > 💡 This tests your loop control logic. Think: when do you write a space vs. skip?
 
 ---
@@ -121,8 +140,9 @@ Output: "cloud computing is fun"
 ---
 
 ### H1 — List Flattener (Nested Lists)
-Write a function `flatten(nested)` that takes a **list that may contain 
-integers or other lists (one level deep only)** and returns a 
+
+Write a function `flatten(nested)` that takes a **list that may contain
+integers or other lists (one level deep only)** and returns a
 single flat list of all integers.
 
 ```
@@ -130,7 +150,7 @@ Input:  [1, [2, 3], 4, [5, 6, 7], 8]
 Output: [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-**Extension (attempt if you finish fast):** What if the nesting is arbitrary depth? Can your function handle `[1, [2, [3, [4]]]]`? 
+**Extension (attempt if you finish fast):** What if the nesting is arbitrary depth? Can your function handle `[1, [2, [3, [4]]]]`?
 
 > 💡 Hint for extension: think recursion — a function calling itself. But nail the flat version first.
 > 💡 Adversarial check: `[]`, `[[]]`, `[1, [], 2]`.
@@ -138,6 +158,7 @@ Output: [1, 2, 3, 4, 5, 6, 7, 8]
 ---
 
 ### H2 — The Scoreboard (Functions + Lists + Loops, all combined)
+
 You are building a mini scoreboard system. Write the following **three functions**:
 
 ```python
@@ -154,6 +175,7 @@ def has_qualified(scoreboard, threshold):
 ```
 
 Test it with this:
+
 ```python
 board = []
 add_score(board, "Soham", 88)
@@ -177,7 +199,7 @@ print(has_qualified(board, 90))
 
 Phase 4:
 
-Q	Status	First Try?	Edge Case Tested	Notes
+### Q	Status	First Try?	Edge Case Tested	Notes
 E1	✅	Yes	✅	Minor: unnecessary pass, count via math cleaner
 E2	✅	Yes	✅	Minor: returned new_word instead of just count
 E3	✅	Yes	✅	Cleaner with range(1, n+1)
@@ -188,6 +210,5 @@ M3	✅	Yes	✅	Caught mentor's question error
 M4	✅	Yes	✅	Self-debugged 15min bug on paper, no IDE
 H1	✅	No	✅	Built two versions independently
 H2	❌	No	❌	Dict syntax gap, logic correct, pending redo
----
 
 *Session 2 and 3 will escalate — even the easy tier will hit harder. Lock Session 1 in first.*
